@@ -19,6 +19,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/skins/skin-blue.min.css">
+  <script src="<?php echo base_url()?>assets/dashboard_page/js/sweetalert/sweetalert2.all.min.js"></script>
 
   <!-- Google Font -->
   <link rel="stylesheet"

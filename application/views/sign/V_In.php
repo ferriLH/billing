@@ -13,13 +13,29 @@ $this->load->view('parts/V_Header');
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="<?php echo base_url()?>" method="post">
+    <form  method="post" action="<?php echo base_url('login/auth') ?>">
+      <?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+              <div class="alert alert-danger">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <strong>Warning</strong>
+                          <?php echo validation_errors(); ?>
+                          <?php echo $this->session->flashdata('failed'); ?>
+              </div>
+              <script>
+                Swal.fire({
+                  type: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!'
+                })
+              </script>
+      <?php }?>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" class="form-control" placeholder="Email" name="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
+
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" placeholder="Password" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -32,7 +48,7 @@ $this->load->view('parts/V_Header');
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <input class="btn btn-primary btn-block btn-flat" type="submit" value="Log in">
         </div>
         <!-- /.col -->
       </div>
