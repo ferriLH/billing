@@ -9,7 +9,7 @@ class M_Login extends CI_Model
     function cek ($user,$pass){
 		$this->db->select("*");
 		$this->db->from('t_user');
-		$this->db->where("Email",$user);
+		$this->db->where("email",$user);
 		$this->db->where("password",$pass);
 		return $this->db->get();        
     }

@@ -19,8 +19,8 @@ class C_Login extends CI_Controller
         $data = array(
             "title" => "Login",
         );
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('email', 'email', 'required|valid_email');
+        $this->form_validation->set_rules('password', 'password', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('sign/V_In',$data);
@@ -32,11 +32,11 @@ class C_Login extends CI_Controller
                 foreach ($cek->result() as $dat) {
                     $sess_data['isLogin']   = TRUE;
                     $sess_data['id_user']   = $dat->id_user;
-                    $sess_data['NIK']       = $dat->NIK;
-                    $sess_data['Email']     = $dat->Email;
+                    $sess_data['nik']       = $dat->nik;
+                    $sess_data['email']     = $dat->email;
                     $sess_data['password']  = $dat->password;
-                    $sess_data['Rule']      = $dat->Rule;
-                    $sess_data['Status']    = $dat->Status;
+                    $sess_data['rule']      = $dat->rule;
+                    $sess_data['status']    = $dat->status;
                     $this->session->set_userdata($sess_data);
                 }
                 $this->session->set_flashdata('sukses','sukses');
