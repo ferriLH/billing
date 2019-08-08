@@ -14,6 +14,7 @@ class C_Login extends CI_Controller
         );
         $this->load->view('sign/V_In',$data);
     }
+
     function auth()
     {
         $data = array(
@@ -33,9 +34,10 @@ class C_Login extends CI_Controller
                     $sess_data['isLogin']   = TRUE;
                     $sess_data['id_user']   = $dat->id_user;
                     $sess_data['nik']       = $dat->nik;
+                    $sess_data['nama']       = $dat->nama;
                     $sess_data['email']     = $dat->email;
+                    $sess_data['role']     = $dat->role;
                     $sess_data['password']  = $dat->password;
-                    $sess_data['rule']      = $dat->rule;
                     $sess_data['status']    = $dat->status;
                     $this->session->set_userdata($sess_data);
                 }
@@ -49,9 +51,7 @@ class C_Login extends CI_Controller
         }
     }
 
-    function signout(){
-        $this->session->sess_dastroy();
-        redirect('Login');
-    }
+    
 }
+
 ?>

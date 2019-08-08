@@ -12,7 +12,16 @@ class C_Home extends CI_Controller
         $data = array(
             "title" => "Home",
         );
-        $this->load->view('V_Home',$data);
+        if($this->session->userdata('isLogin') == TRUE){
+        $this->load->view('V_Home',$data);    
+        }
+        
+    }
+
+    function signout()
+    {
+        $this->session->sess_destroy();
+        redirect('login');
     }
 }
 ?>
