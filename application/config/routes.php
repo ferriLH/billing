@@ -52,10 +52,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller']    = 'C_Login';
 $route['login']    				= 'C_Login';
 $route['login/auth']    		= 'C_Login/auth';
-$route['inadmin']    		= 'C_Inadmin';
+$route['inadmin']    			= 'C_Inadmin';
 $route['inadmin/auth']    		= 'C_Inadmin/auth';
 $route['admin']    				= 'C_Admin';
 $route['home/logout']           = 'C_Home/signout';
+
+//halaman
 $route['home']                  = 'C_Home';
+$route['rbtcontent']            = 'C_Rbtcontent';
+$route['partner']            	= 'C_Partner';
+$route['pencipta']            	= 'C_Pencipta';
+$route['rbtsubmit']            	= 'C_Rbtsubmit';
+$route['traffic']            	= 'C_Traffic';
+$route['sharepartner']          = 'C_Sharepartner';
+$route['sharepencipta']         = 'C_Sharepencipta';
+$route['summary']            	= 'C_Summary';
+$route['payment']            	= 'C_Payment';
+$route['rbttsel']            	= 'C_Rbttsel'; 
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

@@ -211,20 +211,18 @@ $role = $this->session->userdata('role');
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="<?php echo base_url('inadmin')?>"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
-      </ul>
+        <li class="active"><a href="<?php echo base_url('home')?>"><i class="fa fa-link"></i> <span>HOME</span></a></li>
+        <li><a href="<?php echo base_url('rbtcontent')?>"><i class="fa fa-link"></i> <span>RBT CONTENT</span></a></li>
+        <li><a href="<?php echo base_url('partner')?>"><i class="fa fa-link"></i> <span>PARTNER</span></a></li>
+        <li><a href="<?php echo base_url('pencipta')?>"><i class="fa fa-link"></i> <span>PENCIPTA</span></a></li>
+        <li><a href="<?php echo base_url('rbtsubmit')?>"><i class="fa fa-link"></i> <span>RBT SUBMIT</span></a></li>
+        <li><a href="<?php echo base_url('traffic')?>"><i class="fa fa-link"></i> <span>TRAFFIC</span></a></li>
+        <li><a href="<?php echo base_url('sharepartner')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a></li>
+        <li><a href="<?php echo base_url('sharepencipta')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a></li>
+        <li><a href="<?php echo base_url('summary')?>"><i class="fa fa-link"></i> <span>SUMMARY</span></a></li>
+        <li><a href="<?php echo base_url('payment')?>"><i class="fa fa-link"></i> <span>PAYMENT</span></a></li>
+        <li><a href="<?php echo base_url('rbttsel')?>"><i class="fa fa-link"></i> <span>RBT FOR TSEL</span></a></li>
+        
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
