@@ -68,6 +68,9 @@ $route['sharepartner']          = 'C_Sharepartner';
 $route['sharepencipta']         = 'C_Sharepencipta';
 $route['summary']            	= 'C_Summary';
 $route['payment']            	= 'C_Payment';
-$route['rbttsel']            	= 'C_Rbttsel'; 
+$route['rbttsel']            	= 'C_Rbttsel';
+
+
+$route['partner/edit']          = 'C_Partner/edit'; 
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

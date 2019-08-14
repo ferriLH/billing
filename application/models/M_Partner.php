@@ -10,5 +10,8 @@ class M_Partner extends CI_Model
     	$this->db->from('p_partner');
     	return $this->db->get();
     }
+    function edit_data($where,$table){
+    	return $this->db->get_where($table,$where);
+    }
 }
 ?>

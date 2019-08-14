@@ -24,6 +24,9 @@
             <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
             </div>
+            <a href="<?php echo base_url('partner/edit')?>">
+            <button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
+            </a>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="pencipta" class="table table-bordered table-striped">
@@ -58,7 +61,7 @@
                   <td><?php echo $noFax;?></td>
                   <td><?php echo $noAcc;?></td>
                   <td><?php echo $bank;?></td>
-                  <td><button type="button" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i></button> |<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> | <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button></td>
+                  <td><button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> | <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button></td>
                 </tr>
                 <?php endforeach;?>
                 </tbody>
