@@ -10,5 +10,8 @@ class M_Pencipta extends CI_Model
     	$this->db->from('p_pencipta');
     	return $this->db->get();
     }
+	function add_new_pencipta($data)
+	{
+		$this->db->insert('p_pencipta',$data);
+	}
 }
-?>
