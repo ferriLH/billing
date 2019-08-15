@@ -28,7 +28,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="rbt" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -41,10 +41,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <?php foreach ($prbt as $a ){?>
+				<tr>
                   <td></td>
-                  <td></td>
-                  <td></td>
+                  <td><?php echo $a->judul?></td>
+                  <td><?php echo $a->artis?></td>
+					<?php }?>
                   <td></td>
                   <td></td>
                   <td></td>
