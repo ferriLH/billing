@@ -11,7 +11,7 @@ class C_Sharepartner extends CI_Controller
 		$data = array(
 			"title" => "Share Partner",
 		);
-		if($this->session->userdata('isLogin') == 'admin'){
+		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
 			$this->load->view('V_Sharepartner',$data);
 		}else{
 			redirect('admin');

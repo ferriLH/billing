@@ -216,7 +216,7 @@ $login 	= $this->session->userdata('isLogin');
 		  <?php if ($login=='admin') {
 		  	?>
 			  <li class="<?php if($this->uri->segment(1)=="admin"){echo "active";}?>">
-				  <a href="<?php echo base_url('home')?>"><i class="fa fa-link"></i> <span>HOME</span></a>
+				  <a href="<?php if ($login=='admin'){echo base_url('admin');}else{echo base_url('home');}?>"><i class="fa fa-link"></i> <span>HOME</span></a>
 			  </li>
 			  <li class="<?php if($this->uri->segment(1)=="rbtcontent"){echo "active";}?>">
 				  <a href="<?php echo base_url('rbtcontent')?>"><i class="fa fa-link"></i> <span>RBT CONTENT</span></a>
@@ -249,13 +249,16 @@ $login 	= $this->session->userdata('isLogin');
 				  <a href="<?php echo base_url('rbttsel')?>"><i class="fa fa-link"></i> <span>RBT FOR TSEL</span></a>
 			  </li>
 			  <?php
-		  }elseif ($login=='partner') {
+		  }elseif (($login=='partner')&&($role=='partner')) {
 		  	?>
 			  <li><a href="<?php echo base_url('sharepartner')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a></li>
 			  <?php
+		  }elseif (($login=='partner')&&($role=='pencipta')) {
+		  ?>
+			  <li><a href="<?php echo base_url('sharepencipta')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a></li>
+			  <?php
 		  }
 		  ?>
-
         
       <!-- /.sidebar-menu -->
     </section>
