@@ -72,6 +72,6 @@ $route['payment']            	= 'C_Payment';
 $route['rbttsel']            	= 'C_Rbttsel';
 
 
-$route['partner/edit']          = 'C_Partner/edit'; 
+$route['partner/edit/(:any)']   = 'C_Partner/edit/$1';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

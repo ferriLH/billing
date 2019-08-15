@@ -31,7 +31,7 @@ class C_Partner extends CI_Controller
         }
         $this->load->view("CrudPartner/Editpartner");
     }
-    public function edit($id = null)
+    public function edit($id)
     {
         if (!isset($id)) redirect('V_Partner');
 
