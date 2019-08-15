@@ -33,21 +33,43 @@ class C_Partner extends CI_Controller
     }
     public function edit($id)
     {
-        if (!isset($id)) redirect('V_Partner');
-
-        $id = $this->M_Partner;
-        $validation = $this->form_validation;
-        $validation->set_rules($id->rules());
-        if ($validation->run()) {
-            $id->update();
-            $this->session->set_flashdata('succes','Berhasil disimpan');
+        if ($this->session->userdata('isLogin') == TRUE) {
+            $data = array(
+                "title" => "Partner",
+                "edit" => $this->M_Partner->edit($id),
+            );
+            $this->load->view('CrudPartner/EditPartner',$data);
+        }else{
+            redirect('login');
         }
-        $data["id"] = $id->getById($id);
-        if (!$data["id"]) show_404();
-
-        $this->load->view('CrudPartner/Editpartner');
     }
-    public function delete($id=null)
+    function editPartnerAuth($id,$idp)
+    {
+        if ($this->session->userdata('isLogin') == TRUE) {
+            $data = array(
+                "title" => "Artist",
+                "getNewInbox"   => $this->M_Dashboard->getNewInbox(),
+                "getArtistPartner"  => $this->M_Artist->getArtistPartner($id),
+            );
+            //form validation
+            $this->form_validation->set_rules('namaPartner',    'Nama Partner',  'required');
+            $this->form_validation->set_rules('noTelp',            'No Telp',          'numberic');
+            $this->form_validation->set_rules('noFax',        'No Fax',      'numberic');
+            $this->form_validation->set_rules('bank',        'bank',      'required');
+            $this->form_validation->set_rules('noAcc',        'No Acc',      'numberic');
+            if ($this->form_validation->run() == FALSE) {
+                $this->session->set_flashdata('failed', 'gagal');
+                $this->load->view('dashboard_page/V_Edit_Partner',$data);
+            } else{
+                $this->M_Partner->update($id,$d);
+                $this->session->set_flashdata('sukses', 'sukses');
+                redirect('data-artist/'.$idp);
+            }
+        }else{
+            redirect('login');
+        }
+    }
+    public function delete($id)
     {
         if (!isset($id)) show_404();
         
