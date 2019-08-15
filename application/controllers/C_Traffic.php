@@ -8,8 +8,13 @@ class C_Traffic extends CI_Controller
     }
     public function index()
     {
-         $this->load->view('V_Traffic');
-        
+		$data = array(
+			"title" => "Traffic",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Traffic',$data);
+		}else{
+			redirect('admin');
+		}
     }
 }
-?>

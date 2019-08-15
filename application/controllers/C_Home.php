@@ -20,10 +20,14 @@ class C_Home extends CI_Controller
         
     }
 
-    function signout()
+    function signoutPartner()
     {
         $this->session->sess_destroy();
         redirect('login');
     }
+	function signoutAdmin()
+	{
+		$this->session->sess_destroy();
+		redirect('inadmin');
+	}
 }
-?>

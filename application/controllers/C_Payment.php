@@ -8,8 +8,13 @@ class C_Payment extends CI_Controller
     }
     public function index()
     {
-         $this->load->view('V_Payment');
-        
+		$data = array(
+			"title" => "Payment",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Payment',$data);
+		}else{
+			redirect('admin');
+		}
     }
 }
-?>

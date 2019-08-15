@@ -8,8 +8,15 @@ class C_Rbtcontent extends CI_Controller
     }
     public function index()
     {
-         $this->load->view('V_Rbtcontent');
-        
+		$data = array(
+			"title" => "RBT Content",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Rbtcontent',$data);
+		}else{
+			redirect('admin');
+		}
+
     }
 }
 ?>

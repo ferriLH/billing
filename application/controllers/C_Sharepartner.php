@@ -8,8 +8,14 @@ class C_Sharepartner extends CI_Controller
     }
     public function index()
     {
-         $this->load->view('V_Sharepartner');
-        
+		$data = array(
+			"title" => "Share Partner",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Sharepartner',$data);
+		}else{
+			redirect('admin');
+		}
+
     }
 }
-?>

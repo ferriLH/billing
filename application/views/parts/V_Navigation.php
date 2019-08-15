@@ -170,7 +170,7 @@ $login 	= $this->session->userdata('isLogin');
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url('home/logout')?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php if ($login=='admin'){echo base_url('logoutAdmin');}else{echo base_url('logoutPartner');}?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -213,17 +213,49 @@ $login 	= $this->session->userdata('isLogin');
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navigation <?php echo $title;?></li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="<?php echo base_url('home')?>"><i class="fa fa-link"></i> <span>HOME</span></a></li>
-        <li><a href="<?php echo base_url('rbtcontent')?>"><i class="fa fa-link"></i> <span>RBT CONTENT</span></a></li>
-        <li><a href="<?php echo base_url('partner')?>"><i class="fa fa-link"></i> <span>PARTNER</span></a></li>
-        <li><a href="<?php echo base_url('pencipta')?>"><i class="fa fa-link"></i> <span>PENCIPTA</span></a></li>
-        <li><a href="<?php echo base_url('rbtsubmit')?>"><i class="fa fa-link"></i> <span>RBT SUBMIT</span></a></li>
-        <li><a href="<?php echo base_url('traffic')?>"><i class="fa fa-link"></i> <span>TRAFFIC</span></a></li>
-        <li><a href="<?php echo base_url('sharepartner')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a></li>
-        <li><a href="<?php echo base_url('sharepencipta')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a></li>
-        <li><a href="<?php echo base_url('summary')?>"><i class="fa fa-link"></i> <span>SUMMARY</span></a></li>
-        <li><a href="<?php echo base_url('payment')?>"><i class="fa fa-link"></i> <span>PAYMENT</span></a></li>
-        <li><a href="<?php echo base_url('rbttsel')?>"><i class="fa fa-link"></i> <span>RBT FOR TSEL</span></a></li>
+		  <?php if ($login=='admin') {
+		  	?>
+			  <li class="<?php if($this->uri->segment(1)=="admin"){echo "active";}?>">
+				  <a href="<?php echo base_url('home')?>"><i class="fa fa-link"></i> <span>HOME</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="rbtcontent"){echo "active";}?>">
+				  <a href="<?php echo base_url('rbtcontent')?>"><i class="fa fa-link"></i> <span>RBT CONTENT</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="partner"){echo "active";}?>">
+				  <a href="<?php echo base_url('partner')?>"><i class="fa fa-link"></i> <span>PARTNER</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="pencipta"){echo "active";}?>">
+				  <a href="<?php echo base_url('pencipta')?>"><i class="fa fa-link"></i> <span>PENCIPTA</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="rbtsubmit"){echo "active";}?>">
+				  <a href="<?php echo base_url('rbtsubmit')?>"><i class="fa fa-link"></i> <span>RBT SUBMIT</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="traffic"){echo "active";}?>">
+				  <a href="<?php echo base_url('traffic')?>"><i class="fa fa-link"></i> <span>TRAFFIC</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="sharepartner"){echo "active";}?>">
+				  <a href="<?php echo base_url('sharepartner')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="sharepencipta"){echo "active";}?>">
+				  <a href="<?php echo base_url('sharepencipta')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="summary"){echo "active";}?>">
+				  <a href="<?php echo base_url('summary')?>"><i class="fa fa-link"></i> <span>SUMMARY</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="payment"){echo "active";}?>">
+				  <a href="<?php echo base_url('payment')?>"><i class="fa fa-link"></i> <span>PAYMENT</span></a>
+			  </li>
+			  <li class="<?php if($this->uri->segment(1)=="rbttsel"){echo "active";}?>">
+				  <a href="<?php echo base_url('rbttsel')?>"><i class="fa fa-link"></i> <span>RBT FOR TSEL</span></a>
+			  </li>
+			  <?php
+		  }elseif ($login=='partner') {
+		  	?>
+			  <li><a href="<?php echo base_url('sharepartner')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a></li>
+			  <?php
+		  }
+		  ?>
+
         
       <!-- /.sidebar-menu -->
     </section>

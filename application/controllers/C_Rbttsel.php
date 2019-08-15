@@ -8,8 +8,13 @@ class C_Rbttsel extends CI_Controller
     }
     public function index()
     {
-         $this->load->view('V_Rbttsel');
-        
+		$data = array(
+			"title" => "RBT For TSEL",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Rbttsel',$data);
+		}else{
+			redirect('admin');
+		}
     }
 }
-?>

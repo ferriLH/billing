@@ -8,8 +8,13 @@ class C_Rbtsubmit extends CI_Controller
     }
     public function index()
     {
-         $this->load->view('V_Rbtsubmit');
-        
+		$data = array(
+			"title" => "RBT Submit",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Rbtsubmit',$data);
+		}else{
+			redirect('admin');
+		}
     }
 }
-?>

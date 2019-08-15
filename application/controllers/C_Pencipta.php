@@ -9,10 +9,15 @@ class C_Pencipta extends CI_Controller
     }
     public function index()
     {
-         $x['data']=$this->M_Pencipta->show_pencipta();
-
-            $this->load->view('V_Pencipta',$x);
-        
+		$data = array(
+			"title" => "Pencipta",
+			"data"	=> $this->M_Pencipta->show_pencipta(),
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Pencipta',$data);
+		}else{
+			redirect('admin');
+		}
     }
 }
 ?>

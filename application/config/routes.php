@@ -55,7 +55,8 @@ $route['login/auth']    		= 'C_Login/auth';
 $route['inadmin']    			= 'C_Inadmin';
 $route['inadmin/auth']    		= 'C_Inadmin/auth';
 $route['admin']    				= 'C_Admin';
-$route['home/logout']           = 'C_Home/signout';
+$route['logoutPartner']         = 'C_Home/signoutPartner';
+$route['logoutAdmin']         	= 'C_Home/signoutAdmin';
 
 //halaman
 $route['home']                  = 'C_Home';
