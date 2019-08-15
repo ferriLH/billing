@@ -6,7 +6,7 @@ class C_Partner extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Partner');
-        $this->load->helper('url');
+        $this->load->library('form_validation');
     }
     public function index()
     {
@@ -20,37 +20,40 @@ class C_Partner extends CI_Controller
 			redirect('admin');
 		}
     }
-    function edit($id){
-        $where = array('id' => $id);
-        $data['p_partner'] = $this->M_Partner->edit_data($where,'p_partner')->result();
-        $this->load->view('CrudPartner/Editpartner' ,$data);
-    }
-    function update(){
-        $id = $this->input->post('id');
-        $nama = $this->input->post('nama');
-        $telp = $this->input->post('telp');
-        $fax = $this->input->post('fax');
-        $acc = $this->input->post('acc');
-        $bank = $this->input->post('bank');
+    public function add(){
+        $id = $this->M_Partner;
+        $validation = $this->form_validation;
+        $validation->set_rules($id->rules());
 
-        $data = array(
-            'id' => $id,
-            'nama' => $nama,
-            'telp' => $telp,
-            'fax' => $fax,
-            'acc' => $acc,
-            'bank' => $bank
-        );
-
-        $where = array(
-            'id' => $id
-        );
-        $this->M_Partner->update_data($where,$data,'p_partner');
-    redirect('CrudPartner/Editpartner');
+        if ($validation->run()) {
+            $id->save();
+            $this->session->set_flashdata('succes', 'Berhasil disimpan');
+        }
+        $this->load->view("CrudPartner/Editpartner");
     }
-    function update_data($where,$data,$table){
-        $this->db->where($where);
-        $this->db->update($table,$data);
-    }   
+    public function edit($id = null)
+    {
+        if (!isset($id)) redirect('V_Partner');
+
+        $id = $this->M_Partner;
+        $validation = $this->form_validation;
+        $validation->set_rules($id->rules());
+        if ($validation->run()) {
+            $id->update();
+            $this->session->set_flashdata('succes','Berhasil disimpan');
+        }
+        $data["id"] = $id->getById($id);
+        if (!$data["id"]) show_404();
+
+        $this->load->view('CrudPartner/Editpartner');
+    }
+    public function delete($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->M_Partner->delete($id)) {
+            redirect(site_url('V_Partner'));
+        }
+    }
 }
 ?>

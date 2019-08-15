@@ -24,7 +24,7 @@
             <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
             </div>
-            <a href="<?php echo base_url('partner/edit')?>">
+            <a href="<?php echo base_url('')?>">
             <button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
             </a>
             <!-- /.box-header -->

@@ -6,49 +6,48 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php foreach ($id as $i) {?>
-            <form action="<?php echo base_url(). 'CrudPartner/Editpartner'; ?>" method="POST" class="form-horizontal">
+            <form action="<?php base_url('partner/add') ?>" method="post" class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
                   <label class="col-sm-2 control-label" disabled>No</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?php echo $i->id ?>" name="id">
+                    <input type="text" class="form-control" id="id" name="id">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Nama</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?php echo $i->nama ?>" name="namaPartner">
+                    <input type="text" class="form-control" id="namaPartner" name="namaPartner">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Telp</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?php echo $i->telp ?>" name="noTelp">
+                    <input type="text" class="form-control" id="noTelp" name="noTelp">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Fax</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?php echo $i->fax ?>" name="noFax">
+                    <input type="text" class="form-control" id="noFax" name="noFax">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Acc</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?php echo $i->acc ?>" name="noAcc">
+                    <input type="text" class="form-control" id="noAcc" name="noAcc">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Bank</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?php echo $i->bank ?>" name="bank">
+                    <input type="text" class="form-control" id="bank" name="bank">
                   </div>
                 </div>
                 <div class="form-group">
