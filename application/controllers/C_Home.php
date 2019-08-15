@@ -12,9 +12,11 @@ class C_Home extends CI_Controller
         $data = array(
             "title" => "Home",
         );
-        if($this->session->userdata('isLogin') == TRUE){
-        $this->load->view('V_Home',$data);    
-        }
+        if($this->session->userdata('isLogin') == 'partner'){
+        	$this->load->view('V_Home',$data);
+        }else{
+			redirect('login');
+		}
         
     }
 

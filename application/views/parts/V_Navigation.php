@@ -21,8 +21,10 @@ desired effect
 -->
 <body class="hold-transition skin-blue sidebar-mini">
   <?php
-$name = $this->session->userdata('nama');
-$role = $this->session->userdata('role');
+$name 	= $this->session->userdata('nama');
+$email 	= $this->session->userdata('email');
+$role 	= $this->session->userdata('role');
+$login 	= $this->session->userdata('isLogin');
 ?>
 <div class="wrapper">
 
@@ -30,11 +32,11 @@ $role = $this->session->userdata('role');
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="<?php echo base_url()?>" class="logo">
+    <a href="<?php if ($login=='admin'){echo base_url('admin');}else{echo base_url('home');}?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>B</b>ILL</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Billing</b>RBT</span>
     </a>
 
     <!-- Header Navbar -->
@@ -157,8 +159,8 @@ $role = $this->session->userdata('role');
                 <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $name;?> - <?php echo $role;?>
-                  <small>Member since Nov. 2012</small>
+                  <?php echo $name;?>
+                  <small><?php echo $email;?></small>
                 </p>
               </li>
               
@@ -209,7 +211,7 @@ $role = $this->session->userdata('role');
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">Navigation <?php echo $title;?></li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="<?php echo base_url('home')?>"><i class="fa fa-link"></i> <span>HOME</span></a></li>
         <li><a href="<?php echo base_url('rbtcontent')?>"><i class="fa fa-link"></i> <span>RBT CONTENT</span></a></li>

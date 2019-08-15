@@ -10,10 +10,15 @@ class C_Partner extends CI_Controller
     }
     public function index()
     {
-        $x['data']=$this->M_Partner->show_partner();
-
-            $this->load->view('V_Partner',$x);
-        
+		$data = array(
+			"title" => "Partner",
+			"data"	=>$this->M_Partner->show_partner(),
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_Partner',$data);
+		}else{
+			redirect('admin');
+		}
     }
     function edit($id){
         $where = array('id' => $id);

@@ -12,7 +12,12 @@ class C_Inadmin extends CI_Controller
         $data = array(
             "title" => "Admin",
         );
-        $this->load->view('sign/V_Inadmin',$data);
+		if($this->session->userdata('isLogin') == 'admin'){
+			redirect('admin');
+		}else{
+			$this->load->view('sign/V_Inadmin',$data);
+		}
+
     }
 
     function auth()
@@ -31,11 +36,10 @@ class C_Inadmin extends CI_Controller
             $cek = $this->M_Admin->cek($user,$pass);
             if ($cek->num_rows() != 0) {
                 foreach ($cek->result() as $dat) {
-                    $sess_data['isLogin']       = TRUE;
+                    $sess_data['isLogin']       = 'admin';
                     $sess_data['id_user']       = $dat->id_admin;
-                    $sess_data['nama_admin']    = $dat->nama_admin;
-                    $sess_data['email_admin']   = $dat->email_admin;
-                    $sess_data['password']      = $dat->password;
+                    $sess_data['nama']    		= $dat->nama_admin;
+                    $sess_data['email']   		= $dat->email_admin;
                     $sess_data['aktif']         = $dat->aktif;
                     $this->session->set_userdata($sess_data);
                 }

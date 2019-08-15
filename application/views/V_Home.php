@@ -8,12 +8,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        HOME
-        <small>Optional description</small>
+		  Page <?php echo $title;?>
+		  <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+		  <li><a href="<?php echo base_url('home')?>"><i class="fa fa-home"></i></a></li>
+		  <li class="active"><?php echo $title?></li>
       </ol>
     </section>
 

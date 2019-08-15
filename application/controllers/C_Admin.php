@@ -10,12 +10,13 @@ class C_Admin extends CI_Controller
     public function index()
     {
         $data = array(
-            "title" => "admin",
+            "title" => "Admin",
         );
-        if($this->session->userdata('isLogin') == TRUE){
-        $this->load->view('V_Admin',$data);    
-        }
-        
+        if($this->session->userdata('isLogin') == 'admin'){
+        	$this->load->view('V_Admin',$data);
+        }else{
+			redirect('inadmin');
+		}
     }
 
     function signout()
