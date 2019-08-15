@@ -34,23 +34,23 @@
 
 <script>
   $(function () {
-    $('#pencipta').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : true
-    })
+      $('#pencipta').DataTable({
+		  'paging'      : true,
+		  'lengthChange': true,
+		  'searching'   : true,
+		  'ordering'    : true,
+		  'info'        : true,
+		  'autoWidth'   : true
+      });
       $('#rbt').DataTable({
-          'paging'      : true,
-          'lengthChange': true,
+		  'paging'      : true,
+		  'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true
-      })
-  })
+      });
+  });
 
    $('#datepicker').datepicker({
       autoclose: true

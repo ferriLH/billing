@@ -27,7 +27,8 @@
 						<strong>Information</strong><br>
 						<?php echo $this->session->flashdata('sukses'); ?>
 					</div>
-				<?php }?>				<a href="<?php echo base_url('pencipta/add')?>">
+				<?php }?>
+				<a href="<?php echo base_url('pencipta/add')?>">
 					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
 				</a>
             </div>

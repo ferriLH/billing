@@ -11,12 +11,17 @@ class C_Rbtcontent extends CI_Controller
     {
 		if($this->session->userdata('isLogin') == 'admin'){
 
-			//$result1 = $this->M_Rbtcontent->get_prbt();
-			//$result2 = $this->M_Rbtcontent->get_operator($result1);
-
+			$result1 = $this->M_Rbtcontent->get_prbt();
+//			foreach ($result1->result() as $r1){
+//				$result2 = $this->M_Rbtcontent->get_partner($r1->partnerId);
+//				$result3 = $this->M_Rbtcontent->get_pencipta($r1->penciptaId);
+//
+//			}
 			$data = array(
-				"title" => "RBT Content",
-				"prbt"  => $this->M_Rbtcontent->get_prbt(),
+				"title" 	=> "RBT Content",
+				"prbt"  	=> $result1,
+				//"ppartner"  => $result2,
+				//"ppencipta"	=> $result3,
 				//"operator" => $this->M_Rbtcontent->get_operator($result1),
 				//"pencipta" => $this->M_Rbtcontent->get_pencipta($result1),
 				//"partner" => $this->M_Rbtcontent->get_partner($result1),
@@ -32,4 +37,3 @@ class C_Rbtcontent extends CI_Controller
 
     }
 }
-?>

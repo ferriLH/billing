@@ -13,13 +13,13 @@ class M_Rbtcontent extends CI_Model
 		$this->db->select('*');
 		$this->db->from('p_rbt');
 		$this->db->order_by('judul','ASC');
-		$result = $this->db->get()->result();
+		$result = $this->db->get();
 		return $result;
 	}
 
 	function get_operator($result)
 	{
-		$penciptaid = $result->penciptaId;
+		$penciptaid = $result;
 		$this->db->select('*');
 		$this->db->from('p_operator');
 		$this->db->where('penciptaId',$penciptaid);
@@ -27,11 +27,21 @@ class M_Rbtcontent extends CI_Model
 	}
 	function get_partner($result)
 	{
-		$partnerid = $result->partnerId;
-		$this->db->select('*');
+		$result;
+		$this->db->select('namaPartner');
 		$this->db->from('p_partner');
-		$this->db->where('partnerId',$partnerid);
-		return $this->db->get()->result();
+		$this->db->where('id',$result);
+		$query = $this->db->get();
+		return $query->row('namaPartner');
+	}
+	function get_pencipta($result)
+	{
+		$result;
+		$this->db->select('namaPencipta');
+		$this->db->from('p_pencipta');
+		$this->db->where('id',$result);
+		$query = $this->db->get();
+		return $query->row('namaPencipta');
 	}
 	function get_kode($result)
 	{

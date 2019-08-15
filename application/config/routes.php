@@ -61,6 +61,7 @@ $route['logoutAdmin']         	= 'C_Home/signoutAdmin';
 //halaman
 $route['home']                  = 'C_Home';
 $route['rbtcontent']            = 'C_Rbtcontent';
+$route['rbtcontent/add']        = 'C_Rbtcontent/add';
 $route['partner']            	= 'C_Partner';
 $route['pencipta']            	= 'C_Pencipta';
 $route['pencipta/add']          = 'C_Pencipta/add';
