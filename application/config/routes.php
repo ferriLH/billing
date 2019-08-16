@@ -79,6 +79,7 @@ $route['pencipta/edit/(:any)']	= 'C_Pencipta/edit/$1';
 $route['pencipta/edit/auth/(:any)']	= 'C_Pencipta/editAuth/$1';
 
 $route['rbtsubmit']            	= 'C_Rbtsubmit';
+$route['rbtsubmit/commit']	    = 'C_Rbtsubmit/rbtsubmit';
 $route['traffic']            	= 'C_Traffic';
 $route['sharepartner']          = 'C_Sharepartner';
 $route['sharepencipta']         = 'C_Sharepencipta';

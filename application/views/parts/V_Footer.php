@@ -53,6 +53,14 @@
           'order'		: [[0,'desc']]
 
       });
+      $('#submit').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true
+      });
   });
 
    $('#datepicker').datepicker({

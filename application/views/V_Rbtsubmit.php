@@ -18,28 +18,29 @@
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
-        <div class="box-body">
-          <div class="row">
+    <section class="content container-fluid" style="text-align: center">
+        <form action="<?php echo base_url('rbtsubmit/commit')?>" method="post">
+		<div class="box-body" >
+          <div class="row" style="padding-left: 400px">
             <div class="col-md-6">
               <div class="form-group">
                 <label>Month</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Januari</option>
-                  <option>Febuari</option>
-                  <option>Maret</option>
-                  <option>April</option>
-                  <option>Mei</option>
-                  <option>Juni</option>
-                  <option>Juli</option>
-                  <option>Agustus</option>
-                  <option>September</option>
-                  <option>Oktober</option>
-                  <option>November</option>
-                  <option>Desember</option>
+                <select class="form-control select2" style="width: 100%;" name="bulan" id="bulan">
+                  <option selected="selected" value='1'>Januari</option>
+                  <option value='2'>Febuari</option>
+                  <option value='3'>Maret</option>
+                  <option value='4'>April</option>
+                  <option value='5'>Mei</option>
+                  <option value='6'>Juni</option>
+                  <option value='7'>Juli</option>
+                  <option value='8'>Agustus</option>
+                  <option value='9'>September</option>
+                  <option value='10'>Oktober</option>
+                  <option value='11'>November</option>
+                  <option value='12'>Desember</option>
                 </select>
                 <label>Years</label>
-                <select class="form-control select2" style="width: 100%;">
+                <select class="form-control select2" style="width: 100%;" name="tahun" id="tahun">
                   <option selected="selected">2000</option>
                   <option>2001</option>
                   <option>2002</option>
@@ -47,13 +48,91 @@
                   <option>2004</option>
                   <option>2005</option>
                   <option>2006</option>
+					<option>2007</option>
+					<option>2008</option>
+					<option>2009</option>
+					<option>2010</option>
+					<option>2011</option>
+					<option>2012</option>
+					<option>2013</option>
+					<option>2014</option>
+					<option>2015</option>
+					<option>2016</option>
                 </select>
               </div>
-              <button type="button" class="btn btn-block btn-primary btn-lg">View</button>
+              <button type="submit" class="btn btn-block btn-primary btn-lg">View</button>
+
         </div>
       </div>
     </div>
+		</form>
     </section>
+
+	  <section>
+		  <div class="box">
+			  <div class="box-header">
+				  <?php if($this->session->flashdata('sukses')){ ?>
+					  <div class="alert alert-success">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>Information</strong><br>
+						  <?php echo $this->session->flashdata('sukses'); ?>
+					  </div>
+				  <?php }?>
+				  <a href="<?php echo base_url('rbtcontent/add')?>">
+					  <button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
+				  </a>            </div>
+			  <!-- /.box-header -->
+			  <div class="box-body">
+				  <table id="submit" class="table table-bordered table-striped">
+					  <thead>
+					  <tr>
+						  <td >OPERATOR</td>
+						  <td >Total Revenue</td>
+						  <td >Total dl (n)</td>
+						  <td >Total rn (n)</td>
+						  <td >Total cp (n)</td>
+						  <td >Total sp (n)</td>
+						  <td >Total mc (n)</td>
+						  <td >Total p6 (n)</td>
+						  <td >Total p7 (n)</td>
+						  <td >Total Summary (Rp)</td>
+						  <td></td>
+					  </tr>
+					  </thead>
+					  <tbody>
+						<?php foreach ($operator->result() as $a ){?>
+						  <tr>
+							  <td><?php echo $a->operator?></td>
+							  <td><?php echo $this->M_Rbtsubmit->get_rev($month,$a->id)?></td>
+							  <td><?php $total1 = $this->M_Rbtsubmit->get_total1($month,$a->id); echo $total1; ?></td>
+							  <td><?php $total2 = $this->M_Rbtsubmit->get_total2($month,$a->id); echo $total2;?></td>
+							  <td><?php $total3 = $this->M_Rbtsubmit->get_total3($month,$a->id); echo $total3;?></td>
+							  <td><?php $total4 = $this->M_Rbtsubmit->get_total4($month,$a->id); echo $total4;?></td>
+							  <td><?php $total5 = $this->M_Rbtsubmit->get_total5($month,$a->id); echo $total5 ?></td>
+							  <td><?php $total6 = $this->M_Rbtsubmit->get_total6($month,$a->id); echo $total6?></td>
+							  <td><?php $total7 = $this->M_Rbtsubmit->get_total7($month,$a->id); echo $total7?></td>
+							  <?php $int1 = (int)$total1;
+							  		$int2 = (int)$total2;
+							  		$int3 = (int)$total3;
+							  		$int4 = (int)$total4;
+							  		$int5 = (int)$total5;
+							  		$int6 = (int)$total6;
+							  		$int7 = (int)$total7;
+							  		$totalall = $int1+$int2+$int3+$int4+$int5+$int6+$int7;
+							  ?>
+							  <td><?php echo $totalall?></td>
+							  <td>
+								  <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
+								  <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
+							  </td>
+						  </tr>
+					  <?php }?>
+					  </tbody>
+				  </table>
+			  </div>
+			  <!-- /.box-body -->
+		  </div>
+	  </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
