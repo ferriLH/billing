@@ -1,103 +1,72 @@
-  <?php
-  $this->load->view('parts/V_Header');
-  $this->load->view('parts/V_Navigation');
-  ?>
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        General Form Elements
-        <small>Preview</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">General Elements</li>
-      </ol>
-    </section>
 
-    <!-- Main content -->
-      <section class="content">
-      <div class="row">
-   
-      <div class="col-md-6">
-          <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Horizontal Form</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form action="partner/edit/auth/" method="post" class="form-horizontal">
-              <?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
-              <div class="box-body">
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" disabled>No</label>
+<?php
+$this->load->view('parts/V_Header');
+$this->load->view('parts/V_Navigation');
+?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Page <?php echo $title;?>
+      <small>Optional description</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
+      <li class="active"><?php echo $title?></li>
+    </ol>
+  </section>
 
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="id" name="id">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Nama</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" value="<?php echo $edit[0]['id']?>" class="form-control" id="namaPartner" name="namaPartner">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Telp</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" value="<?php echo $edit[0]['noTelp']?>" class="form-control" id="noTelp" name="noTelp">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Fax</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" value="<?php echo $edit[0]['noFax']?>" class="form-control" id="noFax" name="noFax">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Acc</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" value="<?php echo $edit[0]['noAcc']?>" class="form-control" id="noAcc" name="noAcc">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Bank</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" value="<?php echo $edit[0]['bank']?>" class="form-control" id="bank" name="bank">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Remember me
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" value="simpan" class="btn btn-info pull-right">Simpan</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
+  <!-- Main content -->
+  <section class="content container-fluid">
+    <div class="box box-primary">
+      <div class="box-header">
+        <?php if($this->session->flashdata('failed')){ ?>
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Information</strong><br>
+            <?php echo $this->session->flashdata('failed'); ?>
           </div>
+        <?php }?>     </div>
+      <!-- /.box-header -->
+      <form role="form" action="<?php echo base_url('partner/edit/auth')?>" method="post">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="namaPencipta">No</label>
+            <input type="number" class="form-control" name="id" id="id" placeholder="No" value="<?php echo $edit[0]['id']?>" disabled>
+          </div>
+          <div class="form-group">
+            <label for="noTelp">Nama</label>
+            <input type="text" class="form-control" name="namaPartner" id="namaPartner" placeholder="Nama" value="<?php echo $edit[0]['namaPartner']?>">
+          </div>
+          <div class="form-group">
+            <label for="noFax">No Telp</label>
+            <input type="number" class="form-control" name="noTelp" id="noTelp" placeholder="No Telp" value="<?php echo $edit[0]['noTelp']?>">
+          </div>
+          <div class="form-group">
+            <label for="noAcc">No Fax</label>
+            <input type="number" class="form-control" name="noFax" id="noFax" placeholder="No Fax" value="<?php echo $edit[0]['noFax']?>">
+          </div>
+          <div class="form-group">
+            <label for="bank">No Acc</label>
+            <input type="number" class="form-control" name="noAcc" id="noAcc" placeholder="No Acc" value="<?php echo $edit[0]['noAcc']?>">
+          </div>
+          <div class="form-group">
+            <label for="bank">Bank</label>
+            <input type="text" class="form-control" name="bank" id="bank" placeholder="Bank" value="<?php echo $edit[0]['bank']?>">
+          </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <input type="submit" class="btn btn-primary">
+        </div>
+      </form>
+      <!-- /.box-body -->
+    </div>
+  </section>
+  <!-- /.content -->
 </div>
-        <!--/.col (right) -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
-  </div>
-<?php } ?>
-  <?php
-  $this->load->view('parts/V_Footer');
-  ?>
+<!-- /.content-wrapper -->
+<?php
+$this->load->view('parts/V_Footer');
+?>
