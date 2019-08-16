@@ -1,6 +1,24 @@
 <?php
 $this->load->view('parts/V_Header');
 ?>
+<style>
+	.login-page{
+		background: #d2d6de;
+		background-image: url("<?php echo base_url('assets/')?>/images/admin.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+	.login-box-body{
+		background: #fff;
+		opacity: 0.8;
+		padding: 20px;
+		color: #000;
+		border-top: 0;
+		color: #000;
+	}
+</style>
 <!-- iCheck -->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/iCheck/square/blue.css">
 

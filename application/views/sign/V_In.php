@@ -1,6 +1,24 @@
 <?php
 $this->load->view('parts/V_Header');
 ?>
+<style>
+	.login-page{
+		background: #d2d6de;
+		background-image: url("<?php echo base_url('assets/')?>/images/partner.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+	.login-box-body{
+		background: #fff;
+		opacity: 0.8;
+		padding: 20px;
+		color: #000;
+		border-top: 0;
+		color: #000;
+	}
+</style>
 <!-- iCheck -->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/iCheck/square/blue.css">
 
@@ -39,23 +57,27 @@ $this->load->view('parts/V_Header');
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
-        </div>
+<!--        <div class="col-xs-8">-->
+<!--          <div class="checkbox icheck">-->
+<!--            <label>-->
+<!--              <input type="checkbox"> Remember Me-->
+<!--            </label>-->
+<!--          </div>-->
+<!--        </div>-->
         <!-- /.col -->
-        <div class="col-xs-4">
-          <input class="btn btn-primary btn-block btn-flat" type="submit" value="Log in">
-        </div>
+
+		  <div class="col-xs-8">
+			  <a href="#">I forgot my password</a><br>
+		  </div>
+		  <div class="col-xs-4">
+			  <input class="btn btn-primary btn-block btn-flat" type="submit" value="Log in">
+		  </div>
         <!-- /.col -->
       </div>
     </form>
     <!-- /.social-auth-links -->
 
-    <a href="#">I forgot my password</a><br>
+
    
   </div>
   <!-- /.login-box-body -->

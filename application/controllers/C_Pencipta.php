@@ -50,7 +50,7 @@ class C_Pencipta extends CI_Controller
 					$d['type'] 			= 1;
 
 					$this->M_Pencipta->add_new_pencipta($d);
-					$this->session->set_flashdata('sukses', 'sukses');
+					$this->session->set_flashdata('sukses', 'Add Sukses');
 					redirect('pencipta');
 				}
 			}else{
@@ -58,6 +58,19 @@ class C_Pencipta extends CI_Controller
 			}
 		}else{
 			redirect('admin');
+		}
+	}
+	public function delete($id)
+	{
+		if ($this->session->userdata('isLogin') == 'admin') {
+			$this->M_Pencipta->setDelete($id);
+			$this->session->set_flashdata('sukses', 'Delete Sukses');
+			$data = array(
+				"title" 		=> "Pencipta",
+			);
+			redirect('pencipta',$data);
+		}else{
+			redirect('login');
 		}
 	}
 }

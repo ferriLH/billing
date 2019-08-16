@@ -67,8 +67,12 @@
 							<td><?php echo $noAcc;?></td>
 							<td><?php echo $bank;?></td>
 							<td>
-								<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
-								<button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
+								<a href="<?php echo base_url('pencipta/edit/').$id?>">
+									<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
+								</a>
+								<button data-target="<?php echo base_url('pencipta/delete/').$id?>"
+										type="button" class="btn btn-warning delete-pencipta"><i class="glyphicon glyphicon-trash"></i>
+								</button>
 							</td>
 						</tr>
 					<?php endforeach;?>
@@ -79,6 +83,32 @@
 		</div>
 	</section>
     <!-- /.content -->
+	  <script>
+          $(function() {
+              $('.delete-pencipta').click(function(e) {
+                  e.preventDefault();
+                  var href = $(this).attr('data-target');
+                  Swal.fire({
+                      title: 'Are you sure?',
+                      text: "You will delete this forever!",
+                      type: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: "Yes, i'm sure!"
+                  }).then((result) => {
+                      if (result.value) {
+                          Swal.fire(
+                              'Deleted!',
+                              'Your file has been deleted.',
+                              'success'
+                          )
+                          document.location.href = href;
+                      }
+                  })
+              });
+          });
+	  </script>
   </div>
   <!-- /.content-wrapper -->
 <?php

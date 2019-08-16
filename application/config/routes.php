@@ -62,13 +62,19 @@ $route['logoutAdmin']         	= 'C_Home/signoutAdmin';
 $route['home']                  = 'C_Home';
 $route['rbtcontent']            = 'C_Rbtcontent';
 $route['rbtcontent/add']        = 'C_Rbtcontent/add';
+
 $route['partner']            	= 'C_Partner';
 $route['partner/add']          	= 'C_Partner/add';
 $route['partner/add/auth']      = 'C_Partner/addAuth';
+$route['partner/delete/(:any)'] = 'C_Partner/delete/$1';
+
+
 $route['pencipta']            	= 'C_Pencipta';
 $route['pencipta/add']          = 'C_Pencipta/add';
 $route['pencipta/add/auth']     = 'C_Pencipta/addAuth';
 $route['pencipta/delete/(:any)']= 'C_Pencipta/delete/$1';
+$route['pencipta/edit/(:any)']	= 'C_Pencipta/edit/$1';
+
 $route['rbtsubmit']            	= 'C_Rbtsubmit';
 $route['traffic']            	= 'C_Traffic';
 $route['sharepartner']          = 'C_Sharepartner';

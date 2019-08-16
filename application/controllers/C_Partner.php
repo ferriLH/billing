@@ -94,13 +94,17 @@ class C_Partner extends CI_Controller
             redirect('login');
         }
     }
-    public function delete($id)
-    {
-        if (!isset($id)) show_404();
-        
-        if ($this->M_Partner->delete($id)) {
-            redirect(site_url('V_Partner'));
-        }
-    }
+	public function delete($id)
+	{
+		if ($this->session->userdata('isLogin') == 'admin') {
+			$this->M_Partner->setDelete($id);
+			$this->session->set_flashdata('sukses', 'Delete Sukses');
+			$data = array(
+				"title" 		=> "Partner",
+			);
+			redirect('partner',$data);
+		}else{
+			redirect('login');
+		}
+	}
 }
-?>

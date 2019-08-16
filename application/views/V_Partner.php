@@ -21,8 +21,13 @@
     <section class="content container-fluid">
 		<div class="box">
 			<div class="box-header">
-<!--				<h3 class="box-title">Data Table With Full Features</h3>-->
-				<a href="<?php echo base_url('partner/add')?>">
+				<?php if($this->session->flashdata('sukses')){ ?>
+					<div class="alert alert-success">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong>Information</strong><br>
+						<?php echo $this->session->flashdata('sukses'); ?>
+					</div>
+				<?php }?>				<a href="<?php echo base_url('partner/add')?>">
 					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
 				</a>
 			</div>
@@ -61,9 +66,9 @@
 								<a href="<?php echo base_url('partner/edit/').$id?>">
 									<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
 								</a>
-								<a href="<?php echo base_url('partner/delete/').$id?>">
-									<button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
-								</a>
+								<button data-target="<?php echo base_url('partner/delete/').$id?>"
+									type="button" class="btn btn-warning delete-partner"><i class="glyphicon glyphicon-trash"></i>
+								</button>
 							</td>
 						</tr>
 					<?php endforeach;?>
@@ -74,6 +79,32 @@
 		</div>
 	</section>
     <!-- /.content -->
+	  <script>
+          $(function() {
+              $('.delete-partner').click(function(e) {
+                  e.preventDefault();
+                  var href = $(this).attr('data-target');
+                  Swal.fire({
+                      title: 'Are you sure?',
+                      text: "You will delete this forever!",
+                      type: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: "Yes, i'm sure!"
+                  }).then((result) => {
+                      if (result.value) {
+                          Swal.fire(
+                              'Deleted!',
+                              'Your file has been deleted.',
+                              'success'
+                          )
+                          document.location.href = href;
+                      }
+                  })
+              });
+          });
+	  </script>
   </div>
   <!-- /.content-wrapper -->
 <?php

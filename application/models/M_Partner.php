@@ -8,7 +8,8 @@ class M_Partner extends CI_Model
     function show_partner(){
     	$this->db->select("id,namaPartner,noTelp,noFax,bank,noAcc");
     	$this->db->from('p_partner');
-    	return $this->db->get();
+		$this->db->where('type',1);
+		return $this->db->get();
     }
     function add_new_partner($data)
     {
@@ -27,5 +28,11 @@ class M_Partner extends CI_Model
         $this->db->where('id',$id);
         $this->db->update('p_partner',$id);
     }
+	function setDelete($id){
+		$data = array(
+			'type'=>0,
+		);
+		$this->db->where('id',$id);
+		$this->db->update('p_partner',$data);
+	}
 }
-?>

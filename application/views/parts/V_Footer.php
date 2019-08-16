@@ -40,7 +40,8 @@
 		  'searching'   : true,
 		  'ordering'    : true,
 		  'info'        : true,
-		  'autoWidth'   : true
+		  'autoWidth'   : true,
+		  'order'		: [[0,'desc']]
       });
       $('#rbt').DataTable({
 		  'paging'      : true,
@@ -48,7 +49,9 @@
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
-          'autoWidth'   : true
+          'autoWidth'   : true,
+          'order'		: [[0,'desc']]
+
       });
   });
 
