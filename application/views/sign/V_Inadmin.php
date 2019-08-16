@@ -72,9 +72,7 @@ $this->load->view('parts/V_Header');
       </div>
     </form>
     <!-- /.social-auth-links -->
-
-    <a href="#">I forgot my password</a><br>
-   
+<!--	  <a href="--><?php //echo base_url('forgotMyPassword')?><!--">I forgot my password</a><br>-->
   </div>
   <!-- /.login-box-body -->
 </div>

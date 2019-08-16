@@ -5,7 +5,6 @@ class M_Login extends CI_Model
     {
         parent::__construct();
     }
-
     function cek ($user,$pass){
 		$this->db->select("*");
 		$this->db->from('t_user');
@@ -13,6 +12,12 @@ class M_Login extends CI_Model
 		$this->db->where("password",$pass);
 		return $this->db->get();        
     }
+	function cekMail ($email){
+		$tbl = "t_user";
+		$this->db->select("*");
+		$this->db->from($tbl);
+		$this->db->where("email",$email);
+		return $this->db->get();
+	}
 
 }
-?>

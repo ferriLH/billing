@@ -15,6 +15,20 @@ $this->load->view('parts/V_Header');
 <!-- Automatic element centering -->
 <div class="lockscreen-wrapper">
 	<div class="lockscreen-logo">
+		<?php if($this->session->flashdata('failed')){ ?>
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Information</strong><br>
+				<?php echo $this->session->flashdata('failed'); ?>
+			</div>
+		<?php }?>
+		<?php if($this->session->flashdata('sukses')){ ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Information</strong><br>
+				<?php echo $this->session->flashdata('sukses'); ?>
+			</div>
+		<?php }?>
 		<a href="<?php echo base_url('')?>"><b>Billing</b>RBT</a>
 	</div>
 	<!-- User name -->
@@ -29,10 +43,9 @@ $this->load->view('parts/V_Header');
 		<!-- /.lockscreen-image -->
 
 		<!-- lockscreen credentials (contains the form) -->
-		<form class="lockscreen-credentials" method="post" action="#">
+		<form class="lockscreen-credentials" method="post" action="<?php echo base_url('forgotMyPassword/auth')?>">
 			<div class="input-group">
 				<input type="email" name="email" class="form-control" placeholder="Email">
-
 				<div class="input-group-btn">
 					<button type="submit" name="submit" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
 				</div>

@@ -19,7 +19,7 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-		<div class="box">
+		<div class="box box-primary">
 			<div class="box-header">
 				<?php if($this->session->flashdata('sukses')){ ?>
 					<div class="alert alert-success">

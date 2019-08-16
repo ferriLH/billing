@@ -22,7 +22,7 @@
 
   <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
-          <div class="box">
+          <div class="box box-primary">
             <div class="box-header">
 				<?php if($this->session->flashdata('sukses')){ ?>
 					<div class="alert alert-success">
@@ -36,7 +36,7 @@
 				</a>            </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="rbt" class="table table-bordered table-striped">
+              <table id="rbt" class="table table-responsive table-bordered table-striped ">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -44,7 +44,11 @@
                   <th>Artis</th>
                   <th>Pencipta</th>
                   <th>Partner</th>
-                  <th>$resoperator[Operator]</th>
+                  <th>KdTsel</th>
+                  <th>KdXL</th>
+                  <th>KdIsat</th>
+                  <th>KdM8</th>
+                  <th>KdFlexi</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -56,7 +60,11 @@
 					<td><?php echo $a->artis?></td>
 					<td><?php echo $this->M_Rbtcontent->get_pencipta($a->penciptaId); ?></td>
 					<td><?php echo $this->M_Rbtcontent->get_partner($a->partnerId);?></td>
-					<td></td>
+					<td><?php echo $a->kdTsel?></td>
+					<td><?php echo $a->kdXL?></td>
+					<td><?php echo $a->kdIsat?></td>
+					<td><?php echo $a->kdM8?></td>
+					<td><?php echo $a->kdFlexi?></td>
 					<td>
 						<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
 						<button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>

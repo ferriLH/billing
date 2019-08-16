@@ -12,7 +12,6 @@ class M_Rbtcontent extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('p_rbt');
-		$this->db->order_by('judul','ASC');
 		$result = $this->db->get();
 		return $result;
 	}

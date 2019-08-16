@@ -2,11 +2,11 @@
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Anything you want
-    </div>
+	  <div class="pull-right hidden-xs">
+		  Billing RBT
+	  </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+	  <strong>Copyright &copy; 2019 <a target="_blank" href="http://www.alpha-omega.co.id">AlphaOmega</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
