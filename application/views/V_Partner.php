@@ -22,7 +22,7 @@
 		<div class="box">
 			<div class="box-header">
 <!--				<h3 class="box-title">Data Table With Full Features</h3>-->
-				<a href="<?php echo base_url('')?>">
+				<a href="<?php echo base_url('partner/add')?>">
 					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
 				</a>
 			</div>

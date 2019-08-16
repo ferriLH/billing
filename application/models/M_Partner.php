@@ -10,6 +10,10 @@ class M_Partner extends CI_Model
     	$this->db->from('p_partner');
     	return $this->db->get();
     }
+    function add_new_partner($data)
+    {
+        $this->db->insert('p_partner',$data);
+    }
     function edit($id)
     {
         $this->db->select("*");
