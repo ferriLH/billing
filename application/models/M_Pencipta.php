@@ -22,4 +22,17 @@ class M_Pencipta extends CI_Model
 		$this->db->where('id',$id);
 		$this->db->update('p_pencipta',$data);
 	}
+	function edit($id)
+	{
+		$this->db->select("*");
+		$this->db->from("p_pencipta");
+		$this->db->where("id", $id);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	function update($id,$data)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('p_pencipta',$data);
+	}
 }

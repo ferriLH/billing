@@ -77,7 +77,7 @@ class C_Partner extends CI_Controller
     {
         if ($this->session->userdata('isLogin') == 'admin') {
             $data = array(
-                "title" => "Artist",
+                "title" => "Partner",
                 "edit"  => $this->M_Partner->edit($id),
             );
             //form validation
@@ -92,7 +92,7 @@ class C_Partner extends CI_Controller
 				$d['bank']          = ($this->input->post('bank'));
 				$d['noAcc']         = ($this->input->post('noAcc'));
                 $this->M_Partner->update($id,$d);
-                $this->session->set_flashdata('sukses', 'sukses');
+                $this->session->set_flashdata('sukses', 'Update Sukses');
                 redirect('partner/edit/'.$id);
             }
         }else{

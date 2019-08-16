@@ -27,7 +27,6 @@ class M_Rbtcontent extends CI_Model
 	}
 	function get_partner($result)
 	{
-		$result;
 		$this->db->select('namaPartner');
 		$this->db->from('p_partner');
 		$this->db->where('id',$result);
