@@ -67,6 +67,8 @@ $route['partner']            	= 'C_Partner';
 $route['partner/add']          	= 'C_Partner/add';
 $route['partner/add/auth']      = 'C_Partner/addAuth';
 $route['partner/delete/(:any)'] = 'C_Partner/delete/$1';
+$route['partner/edit/(:any)']   = 'C_Partner/edit/$1';
+$route['partner/edit/auth/(:any)']= 'C_Partner/editAuth/$1';
 
 
 $route['pencipta']            	= 'C_Pencipta';
@@ -83,7 +85,5 @@ $route['summary']            	= 'C_Summary';
 $route['payment']            	= 'C_Payment';
 $route['rbttsel']            	= 'C_Rbttsel';
 
-
-$route['partner/edit/(:any)']   = 'C_Partner/edit/$1';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

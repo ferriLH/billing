@@ -26,7 +26,7 @@ class M_Partner extends CI_Model
     function update($id,$data)
     {
         $this->db->where('id',$id);
-        $this->db->update('p_partner',$id);
+        $this->db->update('p_partner',$data);
     }
 	function setDelete($id){
 		$data = array(

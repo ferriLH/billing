@@ -63,7 +63,7 @@ class C_Partner extends CI_Controller
     }
     public function edit($id)
     {
-        if ($this->session->userdata('isLogin') == TRUE) {
+        if ($this->session->userdata('isLogin') == 'admin') {
             $data = array(
                 "title" => "Partner",
                 "edit" => $this->M_Partner->edit($id),
@@ -73,9 +73,9 @@ class C_Partner extends CI_Controller
             redirect('login');
         }
     }
-    function editPartnerAuth($id,$idp)
+    function editAuth($id)
     {
-        if ($this->session->userdata('isLogin') == TRUE) {
+        if ($this->session->userdata('isLogin') == 'admin') {
             $data = array(
                 "title" => "Artist",
                 "edit"  => $this->M_Partner->edit($id),
@@ -86,9 +86,14 @@ class C_Partner extends CI_Controller
                 $this->session->set_flashdata('failed', 'gagal');
                 $this->load->view('CrudPartner/EditPartner',$data);
             } else{
+				$d['namaPartner']  = ($this->input->post('namaPartner'));
+				$d['noTelp']        = ($this->input->post('noTelp'));
+				$d['noFax']         = ($this->input->post('noFax'));
+				$d['bank']          = ($this->input->post('bank'));
+				$d['noAcc']         = ($this->input->post('noAcc'));
                 $this->M_Partner->update($id,$d);
                 $this->session->set_flashdata('sukses', 'sukses');
-                redirect('index/'.$idp);
+                redirect('partner/edit/'.$id);
             }
         }else{
             redirect('login');
