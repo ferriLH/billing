@@ -52,8 +52,12 @@ class C_Login extends CI_Controller
             }
         }
     }
-
-    
+	public function forget()
+	{
+		$data = array(
+			"title" => "Forgot My Password",
+		);
+		$this->load->view('sign/V_Forget',$data);
+	}
 }
 
-?>

@@ -51,6 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller']    = 'C_Login';
 $route['login']    				= 'C_Login';
+$route['forgotMyPassword']    	= 'C_Login/forget';
+$route['forgotMyPassword/auth'] = 'C_Login/forgetAuth';
 $route['login/auth']    		= 'C_Login/auth';
 $route['inadmin']    			= 'C_Inadmin';
 $route['inadmin/auth']    		= 'C_Inadmin/auth';

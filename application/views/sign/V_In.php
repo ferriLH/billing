@@ -67,7 +67,7 @@ $this->load->view('parts/V_Header');
         <!-- /.col -->
 
 		  <div class="col-xs-8">
-			  <a href="#">I forgot my password</a><br>
+			  <a href="<?php echo base_url('forgotMyPassword')?>">I forgot my password</a><br>
 		  </div>
 		  <div class="col-xs-4">
 			  <input class="btn btn-primary btn-block btn-flat" type="submit" value="Log in">
