@@ -53,7 +53,7 @@
           'order'		: [[0,'desc']]
 
       });
-      $('#submit').DataTable({
+      $('#rbtsubmit').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,

@@ -1,4 +1,3 @@
-
 <?php
 $this->load->view('parts/V_Header');
 $this->load->view('parts/V_Navigation');
@@ -33,7 +32,7 @@ $this->load->view('parts/V_Navigation');
 			<div class="box-body">
 		          <div class="form-group">
 		            <label for="noTelp">Nama</label>
-		            <input type="text" class="form-control" name="namaPartner" id="namaPartner" placeholder="Nama" value="">
+		            <input type="text" class="form-control" name="namaPartner" id="namaPartner" placeholder="Nama" required>
 		          </div>
 		          <div class="form-group">
 		            <label for="noFax">No Telp</label>

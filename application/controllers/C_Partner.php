@@ -51,8 +51,8 @@ class C_Partner extends CI_Controller
                     $d['type']          = 1;
 
                     $this->M_Partner->add_new_partner($d);
-                    $this->session->set_flashdata('sukses', 'sukses');
-                    redirect('partner/add');
+					$this->session->set_flashdata('sukses', 'Add Sukses');
+                    redirect('partner');
                 }
             }else{
                 redirect('partner/add');
