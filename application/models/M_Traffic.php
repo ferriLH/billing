@@ -13,6 +13,7 @@ class M_Traffic extends CI_Model
 		$this->db->select('*');
 		$this->db->from('p_rbt');
 		$this->db->order_by('judul','ASC');
+		$this->db->limit(100);
 		$result = $this->db->get();
 		return $result;
 	}
@@ -31,7 +32,7 @@ class M_Traffic extends CI_Model
 		$this->db->from('t_traffic');
 		$this->db->where('month',$month);
 		$this->db->where('rbtId',$result);
-		$this->db->limit('1000');
+		$this->db->limit('100');
 		$query = $this->db->get();
 		return $query->row('n1');
 	}
@@ -41,7 +42,7 @@ class M_Traffic extends CI_Model
 		$this->db->from('t_traffic');
 		$this->db->where('month',$month);
 		$this->db->where('rbtId',$result);
-		$this->db->limit('1000');
+		$this->db->limit('100');
 		$query = $this->db->get();
 		return $query->row('n2');
 	}
@@ -51,8 +52,18 @@ class M_Traffic extends CI_Model
 		$this->db->from('t_traffic');
 		$this->db->where('month',$month);
 		$this->db->where('rbtId',$result);
-		$this->db->limit('1000');
+		$this->db->limit('100');
 		$query = $this->db->get();
 		return $query->row('n3');
+	}
+	function get_kode($op,$rbtid)
+	{
+		$this->db->select('*');
+		$this->db->from('p_kode');
+		$this->db->where('operatorId',$op);
+		$this->db->where('rbtId',$rbtid);
+		$this->db->limit('100');
+		$query = $this->db->get();
+		return $query->row('kode');
 	}
 }

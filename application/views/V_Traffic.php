@@ -19,15 +19,15 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-		<form action="<?php echo base_url('traffic/commit')?>" method="post">
+		<form action="<?php echo base_url('traffic/commit')?>" method="get">
       <div class="box-body">
           <div class="row" style="padding-left: 400px">
             <div class="col-md-6">
               <div class="form-group">
                 <label>Operator</label>
                 <select class="form-control select2" style="width: 100%;" name="op" id="op">
-					<?php foreach ($operator as $a) {?>
-                  <option value="<?php echo $a->id;?>"><?php echo $a->operator?></option>
+					<?php foreach ($operator as $o) {?>
+                  <option value="<?php echo $o->id;?>"><?php echo $o->operator?></option>
                   <?php }?>
                   
                 </select>
@@ -90,20 +90,24 @@
 			  </tr>
 			  </thead>
 			  <tbody>
-			  <?php if (isset($lagu)){?>
+			  <?php $url = $this->uri->segment(2)?>
+			  <?php if ( $url == "commit"){?>
 			  <?php foreach ($lagu->result() as $a ){?>
 				  <tr>
+					  <?php $pkode = $this->M_Traffic->get_kode($this->input->get('op'),$a->id)?>
 					  <td><?php echo $a->judul?></td>
 					  <td><?php echo $a->artis?></td>
-					  <td><?php echo $this->M_Traffic->get_total1($month,$a->id); ?></td>
-					  <td><?php echo $this->M_Traffic->get_total2($month,$a->id);?></td>
-					  <td><?php echo $this->M_Traffic->get_total3($month,$a->id);?></td>
+					  <td><?php echo $this->M_Traffic->get_total1($month,$pkode); ?></td>
+					  <td><?php echo $this->M_Traffic->get_total2($month,$pkode);?></td>
+					  <td><?php echo $this->M_Traffic->get_total3($month,$pkode);?></td>
 					  <td>
 						  <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
 						  <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
 					  </td>
 				  </tr>
-			  <?php } }?>
+			  <?php } } else{ ?>
+			  <td></td><td></td> <td></td> <td></td> <td></td> <td></td>
+			 <?php } ?>
 			  </tbody>
 		  </table>
 	  </div>

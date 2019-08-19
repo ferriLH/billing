@@ -36,9 +36,9 @@ class C_Traffic extends CI_Controller
 		{
 
 			if($this->session->userdata('isLogin') == 'admin'){
-				$bulan= $this->input->post('bulan');
-				$tahun = $this->input->post('tahun');
-				$op = $this->input->post('op');
+				$bulan= $this->input->get('bulan');
+				$tahun = $this->input->get('tahun');
+				$op = $this->input->get('op');
 
 				if ($bulan<10) {
 					$month = $tahun . "0" . $bulan;

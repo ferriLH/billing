@@ -112,7 +112,7 @@
 							  $int5 = $int5  + (int)$total5;
 							  $int6 = $int6  + (int)$total6;
 							  $int7 = $int7  + (int)$total7;
-							  
+
 							  ?>
 							  <td><?php echo $int1?></td>
 							  <td><?php echo $int2?></td>
