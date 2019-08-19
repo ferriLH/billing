@@ -32,21 +32,28 @@ $this->load->view('parts/V_Header');
     <p class="login-box-msg">Sign in to start your session</p>
 
     <form  method="post" action="<?php echo base_url('login/auth') ?>">
-      <?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
-              <div class="alert alert-danger">
-                  <button type="button" class="close" data-dismiss="alert">&times;</button>
-                  <strong>Warning</strong>
-                          <?php echo validation_errors(); ?>
-                          <?php echo $this->session->flashdata('failed'); ?>
-              </div>
-              <script>
+		<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Warning</strong>
+				<?php echo validation_errors(); ?>
+				<?php echo $this->session->flashdata('failed'); ?>
+			</div>
+			<script>
                 Swal.fire({
-                  type: 'error',
-                  title: 'Oops...',
-                  text: 'Something went wrong!'
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!'
                 })
-              </script>
-      <?php }?>
+			</script>
+		<?php }?>
+		<?php if($this->session->flashdata('sukses')){ ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Information</strong><br>
+				<?php echo $this->session->flashdata('sukses'); ?>
+			</div>
+		<?php }?>
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

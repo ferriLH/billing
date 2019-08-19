@@ -19,5 +19,10 @@ class M_Login extends CI_Model
 		$this->db->where("email",$email);
 		return $this->db->get();
 	}
-
+	function changePass($pass,$id){
+		$data = array(
+			'password' =>$pass);
+		$this->db->where('id_user',$id);
+		$this->db->update('t_user',$data);
+	}
 }

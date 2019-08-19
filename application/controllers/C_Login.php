@@ -6,6 +6,7 @@ class C_Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Login');
+
     }
     public function index()
     {
@@ -90,7 +91,7 @@ class C_Login extends CI_Controller
 		$toEmail;
 		$domain = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '')
 			.'://'.$_SERVER['HTTP_HOST'].str_replace('//','/',dirname($_SERVER['SCRIPT_NAME']).'/');
-		$mid = "C_Login/forget_pass_form/";
+		$mid = "C_Login/forgotMyPasswordForm/";
 		$config = Array(
 			'protocol' 	=> 'smtp',
 			'host' 		=> 'smtp.alpha-omega.co.id',
@@ -120,6 +121,40 @@ class C_Login extends CI_Controller
 		else
 			show_error($this->email->print_debugger());
 		return false;
+	}
+	public function forgetForm($id){
+		$data = array(
+			"title" => "Forgot My Password",
+			"id" => $id
+		);
+		$this->load->view('sign/V_ForgetForm',$data);
+	}
+	public function forgetFormAuth($id){
+    	$id = decrypt_url($id);
+		$data = array(
+			"title" => "Forgot My Password",
+			"id" => $id
+		);
+		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+		$this->form_validation->set_rules('cpassword','Confirm Password', 'required|trim');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('sign/V_ForgetForm',$data);
+		}else {
+			if ($this->input->post("submit")) {
+				$pwd = $this->input->post("password");
+				$pass= $this->input->post("cpassword");
+				if($pwd!=$pass){
+					$this->session->set_flashdata('failed', '<br>Password and Confirm Password Does not Match');
+					redirect('forgotMyPasswordForm/'.$id);
+				}else{
+					$passs = sha1($pass);
+					$this->M_Login->changePass($passs,$id);
+					$this->session->set_flashdata('sukses', '<br>Password Change Done. You can login with your new password below');
+					redirect('login',$data);
+				}
+			}
+
+		}
 	}
 }
 
