@@ -90,16 +90,17 @@
 			  </tr>
 			  </thead>
 			  <tbody>
+			  <?php $judul="-"; $artist="-"; $total1=0;$total2=0;$total3=0;?>
 			  <?php $url = $this->uri->segment(2)?>
 			  <?php if ( $url == "commit"){?>
 			  <?php foreach ($lagu->result() as $a ){?>
 				  <tr>
-					  <?php $pkode = $this->M_Traffic->get_kode($this->input->get('op'),$a->id)?>
-					  <td><?php echo $a->judul?></td>
-					  <td><?php echo $a->artis?></td>
-					  <td><?php echo $this->M_Traffic->get_total1($month,$pkode); ?></td>
-					  <td><?php echo $this->M_Traffic->get_total2($month,$pkode);?></td>
-					  <td><?php echo $this->M_Traffic->get_total3($month,$pkode);?></td>
+					  <?php $pkode = $this->M_Traffic->get_kode($this->input->get('op'),$a->id) ;?>
+					  <td><?php  $judul = $a->judul; echo $judul ?></td>
+					  <td><?php $artist = $a->artis; echo $artist?></td>
+					  <td><?php $total1 =  $this->M_Traffic->get_total1($month,$pkode); echo $total1;?></td>
+					  <td><?php $total2 = $this->M_Traffic->get_total2($month,$pkode); echo $total2;?></td>
+					  <td><?php $total3 = $this->M_Traffic->get_total3($month,$pkode); echo $total3;?></td>
 					  <td>
 						  <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
 						  <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
