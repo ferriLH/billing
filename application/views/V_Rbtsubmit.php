@@ -92,25 +92,67 @@
 					  </tr>
 					  </thead>
 					  <tbody>
+					 <?php $int1 =0; $int2 =0;$int3 =0;$int4 =0;$int5 =0;$int6 =0; $int7 =0;?>
 						<?php foreach ($operator->result() as $a ){?>
 						  <tr>
 							  <td><?php echo $a->operator?></td>
 							  <td><?php echo $this->M_Rbtsubmit->get_rev($month,$a->id)?></td>
-							  <td><?php $total1 = $this->M_Rbtsubmit->get_total1($month,$a->id); echo $total1; ?></td>
-							  <td><?php $total2 = $this->M_Rbtsubmit->get_total2($month,$a->id); echo $total2;?></td>
-							  <td><?php $total3 = $this->M_Rbtsubmit->get_total3($month,$a->id); echo $total3;?></td>
-							  <td><?php $total4 = $this->M_Rbtsubmit->get_total4($month,$a->id); echo $total4;?></td>
-							  <td><?php $total5 = $this->M_Rbtsubmit->get_total5($month,$a->id); echo $total5 ?></td>
-							  <td><?php $total6 = $this->M_Rbtsubmit->get_total6($month,$a->id); echo $total6?></td>
-							  <td><?php $total7 = $this->M_Rbtsubmit->get_total7($month,$a->id); echo $total7?></td>
-							  <?php $int1 = (int)$total1;
-							  		$int2 = (int)$total2;
-							  		$int3 = (int)$total3;
-							  		$int4 = (int)$total4;
-							  		$int5 = (int)$total5;
-							  		$int6 = (int)$total6;
-							  		$int7 = (int)$total7;
-							  		$totalall = $int1+$int2+$int3+$int4+$int5+$int6+$int7;
+							  <?php $total1 = $this->M_Rbtsubmit->get_total1($month,$a->id);?>
+							  <?php $total2 = $this->M_Rbtsubmit->get_total2($month,$a->id);?>
+							  <?php $total3 = $this->M_Rbtsubmit->get_total3($month,$a->id);?>
+							  <?php $total4 = $this->M_Rbtsubmit->get_total4($month,$a->id);?>
+							  <?php $total5 = $this->M_Rbtsubmit->get_total5($month,$a->id);?>
+							  <?php $total6 = $this->M_Rbtsubmit->get_total6($month,$a->id);?>
+							  <?php $total7 = $this->M_Rbtsubmit->get_total7($month,$a->id);?>
+							  <?php
+							  $int1 = $int1  + (int)$total1;
+							  $int2 = $int2  + (int)$total2;
+							  $int3 = $int3  + (int)$total3;
+							  $int4 = $int4  + (int)$total4;
+							  $int5 = $int5  + (int)$total5;
+							  $int6 = $int6  + (int)$total6;
+							  $int7 = $int7  + (int)$total7;
+							  
+							  ?>
+							  <td><?php echo $int1?></td>
+							  <td><?php echo $int2?></td>
+							  <td><?php echo $int3?></td>
+							  <td><?php echo $int4?></td>
+							  <td><?php echo $int5?></td>
+							  <td><?php echo $int6?></td>
+							  <td><?php echo $int7?></td>
+								<?php	if ($a->id == 3)
+									{
+										$intrp1 = (int)$this->M_Rbtsubmit->get_rp1($month,$a->id);
+										$intrp3 = (int)$this->M_Rbtsubmit->get_rp3($month,$a->id);
+										$intrp4 = (int)$this->M_Rbtsubmit->get_rp4($month,$a->id);
+										$intrp5 = (int)$this->M_Rbtsubmit->get_rp5($month,$a->id);
+										$intrp6 = (int)$this->M_Rbtsubmit->get_rp6($month,$a->id);
+										$intrp7 = (int)$this->M_Rbtsubmit->get_rp7($month,$a->id);
+										$totalrp1 = $int1 * $intrp1;
+										$totalrp2 = $int2;
+										$totalrp3 = $int3 * $intrp3;
+										$totalrp4 = $int4 * $intrp4;
+										$totalrp5 = $int5 * $intrp5;
+										$totalrp6 = $int6 * $intrp6;
+										$totalrp7 = $int7 * $intrp7;
+									} else {
+										$intrp1 = (int)$this->M_Rbtsubmit->get_rp1($month,$a->id);
+										$intrp2 = (int)$this->M_Rbtsubmit->get_rp2($month,$a->id);
+										$intrp3 = (int)$this->M_Rbtsubmit->get_rp3($month,$a->id);
+										$intrp4 = (int)$this->M_Rbtsubmit->get_rp4($month,$a->id);
+										$intrp5 = (int)$this->M_Rbtsubmit->get_rp5($month,$a->id);
+										$intrp6 = (int)$this->M_Rbtsubmit->get_rp6($month,$a->id);
+										$intrp7 = (int)$this->M_Rbtsubmit->get_rp7($month,$a->id);
+										$totalrp1 = $int1 * $intrp1;
+										$totalrp2 = $int2 * $intrp2;
+										$totalrp3 = $int3 * $intrp3;
+										$totalrp4 = $int4 * $intrp4;
+										$totalrp5 = $int5 * $intrp5;
+										$totalrp6 = $int6 * $intrp6;
+										$totalrp7 = $int7 * $intrp7;
+									}
+							  $totalall = $totalrp1+$totalrp2+$totalrp3+$totalrp4+$totalrp5+$totalrp6+$totalrp7;
 							  ?>
 							  <td><?php echo $totalall?></td>
 							  <td>

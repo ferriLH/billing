@@ -91,4 +91,74 @@ class M_Rbtsubmit extends CI_Model
 		return $query->row('n7');
 	}
 
+	function get_rp1($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p1');
+	}
+
+	function get_rp2($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p2');
+	}
+
+	function get_rp3($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p3');
+	}
+
+	function get_rp4($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p4');
+	}
+
+	function get_rp5($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p5');
+	}
+
+	function get_rp6($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p6');
+	}
+
+	function get_rp7($month,$result)
+	{
+		$this->db->select('*');
+		$this->db->from('p_price');
+		$this->db->where('month',$month);
+		$this->db->where('operatorId',$result);
+		$query = $this->db->get();
+		return $query->row('p7');
+	}
+
 }
