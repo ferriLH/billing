@@ -69,6 +69,15 @@
           'info'        : true,
           'autoWidth'   : true
       });
+      $('#tsel').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+          'scrollX'     : true
+      });
   });
 
    $('#datepicker').datepicker({

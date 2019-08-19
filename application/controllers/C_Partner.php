@@ -52,7 +52,7 @@ class C_Partner extends CI_Controller
 
                     $this->M_Partner->add_new_partner($d);
                     $this->session->set_flashdata('sukses', 'sukses');
-                    redirect('partner');
+                    redirect('partner/add');
                 }
             }else{
                 redirect('partner/add');
