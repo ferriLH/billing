@@ -21,7 +21,9 @@ class C_Rbtsubmit extends CI_Controller
 			$data = array(
 				"title" 	=> "RBT Submit",
 				"operator" => $this->M_Rbtsubmit->get_operator(),
-				"month" => $month
+				"month" => $month,
+				"bulan" => '1',
+				"tahun" => '1',
 			);
 
 
@@ -50,7 +52,9 @@ class C_Rbtsubmit extends CI_Controller
 			$data = array(
 				"title" 	=> "RBT Content",
 				"operator"  	=> $result1,
-				"month"		=>$month
+				"month"		=>$month,
+				"bulan"	=> $bulan,
+				"tahun" => $tahun
 			);
 
 			$this->load->view('V_Rbtsubmit',$data);
