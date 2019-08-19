@@ -65,7 +65,7 @@ class C_Login extends CI_Controller
 		$data = array(
 			"title" => "Forgot My Password"
 		);
-		$this->form_validation->set_rules('email', 'email', 'required|trim|xss_clean');
+		$this->form_validation->set_rules('email', 'email', 'required|trim|valid_email');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('sign/V_Forget',$data);
 		}else{
@@ -76,7 +76,8 @@ class C_Login extends CI_Controller
 					$sess_data['id'] = $dat->id_user;
 					$this->session->set_userdata($sess_data);
 				}
-				$id = $this->session->userdata('id');
+				$idunencrypted = $this->session->userdata('id');
+				$id = encrypt_url($idunencrypted);
 				$this->mailForgot($email,$id);
 				$this->session->set_flashdata('sukses', '<br>Check Your Email');
 				redirect('forgotMyPassword',$data);
@@ -88,46 +89,58 @@ class C_Login extends CI_Controller
 	}
 	public function mailForgot($toEmail,$id) {
 
-		$toEmail;
+		$to_email = $toEmail;
 		$domain = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '')
 			.'://'.$_SERVER['HTTP_HOST'].str_replace('//','/',dirname($_SERVER['SCRIPT_NAME']).'/');
-		$mid = "C_Login/forgotMyPasswordForm/";
+		$mid = "forgotMyPasswordForm/";
 		$config = Array(
-			'protocol' 	=> 'smtp',
-			'host' 		=> 'smtp.alpha-omega.co.id',
-			'port' 		=> '587',
-			'user' 		=> 'support_it@alpha-omega.co.id',
-			'pass' 		=> 'GBrIxCSt49', // change it to yours
-			'mailtype' 	=> 'html',
-			'charset' 	=> 'iso-8859-1',
-			'wordwrap' 	=> TRUE,
-			'message' 	=> "<a href='$domain$mid$id' target='_blank'>Click here to Change Your Password</a>"
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.gmail.com',
+			'smtp_port' => '465',
+			'smtp_user' => 'tittattutproject@gmail.com',
+			'smtp_pass' => 'ttt@tut123',
+			'mailtype' => 'html',
+			'charset' => 'iso-8859-1',
+			'wordwrap' => TRUE,
+			'message' => "<a href='$domain$mid$id' target='_blank'>Click here to Change Your Password</a>"
 		);
 
 		$this->load->library('email', $config);
 		$this->email->initialize($config);
 		$this->email->set_newline("\r\n");
-		$this->email->from($config['user']); // change it to yours
-		$this->email->to($toEmail);// change it to yours
-		$this->email->cc('ferrilasmihalim@gmail.com');
+		$this->email->from($config['smtp_user']);
+		$this->email->to($to_email);
+		$this->email->bcc("andika@alpha-omega.co.id");
 		$this->email->subject('Forget Password');
 		$this->email->message($config['message']);
-		ini_set("SMTP",$config['host']);
-		ini_set("smtp_port",$config['port']);
+		ini_set("SMTP",$config['smtp_host']);
+		ini_set("smtp_port",$config['smtp_port']);
 
 		//Send mail
 		if($this->email->send())
-			$this->session->set_flashdata("sukses","<br>Email sent successfully.");
+			$this->session->set_flashdata("success","<br>Email sent successfully.");
 		else
 			show_error($this->email->print_debugger());
 		return false;
+
 	}
 	public function forgetForm($id){
 		$data = array(
 			"title" => "Forgot My Password",
 			"id" => $id
 		);
-		$this->load->view('sign/V_ForgetForm',$data);
+		$id = decrypt_url($id);
+		$cek    = $this->M_Login->cek_id($id);
+		if($cek->num_rows() > 0){
+			foreach ($cek->result() as $dat){
+				$sess_data['id'] = $dat->id_user;
+				$this->session->set_userdata($sess_data);
+			}
+			$this->load->view('sign/V_ForgetForm',$data);
+		}else {
+			$this->session->set_flashdata('failed', '<br>Fuck off!');
+			$this->load->view('sign/V_Forget',$data);
+		}
 	}
 	public function forgetFormAuth($id){
     	$id = decrypt_url($id);
@@ -153,7 +166,6 @@ class C_Login extends CI_Controller
 					redirect('login',$data);
 				}
 			}
-
 		}
 	}
 }

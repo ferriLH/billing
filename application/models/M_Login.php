@@ -25,4 +25,11 @@ class M_Login extends CI_Model
 		$this->db->where('id_user',$id);
 		$this->db->update('t_user',$data);
 	}
+	function cek_id ($id){
+		$tbl = "t_user";
+		$this->db->select("id_user");
+		$this->db->from($tbl);
+		$this->db->where("id_user",$id);
+		return $this->db->get();
+	}
 }
