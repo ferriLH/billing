@@ -64,7 +64,9 @@
                   <option>2020</option>
                 </select>
               </div>
+              <a href="<?php echo base_url('summary/table')?>">
               <button type="button" class="btn btn-block btn-primary btn-lg">View</button>
+            </a>
         </div>
       </div>
     </div>

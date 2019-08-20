@@ -17,4 +17,15 @@ class C_Payment extends CI_Controller
 			redirect('admin');
 		}
     }
+    public function table()
+    {
+		$data = array(
+			"title" => " Table Payment",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_PaymentTable',$data);
+		}else{
+			redirect('admin');
+		}
+    }
 }

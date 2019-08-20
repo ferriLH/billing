@@ -93,7 +93,9 @@ $route['sharepencipta/tableshare']   = 'C_Sharepencipta/tableshare';
 
 $route['sharepencipta']         = 'C_Sharepencipta';
 $route['summary']            	= 'C_Summary';
+$route['summary/table']         = 'C_Summary/table';
 $route['payment']            	= 'C_Payment';
+$route['payment/table']         = 'C_Payment/table';
 $route['rbttsel']            	= 'C_Rbttsel';
 
 $route['404_override']          = '';

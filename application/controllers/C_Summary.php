@@ -17,4 +17,15 @@ class C_Summary extends CI_Controller
 			redirect('admin');
 		}
     }
+    public function table()
+    {
+		$data = array(
+			"title" => "Summary",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('V_SummaryTable',$data);
+		}else{
+			redirect('admin');
+		}
+    }
 }

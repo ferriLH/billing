@@ -18,25 +18,13 @@ class C_Sharepartner extends CI_Controller
 		}
 
     }
-    public function sortby()
-    {
-		$data = array(
-			"title" => "Sort By",
-		);
-		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
-			$this->load->view('SharePartner/V_Sortby',$data);
-		}else{
-			redirect('admin');
-		}
-
-    }
     public function tableshare()
     {
 		$data = array(
 			"title" => "SHARE PARTNER",
 		);
 		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
-			$this->load->view('SharePartner/V_TableSharePartner',$data);
+			$this->load->view('V_TableSharePartner',$data);
 		}else{
 			redirect('admin');
 		}
