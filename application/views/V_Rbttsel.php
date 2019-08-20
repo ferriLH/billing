@@ -69,9 +69,6 @@
               <?php echo $this->session->flashdata('sukses'); ?>
             </div>
           <?php }?>
-          <a href="<?php echo base_url('rbtcontent/add')?>">
-            <button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
-          </a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -108,7 +105,6 @@
               <td >Total 8500 (n)</td>
               <td >Total 9000 (n)</td>
               <td> Submited</td>
-				<td></td>
             </tr>
             </thead>
             <tbody>
@@ -304,14 +300,6 @@
 					}
 
 					?>
-
-
-
-					<td>
-						<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
-						<button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
-					</td>
-
 				<?php } }  ?>
             </tbody>
           </table>

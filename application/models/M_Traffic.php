@@ -13,7 +13,7 @@ class M_Traffic extends CI_Model
 		$this->db->select('*');
 		$this->db->from('p_rbt');
 		$this->db->order_by('judul','ASC');
-		$this->db->limit(100);
+		//$this->db->limit(100);
 		$result = $this->db->get();
 		return $result;
 	}
