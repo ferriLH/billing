@@ -24,6 +24,7 @@ class C_Partner extends CI_Controller
     {
         $data = array(
             "title" => "Add Partner",
+			"idPartner"	=> $this->M_Partner->getNewIdPartner(),
         );
         if($this->session->userdata('isLogin') == 'admin'){
             $this->load->view('CrudPartner/AddPartner',$data);
@@ -38,19 +39,28 @@ class C_Partner extends CI_Controller
         );
         if($this->session->userdata('isLogin') == 'admin'){
             if($this->input->post('submit')){
-                $this->form_validation->set_rules('namaPartner',   'Nama Partner',    'required');
+                $this->form_validation->set_rules('namaPartner',   	'Nama Partner',    	'required');
+                $this->form_validation->set_rules('email',   		'Email',    		'required|valid_email');
+                $this->form_validation->set_rules('password',   	'Password',    		'required');
                 if ($this->form_validation->run() == FALSE) {
                     $this->session->set_flashdata('failed', 'gagal');
                     $this->load->view('CrudPartner/AddPartner',$data);
                 } else {
-                    $d['namaPartner']  = ($this->input->post('namaPartner'));
+                    $d['id']  			= ($this->input->post('idPartner'));
+                    $d['namaPartner']  	= ($this->input->post('namaPartner'));
                     $d['noTelp']        = ($this->input->post('noTelp'));
                     $d['noFax']         = ($this->input->post('noFax'));
                     $d['bank']          = ($this->input->post('bank'));
                     $d['noAcc']         = ($this->input->post('noAcc'));
                     $d['type']          = 1;
-
-                    $this->M_Partner->add_new_partner($d);
+					$this->M_Partner->add_new_partner($d);
+					$u['idPartner']		= $this->input->post('idPartner');
+					$u['idPencipta']    = 0;
+					$u['email']         = ($this->input->post('email'));
+					$u['role']         	= 'partner';
+					$u['password']      = sha1($this->input->post('password'));
+					$u['status']        = 1;
+					$this->M_Partner->add_new_user($u);
 					$this->session->set_flashdata('sukses', 'Add Sukses');
                     redirect('partner');
                 }
@@ -67,6 +77,7 @@ class C_Partner extends CI_Controller
             $data = array(
                 "title" => "Partner",
                 "edit" => $this->M_Partner->edit($id),
+                "editUser" => $this->M_Partner->editUser($id),
             );
             $this->load->view('CrudPartner/EditPartner',$data);
         }else{
@@ -82,7 +93,8 @@ class C_Partner extends CI_Controller
             );
             //form validation
             $this->form_validation->set_rules('namaPartner',    'Nama Partner',  'required');
-            if ($this->form_validation->run() == FALSE) {
+			$this->form_validation->set_rules('email',   		'Email',    		'required|valid_email');
+			if ($this->form_validation->run() == FALSE) {
                 $this->session->set_flashdata('failed', 'gagal');
                 $this->load->view('CrudPartner/EditPartner',$data);
             } else{
@@ -92,7 +104,14 @@ class C_Partner extends CI_Controller
 				$d['bank']          = ($this->input->post('bank'));
 				$d['noAcc']         = ($this->input->post('noAcc'));
                 $this->M_Partner->update($id,$d);
-                $this->session->set_flashdata('sukses', 'Update Sukses');
+				if ($this->input->post('password')!='') {
+					$u['email']         = ($this->input->post('email'));
+					$u['password']      = sha1($this->input->post('password'));
+				}else{
+					$u['email']         = ($this->input->post('email'));
+				}
+				$this->M_Partner->updateUser($id,$u);
+				$this->session->set_flashdata('sukses', 'Update Sukses');
                 redirect('partner/edit/'.$id);
             }
         }else{
@@ -103,6 +122,7 @@ class C_Partner extends CI_Controller
 	{
 		if ($this->session->userdata('isLogin') == 'admin') {
 			$this->M_Partner->setDelete($id);
+			$this->M_Partner->setDeleteUser($id);
 			$this->session->set_flashdata('sukses', 'Delete Sukses');
 			$data = array(
 				"title" 		=> "Partner",

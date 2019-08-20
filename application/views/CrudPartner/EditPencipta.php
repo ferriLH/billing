@@ -64,6 +64,16 @@ $this->load->view('parts/V_Navigation');
 						<input type="text" class="form-control" name="bank" id="bank" placeholder="Bank" value="<?php echo $edit[0]['bank']?>">
 					</div>
 				</div>
+				<div class="box-body">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $editUser[0]['email']?>" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" value="">
+					</div>
+				</div>
 				<!-- /.box-body -->
 				<div class="box-footer">
 					<input type="submit" name="submit" id="submit" class="btn btn-primary">

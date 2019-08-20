@@ -20,37 +20,50 @@ $this->load->view('parts/V_Navigation');
 	<section class="content container-fluid">
 		<div class="box box-primary">
 			<div class="box-header">
+				<button class="btn btn-toolbar">ID : <?php echo $idPartner[0]['id']+1;?></button>
 				<?php if($this->session->flashdata('failed')){ ?>
 					<div class="alert alert-danger">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Information</strong><br>
 						<?php echo $this->session->flashdata('failed'); ?>
 					</div>
-				<?php }?>			</div>
+				<?php }?>
+			</div>
 			<!-- /.box-header -->
 			<form role="form" action="<?php echo base_url('partner/add/auth')?>" method="post">
-			<div class="box-body">
-		          <div class="form-group">
-		            <label for="noTelp">Nama</label>
-		            <input type="text" class="form-control" name="namaPartner" id="namaPartner" placeholder="Nama" required>
-		          </div>
-		          <div class="form-group">
-		            <label for="noFax">No Telp</label>
-		            <input type="number" class="form-control" name="noTelp" id="noTelp" placeholder="No Telp" value="">
-		          </div>
-		          <div class="form-group">
-		            <label for="noAcc">No Fax</label>
-		            <input type="number" class="form-control" name="noFax" id="noFax" placeholder="No Fax" value="">
-		          </div>
-		          <div class="form-group">
-		            <label for="bank">No Acc</label>
-		            <input type="number" class="form-control" name="noAcc" id="noAcc" placeholder="No Acc" value="">
-		          </div>
-		          <div class="form-group">
-		            <label for="bank">Bank</label>
-		            <input type="text" class="form-control" name="bank" id="bank" placeholder="Bank" value="">
-		          </div>
-		    </div>
+				<input type="hidden" value="<?php echo $idPartner[0]['id']+1;?>" name="idPartner">
+				<div class="box-body">
+					<div class="form-group">
+						<label for="noTelp">Nama</label>
+						<input type="text" class="form-control" name="namaPartner" id="namaPartner" placeholder="Nama" required>
+					</div>
+					<div class="form-group">
+						<label for="noFax">No Telp</label>
+						<input type="number" class="form-control" name="noTelp" id="noTelp" placeholder="No Telp" value="">
+					</div>
+					<div class="form-group">
+						<label for="noAcc">No Fax</label>
+						<input type="number" class="form-control" name="noFax" id="noFax" placeholder="No Fax" value="">
+					</div>
+					<div class="form-group">
+						<label for="bank">No Acc</label>
+						<input type="number" class="form-control" name="noAcc" id="noAcc" placeholder="No Acc" value="">
+					</div>
+					<div class="form-group">
+						<label for="bank">Bank</label>
+						<input type="text" class="form-control" name="bank" id="bank" placeholder="Bank" value="">
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+					</div>
+				</div>
 						<!-- /.box-body -->
 				<div class="box-footer">
 					<input type="submit" name="submit" id="submit" class="btn btn-primary">

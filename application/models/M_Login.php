@@ -32,4 +32,16 @@ class M_Login extends CI_Model
 		$this->db->where("id_user",$id);
 		return $this->db->get();
 	}
+	function getPartner ($id){
+		$this->db->select("*");
+		$this->db->from('p_partner');
+		$this->db->where("id",$id);
+		return $this->db->get();
+	}
+	function getPencipta ($id){
+		$this->db->select("*");
+		$this->db->from('p_pencipta');
+		$this->db->where("id",$id);
+		return $this->db->get();
+	}
 }

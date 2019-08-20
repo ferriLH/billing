@@ -38,14 +38,39 @@ class C_Login extends CI_Controller
                 foreach ($cek->result() as $dat) {
                     $sess_data['isLogin'] 	= 'partner';
                     $sess_data['id_user']  	= $dat->id_user;
-                    $sess_data['nik']      	= $dat->nik;
-                    $sess_data['nama']      = $dat->nama;
+                    $sess_data['idPartner'] = $dat->idPartner;
+                    $sess_data['idPencipta']= $dat->idPencipta;
+                    //$sess_data['nama']      = $dat->nama;
                     $sess_data['email']     = $dat->email;
                     $sess_data['role']     	= $dat->role;
                     $sess_data['status']    = $dat->status;
                     $this->session->set_userdata($sess_data);
                 }
-                $this->session->set_flashdata('sukses','sukses');
+				if ($this->session->userdata('role')=='partner') {
+					$getProfile = $this->M_Login->getPartner($this->session->userdata('idPartner'));
+					foreach ($getProfile->result() as $dat) {
+						$sess_data['nama'] 		= $dat->namaPartner;
+						$sess_data['noTelp']    = $dat->noTelp;
+						$sess_data['noFax']     = $dat->noFax;
+						$sess_data['bank']    	= $dat->bank;
+						$sess_data['noAcc']    	= $dat->noAcc;
+						//$sess_data['rev']    	= $dat->status;
+						$this->session->set_userdata($sess_data);
+					}
+				}elseif ($this->session->userdata('role')=='pencipta') {
+					$getProfile = $this->M_Login->getPencipta($this->session->userdata('idPencipta'));
+					foreach ($getProfile->result() as $dat) {
+						$sess_data['nama']      = $dat->namaPencipta;
+						$sess_data['noTelp']    = $dat->noTelp;
+						$sess_data['noFax']     = $dat->noFax;
+						$sess_data['bank']    	= $dat->bank;
+						$sess_data['noAcc']    	= $dat->noAcc;
+						//$sess_data['rev']    	= $dat->status;
+						$this->session->set_userdata($sess_data);
+					}
+				}
+
+				$this->session->set_flashdata('sukses','sukses');
                 redirect('home');
             } else {
                 $this->session->set_flashdata('failed', '<br>Username atau Password anda masukan salah!');
