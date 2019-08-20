@@ -23,6 +23,8 @@ class C_Pencipta extends CI_Controller
 	{
 		$data = array(
 			"title" => "Add Pencipta",
+			"idPencipta"=> $this->M_Pencipta->getNewIdPencipta(),
+
 		);
 		if($this->session->userdata('isLogin') == 'admin'){
 			$this->load->view('CrudPartner/AddPencipta',$data);
@@ -38,18 +40,26 @@ class C_Pencipta extends CI_Controller
 		if($this->session->userdata('isLogin') == 'admin'){
 			if($this->input->post('submit')){
 				$this->form_validation->set_rules('namaPencipta', 	'Nama Pencipta',	'required');
+				$this->form_validation->set_rules('email',   		'Email',    		'required|valid_email');
 				if ($this->form_validation->run() == FALSE) {
 					$this->session->set_flashdata('failed', 'gagal');
 					$this->load->view('CrudPartner/AddPencipta',$data);
 				} else {
+					$d['id']  			= ($this->input->post('idPencipta'));
 					$d['namaPencipta']	= ($this->input->post('namaPencipta'));
 					$d['noTelp'] 		= ($this->input->post('noTelp'));
 					$d['noFax'] 		= ($this->input->post('noFax'));
 					$d['bank']			= ($this->input->post('bank'));
 					$d['noAcc'] 		= ($this->input->post('noAcc'));
 					$d['type'] 			= 1;
-
 					$this->M_Pencipta->add_new_pencipta($d);
+					$u['idPartner']		= 0;
+					$u['idPencipta']    = $this->input->post('idPencipta');
+					$u['email']         = $this->input->post('email');
+					$u['role']         	= 'pencipta';
+					$u['password']      = sha1($this->input->post('password'));
+					$u['status']        = 1;
+					$this->M_Pencipta->add_new_user($u);
 					$this->session->set_flashdata('sukses', 'Add Sukses');
 					redirect('pencipta');
 				}
@@ -64,6 +74,7 @@ class C_Pencipta extends CI_Controller
 	{
 		if ($this->session->userdata('isLogin') == 'admin') {
 			$this->M_Pencipta->setDelete($id);
+			$this->M_Pencipta->setDeleteUser($id);
 			$this->session->set_flashdata('sukses', 'Delete Sukses');
 			$data = array(
 				"title" 		=> "Pencipta",
@@ -79,6 +90,7 @@ class C_Pencipta extends CI_Controller
 			$data = array(
 				"title" => "Pencipta",
 				"edit" => $this->M_Pencipta->edit($id),
+				"editUser" => $this->M_Pencipta->editUser($id),
 			);
 			$this->load->view('CrudPartner/EditPencipta',$data);
 		}else{
@@ -94,6 +106,7 @@ class C_Pencipta extends CI_Controller
 			);
 			//form validation
 			$this->form_validation->set_rules('namaPencipta',    'Nama Pencipta',  'required');
+			$this->form_validation->set_rules('email',   		'Email',    		'required|valid_email');
 			if ($this->form_validation->run() == FALSE) {
 				$this->session->set_flashdata('failed', 'gagal');
 				$this->load->view('CrudPartner/EditPencipta',$data);
@@ -104,6 +117,13 @@ class C_Pencipta extends CI_Controller
 				$d['bank']			= ($this->input->post('bank'));
 				$d['noAcc'] 		= ($this->input->post('noAcc'));
 				$this->M_Pencipta->update($id,$d);
+				if ($this->input->post('password')!='') {
+					$u['email']         = ($this->input->post('email'));
+					$u['password']      = sha1($this->input->post('password'));
+				}else{
+					$u['email']         = ($this->input->post('email'));
+				}
+				$this->M_Pencipta->updateUser($id,$u);
 				$this->session->set_flashdata('sukses', 'Update Sukses');
 				redirect('pencipta/edit/'.$id);
 			}

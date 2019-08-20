@@ -97,6 +97,7 @@ $route['summary/table']         = 'C_Summary/table';
 $route['payment']            	= 'C_Payment';
 $route['payment/table']         = 'C_Payment/table';
 $route['rbttsel']            	= 'C_Rbttsel';
+$route['rbttsel/commit']		= 'C_Rbttsel/rbttsel_submit';
 
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

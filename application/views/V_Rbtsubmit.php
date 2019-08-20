@@ -134,6 +134,7 @@
 
 
 								foreach ($this->M_Rbtsubmit->get_rev($month, $a->id) as $reven) {
+									if (isset($reven->sum)){
 									echo "
 									<tr>
 									<td>$a->operator</td>
@@ -147,6 +148,20 @@
 									<td>$total7</td>
 									<td>$totalall</td>
 									";
+								 }else{
+										echo "<tr>
+									<td>$a->operator</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									";
+								}
 
 							?>
 

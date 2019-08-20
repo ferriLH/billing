@@ -21,6 +21,7 @@ $this->load->view('parts/V_Navigation');
 	<section class="content container-fluid">
 		<div class="box box-primary">
 			<div class="box-header">
+				<button class="btn btn-toolbar">ID : <?php echo $idPencipta[0]['id']+1;?></button>
 				<?php if($this->session->flashdata('failed')){ ?>
 					<div class="alert alert-danger">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -31,6 +32,7 @@ $this->load->view('parts/V_Navigation');
 			<!-- /.box-header -->
 			<form role="form" action="<?php echo base_url('pencipta/add/auth')?>" method="post">
 				<div class="box-body">
+					<input type="hidden" value="<?php echo $idPencipta[0]['id']+1;?>" name="idPencipta">
 					<div class="form-group">
 						<label for="namaPencipta">Nama Pencipta</label>
 						<input type="text" class="form-control" name="namaPencipta" id="namaPencipta" placeholder="Nama Pencipta" required>
@@ -50,6 +52,16 @@ $this->load->view('parts/V_Navigation');
 					<div class="form-group">
 						<label for="bank">Bank</label>
 						<input type="text" class="form-control" name="bank" id="bank" placeholder="Bank" value="">
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
 					</div>
 				</div>
 				<!-- /.box-body -->

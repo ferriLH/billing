@@ -23,10 +23,23 @@ class M_Partner extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    function editUser($id)
+    {
+        $this->db->select("email");
+        $this->db->from("t_user");
+        $this->db->where("idPartner", $id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     function update($id,$data)
     {
         $this->db->where('id',$id);
         $this->db->update('p_partner',$data);
+    }
+    function updateUser($id,$data)
+    {
+        $this->db->where('idPartner',$id);
+        $this->db->update('t_user',$data);
     }
 	function setDelete($id){
 		$data = array(
@@ -34,5 +47,23 @@ class M_Partner extends CI_Model
 		);
 		$this->db->where('id',$id);
 		$this->db->update('p_partner',$data);
+	}
+	function setDeleteUser($id){
+		$data = array(
+			'status'=>0,
+		);
+		$this->db->where('idPartner',$id);
+		$this->db->update('t_user',$data);
+	}
+	function getNewIdPartner(){
+		$this->db->select_max("id");
+		$this->db->from('p_partner');
+		$this->db->where('type',1);
+		$get =  $this->db->get();
+		return $get->result_array();
+	}
+	function add_new_user($data)
+	{
+		$this->db->insert('t_user',$data);
 	}
 }
