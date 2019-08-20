@@ -95,6 +95,7 @@ $route['sharepencipta']         = 'C_Sharepencipta';
 $route['summary']            	= 'C_Summary';
 $route['payment']            	= 'C_Payment';
 $route['rbttsel']            	= 'C_Rbttsel';
+$route['rbttsel/commit']		= 'C_Rbttsel/rbttsel_submit';
 
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
