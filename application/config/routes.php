@@ -86,6 +86,9 @@ $route['traffic']            	= 'C_Traffic';
 $route['traffic/commit']       	= 'C_Traffic/commit';
 
 $route['sharepartner']          = 'C_Sharepartner';
+$route['sharepartner/sortby']   = 'C_Sharepartner/sortby';
+$route['sharepartner/tableshare']   = 'C_Sharepartner/tableshare';
+
 $route['sharepencipta']         = 'C_Sharepencipta';
 $route['summary']            	= 'C_Summary';
 $route['payment']            	= 'C_Payment';
