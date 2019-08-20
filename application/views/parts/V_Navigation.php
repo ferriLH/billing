@@ -237,7 +237,7 @@ $login 	= $this->session->userdata('isLogin');
 				  <a href="<?php echo base_url('sharepartner/sortby')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a>
 			  </li>
 			  <li class="<?php if($this->uri->segment(1)=="sharepencipta"){echo "active";}?>">
-				  <a href="<?php echo base_url('sharepencipta')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a>
+				  <a href="<?php echo base_url('sharepencipta/sortby')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a>
 			  </li>
 			  <li class="<?php if($this->uri->segment(1)=="summary"){echo "active";}?>">
 				  <a href="<?php echo base_url('summary')?>"><i class="fa fa-link"></i> <span>SUMMARY</span></a>

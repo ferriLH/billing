@@ -17,4 +17,28 @@ class C_Sharepencipta extends CI_Controller
 			redirect('admin');
 		}
     }
+     public function sortby()
+    {
+		$data = array(
+			"title" => "Sort By",
+		);
+		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
+			$this->load->view('SharePencipta/V_Sortby',$data);
+		}else{
+			redirect('admin');
+		}
+
+    }
+    public function tableshare()
+    {
+		$data = array(
+			"title" => "SHARE PENCIPTA",
+		);
+		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
+			$this->load->view('SharePencipta/V_TableSharePencipta',$data);
+		}else{
+			redirect('admin');
+		}
+
+    }
 }

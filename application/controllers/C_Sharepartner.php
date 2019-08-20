@@ -33,7 +33,7 @@ class C_Sharepartner extends CI_Controller
     public function tableshare()
     {
 		$data = array(
-			"title" => "SHARE PENCIPTA",
+			"title" => "SHARE PARTNER",
 		);
 		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
 			$this->load->view('SharePartner/V_TableSharePartner',$data);

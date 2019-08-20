@@ -29,7 +29,7 @@
                   <option value='2'>ABJAD</option>
                 </select>
               </div>
-              <a href="<?php echo base_url('sharepartner')?>">
+              <a href="<?php echo base_url('sharepencipta')?>">
                 <button type="button" class="btn btn-block btn-primary btn-lg">View</button>
               </a>
             </div>
