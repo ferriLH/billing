@@ -43,7 +43,7 @@
                   <td>Rp.<?php echo $tempSumOp?></td>
                 </tr>
                 <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td> 
+                  <td>Total Revenue From Partner</td>
 					<?php $grandpartner = 0; ?>
 					<?php foreach ($this->M_Summary->get_sh_partner($ops->id,$month) as $shpart){?>
                   <?php $totalpartner = $totalpartner + $shpart->share ;
@@ -56,7 +56,7 @@
 
                 </tr>
                 <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
+                  <td>Total Revenue From Pencipta</td>
 					<?php $grandoperator = 0; ?>
 					  <?php foreach ($this->M_Summary->get_sh_pencipta($ops->id,$month) as $shpencipta){?>
 						  <?php $totalpencipta = $totalpencipta + $shpencipta->share; $tmptotalpencipta = number_format($totalpencipta);
