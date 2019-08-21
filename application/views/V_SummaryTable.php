@@ -48,7 +48,7 @@
 					<?php foreach ($this->M_Summary->get_sh_partner($ops->id,$month) as $shpart){?>
                   <?php $totalpartner = $totalpartner + $shpart->share ;
                   $tmptotalpartner = number_format($totalpartner);
-						$grandpartner= $grandpartner + $totalpartner;
+						$grandpartner = $grandpartner + $totalpartner;
 						?>
 					<?php }?>
                   		<td>Rp.<?php echo $tmptotalpartner; ?></td>
@@ -60,7 +60,7 @@
 					<?php $grandoperator = 0; ?>
 					  <?php foreach ($this->M_Summary->get_sh_pencipta($ops->id,$month) as $shpencipta){?>
 						  <?php $totalpencipta = $totalpencipta + $shpencipta->share; $tmptotalpencipta = number_format($totalpencipta);
-						  $grandoperator=$grandoperator+$totalpencipta;?>
+						  $grandoperator= $grandoperator +$totalpencipta;?>
 					  <?php }?>
                   <td>Rp.<?php echo $tmptotalpencipta?></td>
                   <td></td>
@@ -74,8 +74,8 @@
                 </tr>
                 <tr>
                   <td><b>Total</b>  </td>
-                  <td>Rp. <?php echo $tempSumOp?></td>
-                  <td>Rp. <?php echo $tempSumOp?></td>
+                  <td>Rp. <?php echo $tempSumOp ?></td>
+                  <td>Rp. <?php echo $tempSumOp ?></td>
                 </tr>
               </table>
             </div>
@@ -87,6 +87,8 @@
 
             <div class="box-body">
               <table class="table table-bordered">
+				  <?php $grandoperator = 0; ?>
+				  <?php $grandpartner = 0; ?>
 				  <?php $tmpgrandoperator = number_format($grandoperator);
 				  		$tmpgrandpartner = number_format($grandpartner);
 				  ?>
@@ -98,12 +100,12 @@
                 <tr>
                   <td>Total Revenue From Operator</td>
                   <td></td>
-                  <td>Rp. <?php echo $tmpgrandoperator?></td>
+                  <td><?php echo number_format($tmpgrandoperator)?></td>
                 </tr>
                 <tr>
                   <td>Total Revenue From Partner</td>
                   <td>331313</td>
-                  <td>Rp.<?php echo $tmpgrandpartner?></td>
+                  <td><?php echo number_format($tmpgrandpartner)?></td>
                 </tr>
                 <tr>
                   <td>Total Revenue From Pencipta</td>
