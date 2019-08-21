@@ -34,14 +34,17 @@
 
 <script>
   $(function () {
-      $('#pencipta').DataTable({
+      $('#tabel_pencipta').DataTable({
 		  'paging'      : true,
 		  'lengthChange': true,
 		  'searching'   : true,
 		  'ordering'    : true,
 		  'info'        : true,
 		  'autoWidth'   : true,
-		  'order'		: [[0,'desc']]
+          'responsive'	: true,
+		  'order'		: [[0,'desc']],
+          //'scrollX'     : true
+
       });
       $('#rbt').DataTable({
 		  'paging'      : true,
@@ -50,7 +53,9 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'order'		: [[0,'desc']]
+          'order'		: [[0,'desc']],
+          'scrollX'     : true
+
 
       });
       $('#rbtsubmit').DataTable({
@@ -59,7 +64,9 @@
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
-          'autoWidth'   : true
+          'autoWidth'   : true,
+          'scrollX'     : true
+
       });
       $('#traffic').DataTable({
           'paging'      : true,
@@ -67,7 +74,9 @@
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
-          'autoWidth'   : true
+          'autoWidth'   : true,
+          //'scrollX'     : true
+
       });
       $('#tsel').DataTable({
           'paging'      : true,

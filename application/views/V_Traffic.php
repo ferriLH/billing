@@ -1,5 +1,5 @@
-
   <?php
+  set_time_limit(500);
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');
   ?>
@@ -26,7 +26,7 @@
 							  <label>Operator</label>
 							  <select class="form-control select2" style="width: 100%;" name="op" id="op">
 								  <?php foreach ($operator as $o) {?>
-									  <option value="<?php echo $o->id;?>"><?php echo $o->operator?></option>
+									  <option <?php if ($op==$o->id) {echo "selected";}?> value="<?php echo $o->id;?>"><?php echo $o->operator?></option>
 								  <?php }?>
 
 							  </select>
@@ -71,56 +71,29 @@
 						  <td >Download</td>
 						  <td >Renew</td>
 						  <td >Campaign</td>
-<!--						  <td>Action</td>-->
 					  </tr>
 					  </thead>
 					  <tbody>
 					  <?php $judul="-"; $artist="-"; $total1=0;$total2=0;$total3=0;?>
 					  <?php $url = $this->uri->segment(2)?>
-					  <?php if ( $url == "commit"){?>
+					  <?php if ( $url == "commit"){ $op=$this->input->get('op');?>
 						  <?php foreach ($lagu as $a ){?>
+							  <?php
+							  $pkode = $this->M_Traffic->get_kode($op,$a->id);
+							  if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
+							  $traffic=$this->M_Traffic->get_total($month, $kode,$op);
+							  ?>
 							  <tr>
-								  <td><?php  $judul = $a->judul; echo $judul ?></td>
+								  <td><?php $judul = $a->judul; echo $judul ?></td>
 								  <td><?php $artist = $a->artis; echo $artist?></td>
-							  <?php foreach ($this->M_Traffic->get_kode($this->input->get('op'),$a->id) as $kode ) { ?>
-								  <?php foreach ($this->M_Traffic->get_total($month, $kode->kode) as $total) {
-									  $n1 = $total->n1;
-									  $n2 = $total->n2;
-									  $n3 = $total->n3;
-									  //if (isset($n1 == 0)) {
-										  echo "<td>$n1</td>
-												<td>$n2</td>
-												<td>$n3</td>
-												";
-									  //} else if (isset($n2 == 0)) {
-										//  echo "<td>$n1</td>
-										//		<td>0</td>
-										//		<td>$n3</td>
-									//			";
-									//  } else if (isset($n3 == 0)) {
-									//	  echo "<td>$n1</td>
-									//			<td>$n2</td>
-									//			<td>0</td>
-									//			";
-									  //} else {
-										//  echo "<td>0</td>
-										//		<td>0</td>
-										//		<td>0</td>
-										//		";
-									  }
-									  ?>
-<!--									  <td>-->
-<!--										  <button type="button" class="btn btn-danger"><i-->
-<!--												  class="glyphicon glyphicon-edit"></i></button>-->
-<!--										  |-->
-<!--										  <button type="button" class="btn btn-warning"><i-->
-<!--												  class="glyphicon glyphicon-trash"></i></button>-->
-<!--									  </td>-->
-									  </tr>
-									  <?php
-								  }
-							  }
-					  }  ?>
+								  <td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+								  <td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+								  <td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
+							  </tr>
+							  <?php
+						  }
+					  }
+					  ?>
 					  </tbody>
 				  </table>
 			  </div>

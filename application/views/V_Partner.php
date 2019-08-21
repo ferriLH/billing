@@ -33,7 +33,7 @@
 			</div>
             <!-- /.box-header -->
 			<div class="box-body">
-				<table id="pencipta" class="table table-bordered table-striped">
+				<table id="tabel_pencipta" class="table table-responsive table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>

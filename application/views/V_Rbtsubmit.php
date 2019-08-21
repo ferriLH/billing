@@ -65,7 +65,7 @@
 			  </div>
 			  <!-- /.box-header -->
 			  <div class="box-body">
-				  <table id="rbtsubmit" class="table table-responsive table-bordered table-striped">
+				  <table id="rbtsubmit" class="table table-bordered table-striped">
 					  <thead>
 					  <tr>
 						  <td >OPERATOR</td>
