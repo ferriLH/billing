@@ -23,255 +23,98 @@
               <button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button>
             </div>
             <!-- /.box-header -->
+			  <?php foreach ($this->M_Summary->get_operator() as $ops){?>
+				  <?php foreach ($this->M_Summary->get_summary($ops->id,$month) as $sum){?>
+					  <?php $tempSumOp = number_format($sum->sum);
+					  $totalpartner = 0 ;
+					  $totalpencipta = 0;
+
+					  ?>
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th colspan="3">TELKOMSEL</th>
+                  <th>Rp.<?php echo $ops->operator?></th>
+                  <th></th>
+                  <th></th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
                   <td></td>
-                  <td>25.000000</td>
+                  <td>Rp.<?php echo $tempSumOp?></td>
                 </tr>
                 <tr>
                   <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td> 
-                  <td>331313</td>
-                  <td>13131</td>
+					<?php $grandpartner = 0; ?>
+					<?php foreach ($this->M_Summary->get_sh_partner($ops->id,$month) as $shpart){?>
+                  <?php $totalpartner = $totalpartner + $shpart->share ;
+                  $tmptotalpartner = number_format($totalpartner);
+						$grandpartner= $grandpartner + $totalpartner;
+						?>
+					<?php }?>
+                  		<td>Rp.<?php echo $tmptotalpartner; ?></td>
+                  <td></td>
+
                 </tr>
                 <tr>
                   <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
+					<?php $grandoperator = 0; ?>
+					  <?php foreach ($this->M_Summary->get_sh_pencipta($ops->id,$month) as $shpencipta){?>
+						  <?php $totalpencipta = $totalpencipta + $shpencipta->share; $tmptotalpencipta = number_format($totalpencipta);
+						  $grandoperator=$grandoperator+$totalpencipta;?>
+					  <?php }?>
+                  <td>Rp.<?php echo $tmptotalpencipta?></td>
+                  <td></td>
+
                 </tr>
                 <tr>
                   <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><b>Total</b>  </td>
-                  <td></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box-body">
-               <table class="table table-bordered">
-                <tr>
-                  <th colspan="3">INDOSAT</th>
-                </tr>
-                <tr>
-                  <td>Total Revenue From Operator</td>
-                  <td></td>
-                  <td>25.000000</td>
-                </tr>
-                <tr>
-                  <td><a href="</a><?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
-                  <td>331313</td>
-                  <td>13131</td>
-                </tr>
-                <tr>
-                  <td><?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
-                </tr>
-                <tr>
-                  <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><b>Total</b>  </td>
-                  <td></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box-body">
-               <table class="table table-bordered">
-                <tr>
-                  <th colspan="3">XL</th>
-                </tr>
-                <tr>
-                  <td>Total Revenue From Operator</td>
-                  <td></td>
-                  <td>25.000000</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
-                  <td>331313</td>
-                  <td>13131</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
-                </tr>
-                <tr>
-                  <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><b>Total</b>  </td>
-                  <td></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box-body">
-               <table class="table table-bordered">
-                <tr>
-                  <th colspan="3">FLEXI</th>
-                </tr>
-                <tr>
-                  <td>Total Revenue From Operator</td>
-                  <td></td>
-                  <td>25.000000</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
-                  <td>331313</td>
-                  <td>13131</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
-                </tr>
-                <tr>
-                  <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
+					<?php $tmprevaop = number_format($sum->sum - $shpencipta->share - $shpart->share);?>
+                  <td>Rp.<?php echo $tmprevaop?></td>
                   <td></td>
                 </tr>
                 <tr>
                   <td><b>Total</b>  </td>
-                  <td colspan="2"></td>
+                  <td>Rp. <?php echo $tempSumOp?></td>
+                  <td>Rp. <?php echo $tempSumOp?></td>
                 </tr>
               </table>
             </div>
+			<?php }}?>
+
+
+
+
+
             <div class="box-body">
               <table class="table table-bordered">
+				  <?php $tmpgrandoperator = number_format($grandoperator);
+				  		$tmpgrandpartner = number_format($grandpartner);
+				  ?>
                 <tr>
-                  <th colspan="3">MOBILE8</th>
+                  <th>TOTAL</th>
+                  <th></th>
+                  <th></th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
                   <td></td>
-                  <td>25.000000</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
-                  <td>331313</td>
-                  <td>13131</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
-                </tr>
-                <tr>
-                  <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>Total</b>  </td>
-                  <td colspan="2"></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th colspan="3">ESIA</th>
-                </tr>
-                <tr>
-                  <td>Total Revenue From Operator</td>
-                  <td></td>
-                  <td>25.000000</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
-                  <td>331313</td>
-                  <td>13131</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
-                </tr>
-                <tr>
-                  <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>Total</b>  </td>
-                  <td colspan="2"></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th colspan="3">THREE</th>
-                </tr>
-                <tr>
-                  <td>Total Revenue From Operator</td>
-                  <td></td>
-                  <td>25.000000</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
-                  <td>331313</td>
-                  <td>13131</td>
-                </tr>
-                <tr>
-                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
-                  <td>Cron job running</td>
-                  <td>  </td>
-                  
-                </tr>
-                <tr>
-                  <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><b>Total</b>  </td>
-                  <td></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th colspan="3">TOTAL</th>
-                </tr>
-                <tr>
-                  <td>Total Revenue From Operator</td>
-                  <td></td>
-                  <td>25.000000</td>
+                  <td>Rp. <?php echo $tmpgrandoperator?></td>
                 </tr>
                 <tr>
                   <td>Total Revenue From Partner</td>
                   <td>331313</td>
-                  <td>13131</td>
+                  <td>Rp.<?php echo $tmpgrandpartner?></td>
                 </tr>
                 <tr>
                   <td>Total Revenue From Pencipta</td>
-                  <td>Cron job running</td>
+                  <td>ACAN AJG</td>
                   <td>  </td>
                   
                 </tr>
                 <tr>
                   <td>Total Revenue From AlphaOmega</td>
-                  <td></td>
-                  <td></td>
+                  <td>DUAR</td>
+                  <td>MEMEK</td>
                 </tr>
               </table>
             </div>
