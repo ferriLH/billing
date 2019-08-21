@@ -64,6 +64,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>TOTAL SHARE</th>
+                  <th>0</th>
+                </tr>
+                <tr>
+                  <th>-4,5%</th>
+                  <th>0</th>
+                </tr>
+              </table>
+            </div>
 			</div>
             <!-- /.box-body -->
 
@@ -117,6 +129,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>TOTAL SHARE</th>
+                  <th>0</th>
+                </tr>
+                <tr>
+                  <th>-4,5%</th>
+                  <th>0</th>
+                </tr>
+              </table>
+            </div>
 			</div>
             <!-- /.box-body -->
 
@@ -170,6 +194,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>TOTAL SHARE</th>
+                  <th>0</th>
+                </tr>
+                <tr>
+                  <th>-4,5%</th>
+                  <th>0</th>
+                </tr>
+              </table>
+            </div>
 			</div>
             <!-- /.box-body -->
 
@@ -223,6 +259,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>TOTAL SHARE</th>
+                  <th>0</th>
+                </tr>
+                <tr>
+                  <th>-4,5%</th>
+                  <th>0</th>
+                </tr>
+              </table>
+            </div>
 			</div>
             <!-- /.box-body -->
 
@@ -276,6 +324,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>TOTAL SHARE</th>
+                  <th>0</th>
+                </tr>
+                <tr>
+                  <th>-4,5%</th>
+                  <th>0</th>
+                </tr>
+              </table>
+            </div>
 			</div>
             <!-- /.box-body -->
 
@@ -329,6 +389,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>TOTAL SHARE</th>
+                  <th>0</th>
+                </tr>
+                <tr>
+                  <th>-4,5%</th>
+                  <th>0</th>
+                </tr>
+              </table>
+            </div>
 			</div>
             <!-- /.box-body -->
 

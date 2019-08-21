@@ -17,7 +17,7 @@
 
    <section class="content">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
              <center> <h3 class="box-title"><b>SHARE PARTNER</b></h3> <br></center>

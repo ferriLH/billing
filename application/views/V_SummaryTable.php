@@ -17,10 +17,10 @@
 
    <section class="content">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">SUMMARY</h3>
+              <button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -301,10 +301,10 @@
             </div>
           </div>
         </div>
-      </div>
+      
     </section>
     <!-- /.content -->
-  </div>
+    </div>
 <?php
   $this->load->view('parts/V_Footer');
 ?>
