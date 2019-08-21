@@ -5,13 +5,15 @@ class C_Sharepartner extends CI_Controller
     function __construct()
     {
         parent::__construct();
-    }
+		$this->load->model('M_Sharepartner');
+	}
     public function index()
     {
-		$data = array(
-			"title" => "Share Partner",
-		);
 		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
+			$data = array(
+				"title" => "Share Partner",
+				"getPartner" => $this->M_Sharepartner->getPartner(),
+			);
 			$this->load->view('V_SharePartner',$data);
 		}else{
 			redirect('admin');
@@ -20,10 +22,10 @@ class C_Sharepartner extends CI_Controller
     }
     public function tableshare()
     {
-		$data = array(
-			"title" => "SHARE PARTNER",
-		);
 		if($this->session->userdata('isLogin') == 'admin'||$this->session->userdata('isLogin') == 'partner'){
+			$data = array(
+				"title" => "SHARE PARTNER",
+			);
 			$this->load->view('V_TableSharePartner',$data);
 		}else{
 			redirect('admin');

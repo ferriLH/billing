@@ -10,6 +10,8 @@ class C_Summary extends CI_Controller
     {
 		$data = array(
 			"title" => "Summary",
+			"bulan" => date('n'),
+			"tahun" => date('Y'),
 		);
 		if($this->session->userdata('isLogin') == 'admin'){
 			$this->load->view('V_Summary',$data);
@@ -19,6 +21,8 @@ class C_Summary extends CI_Controller
     }
     public function table()
     {
+		$bulan= $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
 		$data = array(
 			"title" => "Summary",
 		);

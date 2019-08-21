@@ -8,20 +8,20 @@
 	  <!-- Content Header (Page header) -->
 	  <section class="content-header">
 		  <h1>
-			  TRAFFIC
+			  <?php echo $title; ?>
 			  <small>Optional description</small>
 		  </h1>
 		  <ol class="breadcrumb">
-			  <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-			  <li class="active">Here</li>
+			  <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
+			  <li class="active"><?php echo $title?></li>
 		  </ol>
 	  </section>
     <!-- Main content -->
-	  <section class="content container-fluid">
+	  <section class="content container-fluid text-center">
 		  <form action="<?php echo base_url('traffic/commit')?>" method="get">
 			  <div class="box-body">
-				  <div class="row" style="padding-left: 400px">
-					  <div class="col-md-6">
+				  <div class="row">
+					  <div class="col-md-4 col-md-offset-4">
 						  <div class="form-group">
 							  <label>Operator</label>
 							  <select class="form-control select2" style="width: 100%;" name="op" id="op">

@@ -22,8 +22,8 @@ class C_Rbtsubmit extends CI_Controller
 				"title" 	=> "RBT Submit",
 				"operator" => $this->M_Rbtsubmit->get_operator(),
 				"month" => $month,
-				"bulan" => '1',
-				"tahun" => '1',
+				"bulan" => date('n'),
+				"tahun" => date('Y'),
 			);
 
 

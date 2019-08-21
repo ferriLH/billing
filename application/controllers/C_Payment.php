@@ -8,10 +8,13 @@ class C_Payment extends CI_Controller
     }
     public function index()
     {
-		$data = array(
-			"title" => "Payment",
-		);
 		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->model('M_Sharepencipta');
+			$data = array(
+				"title" => "Payment",
+				"getPencipta" => $this->M_Sharepencipta->getPencipta(),
+
+			);
 			$this->load->view('V_Payment',$data);
 		}else{
 			redirect('admin');
@@ -19,10 +22,10 @@ class C_Payment extends CI_Controller
     }
     public function table()
     {
-		$data = array(
-			"title" => " Table Payment",
-		);
 		if($this->session->userdata('isLogin') == 'admin'){
+			$data = array(
+				"title" => " Table Payment",
+			);
 			$this->load->view('V_PaymentTable',$data);
 		}else{
 			redirect('admin');

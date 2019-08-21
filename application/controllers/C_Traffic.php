@@ -21,7 +21,7 @@ class C_Traffic extends CI_Controller
 				$month = $tahun . $bulan;
 			}
 			$data = array(
-				"title" 	=> "RBT Submit",
+				"title" 	=> "Traffic",
 				"operator" => $this->M_Traffic->get_operator(),
 				"month" => $month,
 				"lagu" => $this->M_Traffic->get_judul($op)
@@ -46,7 +46,7 @@ class C_Traffic extends CI_Controller
 					$month = $tahun . $bulan;
 				}
 				$data = array(
-					"title" 	=> "RBT Submit",
+					"title" 	=> "Traffic",
 					"operator" => $this->M_Traffic->get_operator(),
 					"month" => $month,
 					"lagu" => $this->M_Traffic->get_judul($op)
