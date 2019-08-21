@@ -32,42 +32,30 @@
 							  </select>
 							  <label>Month</label>
 							  <select class="form-control select2" style="width: 100%;" name="bulan" id="bulan">
-								  <option selected="selected" value='1'>Januari</option>
-								  <option value='2'>Febuari</option>
-								  <option value='3'>Maret</option>
-								  <option value='4'>April</option>
-								  <option value='5'>Mei</option>
-								  <option value='6'>Juni</option>
-								  <option value='7'>Juli</option>
-								  <option value='8'>Agustus</option>
-								  <option value='9'>September</option>
-								  <option value='10'>Oktober</option>
-								  <option value='11'>November</option>
-								  <option value='12'>Desember</option>
+								  <option value='1' <?php if ($bulan==1) {echo "selected";}?>>Januari</option>
+								  <option value='2' <?php if ($bulan==2) {echo "selected";}?>>Febuari</option>
+								  <option value='3' <?php if ($bulan==3) {echo "selected";}?>>Maret</option>
+								  <option value='4' <?php if ($bulan==4) {echo "selected";}?>>April</option>
+								  <option value='5' <?php if ($bulan==5) {echo "selected";}?>>Mei</option>
+								  <option value='6' <?php if ($bulan==6) {echo "selected";}?>>Juni</option>
+								  <option value='7' <?php if ($bulan==7) {echo "selected";}?>>Juli</option>
+								  <option value='8' <?php if ($bulan==8) {echo "selected";}?>>Agustus</option>
+								  <option value='9' <?php if ($bulan==9) {echo "selected";}?>>September</option>
+								  <option value='10' <?php if ($bulan==10) {echo "selected";}?>>Oktober</option>
+								  <option value='11' <?php if ($bulan==11) {echo "selected";}?>>November</option>
+								  <option value='12' <?php if ($bulan==12) {echo "selected";}?>>Desember</option>
 							  </select>
 							  <label>Years</label>
 							  <select class="form-control select2" style="width: 100%;" name="tahun" id="tahun">
-								  <option selected="selected">2000</option>
-								  <option>2001</option>
-								  <option>2002</option>
-								  <option>2003</option>
-								  <option>2004</option>
-								  <option>2005</option>
-								  <option>2006</option>
-								  <option>2007</option>
-								  <option>2008</option>
-								  <option>2009</option>
-								  <option>2010</option>
-								  <option>2011</option>
-								  <option>2012</option>
-								  <option>2013</option>
-								  <option>2014</option>
-								  <option>2015</option>
-								  <option>2016</option>
-								  <option>2017</option>
-								  <option>2018</option>
-								  <option>2019</option>
-								  <option>2020</option>
+								  <option <?php if ($tahun==1) {echo "selected";}?>>2006</option>
+								  <?php
+								  for ($i=7; $i <= 50; $i++) {
+									  if ($i<10) {
+										  echo "<option ";if ($tahun=="200".$i){echo "selected";} echo ">200".$i."</option>";
+									  }else {
+										  echo "<option ";if ($tahun=="20".$i){echo "selected";} echo ">20".$i."</option>";									  }
+								  }
+								  ?>
 							  </select>
 						  </div>
 						  <button type="submit" class="btn btn-block btn-primary btn-lg">View</button>
@@ -94,29 +82,49 @@
 					  <?php $judul="-"; $artist="-"; $total1=0;$total2=0;$total3=0;?>
 					  <?php $url = $this->uri->segment(2)?>
 					  <?php if ( $url == "commit"){?>
-						  <?php foreach ($lagu->result() as $a ){?>
+						  <?php foreach ($lagu as $a ){?>
 							  <tr>
-								  <?php $pkode = $this->M_Traffic->get_kode($this->input->get('op'),$a->id) ;?>
 								  <td><?php  $judul = $a->judul; echo $judul ?></td>
 								  <td><?php $artist = $a->artis; echo $artist?></td>
-								  <td><?php $total1 =  $this->M_Traffic->get_total1($month,$pkode); echo $total1;?></td>
-								  <td><?php $total2 = $this->M_Traffic->get_total2($month,$pkode); echo $total2;?></td>
-								  <td><?php $total3 = $this->M_Traffic->get_total3($month,$pkode); echo $total3;?></td>
-								  <td>
-									  <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></button> |
-									  <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button>
-								  </td>
-							  </tr>
-						  <?php
-						  }
-					  } else{ ?>
-						  <td></td>
-						  <td></td>
-						  <td></td>
-						  <td></td>
-						  <td></td>
-						  <td></td>
-					  <?php } ?>
+							  <?php foreach ($this->M_Traffic->get_kode($this->input->get('op'),$a->id) as $kode ) { ?>
+								  <?php foreach ($this->M_Traffic->get_total($month, $kode->kode) as $total) {
+									  $n1 = $total->n1;
+									  $n2 = $total->n2;
+									  $n3 = $total->n3;
+									  //if (isset($n1 == 0)) {
+										  echo "<td>$n1</td>
+												<td>$n2</td>
+												<td>$n3</td>
+												";
+									  //} else if (isset($n2 == 0)) {
+										//  echo "<td>$n1</td>
+										//		<td>0</td>
+										//		<td>$n3</td>
+									//			";
+									//  } else if (isset($n3 == 0)) {
+									//	  echo "<td>$n1</td>
+									//			<td>$n2</td>
+									//			<td>0</td>
+									//			";
+									  //} else {
+										//  echo "<td>0</td>
+										//		<td>0</td>
+										//		<td>0</td>
+										//		";
+									  }
+									  ?>
+									  <td>
+										  <button type="button" class="btn btn-danger"><i
+												  class="glyphicon glyphicon-edit"></i></button>
+										  |
+										  <button type="button" class="btn btn-warning"><i
+												  class="glyphicon glyphicon-trash"></i></button>
+									  </td>
+									  </tr>
+									  <?php
+								  }
+							  }
+					  }  ?>
 					  </tbody>
 				  </table>
 			  </div>

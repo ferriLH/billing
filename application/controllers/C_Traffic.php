@@ -24,7 +24,9 @@ class C_Traffic extends CI_Controller
 				"title" 	=> "Traffic",
 				"operator" => $this->M_Traffic->get_operator(),
 				"month" => $month,
-				"lagu" => $this->M_Traffic->get_judul($op)
+				"lagu" => $this->M_Traffic->get_judul($op),
+				"bulan" => '1',
+				"tahun" => '1',
 			);
 
 			$this->load->view('V_Traffic',$data);
@@ -49,7 +51,9 @@ class C_Traffic extends CI_Controller
 					"title" 	=> "Traffic",
 					"operator" => $this->M_Traffic->get_operator(),
 					"month" => $month,
-					"lagu" => $this->M_Traffic->get_judul($op)
+					"lagu" => $this->M_Traffic->get_judul($op),
+					"bulan" => $bulan,
+					"tahun" => $tahun,
 				);
 
 				$this->load->view('V_Traffic',$data);
