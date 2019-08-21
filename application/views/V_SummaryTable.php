@@ -26,9 +26,7 @@
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th>TELKOMSEL</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">TELKOMSEL</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -36,12 +34,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td> 
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -52,8 +50,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td><b>Total</b>  </td>
-                  <td></td>
+                  <td colspan="2"><b>Total</b>  </td>
                   <td></td>
                 </tr>
               </table>
@@ -61,9 +58,7 @@
             <div class="box-body">
                <table class="table table-bordered">
                 <tr>
-                  <th>INDOSAT</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">INDOSAT</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -71,12 +66,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="</a><?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -87,8 +82,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td><b>Total</b>  </td>
-                  <td></td>
+                  <td colspan="2"><b>Total</b>  </td>
                   <td></td>
                 </tr>
               </table>
@@ -96,9 +90,7 @@
             <div class="box-body">
                <table class="table table-bordered">
                 <tr>
-                  <th>XL</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">XL</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -106,12 +98,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -122,8 +114,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td><b>Total</b>  </td>
-                  <td></td>
+                  <td colspan="2"><b>Total</b>  </td>
                   <td></td>
                 </tr>
               </table>
@@ -131,9 +122,7 @@
             <div class="box-body">
                <table class="table table-bordered">
                 <tr>
-                  <th>FLEXI</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">FLEXI</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -141,12 +130,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -158,17 +147,14 @@
                 </tr>
                 <tr>
                   <td><b>Total</b>  </td>
-                  <td></td>
-                  <td></td>
+                  <td colspan="2"></td>
                 </tr>
               </table>
             </div>
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th>MOBILE8</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">MOBILE8</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -176,12 +162,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -193,17 +179,14 @@
                 </tr>
                 <tr>
                   <td><b>Total</b>  </td>
-                  <td></td>
-                  <td></td>
+                  <td colspan="2"></td>
                 </tr>
               </table>
             </div>
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th>ESIA</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">ESIA</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -211,12 +194,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -228,17 +211,14 @@
                 </tr>
                 <tr>
                   <td><b>Total</b>  </td>
-                  <td></td>
-                  <td></td>
+                  <td colspan="2"></td>
                 </tr>
               </table>
             </div>
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th>THREE</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">THREE</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>
@@ -246,12 +226,12 @@
                   <td>25.000000</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePartner')?>">Total Revenue From Partner</a></td>
                   <td>331313</td>
                   <td>13131</td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
+                  <td><a href="<?php echo base_url('summary/RevenuePencipta')?>">Total Revenue From Pencipta</a></td>
                   <td>Cron job running</td>
                   <td>  </td>
                   
@@ -262,8 +242,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td><b>Total</b>  </td>
-                  <td></td>
+                  <td colspan="2"><b>Total</b>  </td>
                   <td></td>
                 </tr>
               </table>
@@ -271,9 +250,7 @@
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th>TOTAL</th>
-                  <th></th>
-                  <th></th>
+                  <th colspan="3">TOTAL</th>
                 </tr>
                 <tr>
                   <td>Total Revenue From Operator</td>

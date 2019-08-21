@@ -63,8 +63,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td><b>GRAND</b>  </td>
-                  <td></td>
+                  <td colspan="2"><b>GRAND</b>  </td>
                   <td></td>
                 </tr>
               </table>
@@ -72,7 +71,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
     <!-- /.content -->
   </div>

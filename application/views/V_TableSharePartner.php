@@ -465,7 +465,7 @@
         </div>
       </div>
     </section>
-  </div>
+
   <!-- /.content-wrapper -->
 <?php
 $this->load->view('parts/V_Footer');

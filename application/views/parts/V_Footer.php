@@ -123,7 +123,7 @@
           'autoWidth'   : true,
           'scrollX'     : true
       });
-      $('#pencipta').DataTable({
+      $('#pencipta4').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
@@ -159,6 +159,7 @@
           'autoWidth'   : true,
           'scrollX'     : true
       });
+      $('#revenue').DataTable();
   });
 
    $('#datepicker').datepicker({

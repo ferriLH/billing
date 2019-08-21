@@ -32,4 +32,26 @@ class C_Summary extends CI_Controller
 			redirect('admin');
 		}
     }
+    public function RevenuePartner()
+    {
+		$data = array(
+			"title" => "Revenue Partner From Partner",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('TabelSummary/V_RevenuePartner',$data);
+		}else{
+			redirect('admin');
+		}
+    }
+    public function RevenuePencipta()
+    {
+		$data = array(
+			"title" => "Revenue Partner From Pencipta",
+		);
+		if($this->session->userdata('isLogin') == 'admin'){
+			$this->load->view('TabelSummary/V_RevenuePencipta',$data);
+		}else{
+			redirect('admin');
+		}
+    }
 }
