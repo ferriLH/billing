@@ -26,11 +26,11 @@
 							  <label>Month</label>
 							  <select class="form-control select2" style="width: 100%;" name="bulan" id="bulan">
 								  <?php
-								  $month=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-								  $jml_bln=count($month);
+								  $sasih=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+								  $jml_bln=count($sasih);
 								  for($b=1; $b<$jml_bln; $b++){
 								  	?>
-									  <option value="<?php echo $b?>" <?php if ($bulan==$b) {echo "selected";}?>><?php echo $month[$b];?></option>
+									  <option value="<?php echo $b?>" <?php if ($bulan==$b) {echo "selected";}?>><?php echo $sasih[$b];?></option>
 									  <?php
 								  }
 								  ?>

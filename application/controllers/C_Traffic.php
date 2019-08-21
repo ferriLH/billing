@@ -25,8 +25,8 @@ class C_Traffic extends CI_Controller
 				"operator" => $this->M_Traffic->get_operator(),
 				"month" => $month,
 				"lagu" => $this->M_Traffic->get_judul($op),
-				"bulan" => '1',
-				"tahun" => '1',
+				"bulan" => date('n'),
+				"tahun" => date('Y'),
 			);
 
 			$this->load->view('V_Traffic',$data);

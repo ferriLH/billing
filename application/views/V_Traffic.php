@@ -32,28 +32,24 @@
 							  </select>
 							  <label>Month</label>
 							  <select class="form-control select2" style="width: 100%;" name="bulan" id="bulan">
-								  <option value='1' <?php if ($bulan==1) {echo "selected";}?>>Januari</option>
-								  <option value='2' <?php if ($bulan==2) {echo "selected";}?>>Febuari</option>
-								  <option value='3' <?php if ($bulan==3) {echo "selected";}?>>Maret</option>
-								  <option value='4' <?php if ($bulan==4) {echo "selected";}?>>April</option>
-								  <option value='5' <?php if ($bulan==5) {echo "selected";}?>>Mei</option>
-								  <option value='6' <?php if ($bulan==6) {echo "selected";}?>>Juni</option>
-								  <option value='7' <?php if ($bulan==7) {echo "selected";}?>>Juli</option>
-								  <option value='8' <?php if ($bulan==8) {echo "selected";}?>>Agustus</option>
-								  <option value='9' <?php if ($bulan==9) {echo "selected";}?>>September</option>
-								  <option value='10' <?php if ($bulan==10) {echo "selected";}?>>Oktober</option>
-								  <option value='11' <?php if ($bulan==11) {echo "selected";}?>>November</option>
-								  <option value='12' <?php if ($bulan==12) {echo "selected";}?>>Desember</option>
+								  <?php
+								  $sasih=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+								  $jml_bln=count($sasih);
+								  for($b=1; $b<$jml_bln; $b++){
+									  ?>
+									  <option value="<?php echo $b?>" <?php if ($bulan==$b) {echo "selected";}?>><?php echo $sasih[$b];?></option>
+									  <?php
+								  }
+								  ?>
 							  </select>
 							  <label>Years</label>
 							  <select class="form-control select2" style="width: 100%;" name="tahun" id="tahun">
-								  <option <?php if ($tahun==1) {echo "selected";}?>>2006</option>
 								  <?php
-								  for ($i=7; $i <= 50; $i++) {
-									  if ($i<10) {
-										  echo "<option ";if ($tahun=="200".$i){echo "selected";} echo ">200".$i."</option>";
-									  }else {
-										  echo "<option ";if ($tahun=="20".$i){echo "selected";} echo ">20".$i."</option>";									  }
+								  $thn_skr = date('Y');
+								  for ($x = $thn_skr; $x >= 2006; $x--) {
+									  ?>
+									  <option <?php if ($tahun==$x){echo "selected";}?> value="<?php echo $x ?>"><?php echo $x ?></option>
+									  <?php
 								  }
 								  ?>
 							  </select>
@@ -75,7 +71,7 @@
 						  <td >Download</td>
 						  <td >Renew</td>
 						  <td >Campaign</td>
-						  <td>Action</td>
+<!--						  <td>Action</td>-->
 					  </tr>
 					  </thead>
 					  <tbody>
@@ -113,13 +109,13 @@
 										//		";
 									  }
 									  ?>
-									  <td>
-										  <button type="button" class="btn btn-danger"><i
-												  class="glyphicon glyphicon-edit"></i></button>
-										  |
-										  <button type="button" class="btn btn-warning"><i
-												  class="glyphicon glyphicon-trash"></i></button>
-									  </td>
+<!--									  <td>-->
+<!--										  <button type="button" class="btn btn-danger"><i-->
+<!--												  class="glyphicon glyphicon-edit"></i></button>-->
+<!--										  |-->
+<!--										  <button type="button" class="btn btn-warning"><i-->
+<!--												  class="glyphicon glyphicon-trash"></i></button>-->
+<!--									  </td>-->
 									  </tr>
 									  <?php
 								  }
