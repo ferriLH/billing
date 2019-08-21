@@ -1,4 +1,3 @@
-
   <?php
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');

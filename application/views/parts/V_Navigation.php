@@ -167,7 +167,7 @@ $login 	= $this->session->userdata('isLogin');
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?php echo base_url('profile')?>" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?php if ($login=='admin'){echo base_url('logoutAdmin');}else{echo base_url('logoutPartner');}?>" class="btn btn-default btn-flat">Sign out</a>
