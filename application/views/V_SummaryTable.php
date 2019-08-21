@@ -28,7 +28,7 @@
 					  <?php $tempSumOp = number_format($sum->sum);
 					  $totalpartner = 0 ;
 					  $totalpencipta = 0;
-
+					  $shpencipta = 0;
 					  ?>
             <div class="box-body">
               <table class="table table-bordered">
@@ -45,6 +45,7 @@
                 <tr>
                   <td>Total Revenue From Partner</td>
 					<?php $grandpartner = 0; ?>
+					<?php $tmptotalpartner = 0; ?>
 					<?php foreach ($this->M_Summary->get_sh_partner($ops->id,$month) as $shpart){?>
                   <?php $totalpartner = $totalpartner + $shpart->share ;
                   $tmptotalpartner = number_format($totalpartner);
@@ -58,6 +59,7 @@
                 <tr>
                   <td>Total Revenue From Pencipta</td>
 					<?php $grandoperator = 0; ?>
+					<?php $shpencipta = 0; ?>
 					  <?php foreach ($this->M_Summary->get_sh_pencipta($ops->id,$month) as $shpencipta){?>
 						  <?php $totalpencipta = $totalpencipta + $shpencipta->share; $tmptotalpencipta = number_format($totalpencipta);
 						  $grandoperator= $grandoperator +$totalpencipta;?>
@@ -68,7 +70,7 @@
                 </tr>
                 <tr>
                   <td>Total Revenue From AlphaOmega</td>
-					<?php $tmprevaop = number_format($sum->sum - $shpencipta->share - $shpart->share);?>
+					<?php $tmprevaop = number_format(($sum->sum) - ($totalpencipta) - ($totalpartner));?>
                   <td>Rp.<?php echo $tmprevaop?></td>
                   <td></td>
                 </tr>
