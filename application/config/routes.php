@@ -59,7 +59,7 @@ $route['login/auth']    		= 'C_Login/auth';
 $route['inadmin']    			= 'C_Inadmin';
 $route['inadmin/auth']    		= 'C_Inadmin/auth';
 $route['admin']    				= 'C_Admin';
-$route['profile']    			= 'C_Profile';
+$route['profile/(:any)'] 		= 'C_Profile';
 $route['logoutPartner']         = 'C_Home/signoutPartner';
 $route['logoutAdmin']         	= 'C_Home/signoutAdmin';
 

@@ -25,6 +25,7 @@ $name 	= $this->session->userdata('nama');
 $email 	= $this->session->userdata('email');
 $role 	= $this->session->userdata('role');
 $login 	= $this->session->userdata('isLogin');
+$id 	= $this->session->userdata('id_user');
 ?>
 <div class="wrapper">
 
@@ -167,7 +168,7 @@ $login 	= $this->session->userdata('isLogin');
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?php echo base_url('profile')?>" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?php echo base_url('profile/'.$id)?>" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?php if ($login=='admin'){echo base_url('logoutAdmin');}else{echo base_url('logoutPartner');}?>" class="btn btn-default btn-flat">Sign out</a>
