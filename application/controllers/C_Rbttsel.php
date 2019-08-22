@@ -22,8 +22,8 @@ class C_Rbttsel extends CI_Controller
 				"title" 	=> "RBT Tsel",
 				"operator" => $this->M_Rbttsel->get_operator(),
 				"month" => $month,
-				"bulan" => '1',
-				"tahun" => '1',
+				"bulan" => date('n'),
+				"tahun" => date('Y'),
 			);
 			$this->load->view('V_Rbttsel',$data);
 		}else{

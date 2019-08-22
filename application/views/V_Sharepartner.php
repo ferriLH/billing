@@ -2,6 +2,8 @@
   <?php
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');
+  $idPart = $this->session->userdata('idPartner');
+  $idPenc = $this->session->userdata('idPencipta');
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -15,25 +17,40 @@
 			  <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
 			  <li class="active"><?php echo $title?></li>
 		  </ol>
+		  <?php if($this->session->flashdata('failed')){ ?>
+			  <div class="alert alert-danger">
+				  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  <strong>Information</strong><br>
+				  <?php echo $this->session->flashdata('failed'); ?>
+			  </div>
+		  <?php }?>
 	  </section>
     <!-- Main content -->
 	  <section class="content container-fluid text-center" >
-		  <form action="" method="post">
+		  <form action="<?php echo base_url('sharepartner/tableshare')?>" method="post">
 			  <div class="box-body" >
 				  <div class="row">
 					  <div class="col-md-4 col-md-offset-4">
 						  <div class="form-group">
-							  <label>Partner </label>
-							  <select class="form-control select2" style="width: 100%;" name="partner">
-								  <option value="0">- choose -</option>
-								  <?php
-								   foreach ($getPartner as $p) {
-								   	?>
-									   <option value="<?php echo $p->id?>"><?php echo $p->namaPartner?></option>
-									   <?php
-								   }
-								  ?>
-							  </select>
+							  <?php if (isset($idPart)) {
+							  	?>
+								  <input name="partner" type="hidden" value="<?php echo $idPart?>">
+							  <?php
+							  }else{
+							  	?>
+								  <select class="form-control select2" style="width: 100%;" name="partner">
+									  <option value="0">- choose -</option>
+									  <?php
+									  foreach ($getPartner as $p) {
+										  ?>
+										  <option value="<?php echo $p->id?>"><?php echo $p->namaPartner?></option>
+										  <?php
+									  }
+									  ?>
+								  </select>
+							  <?php
+							  }
+							  	?>
 							  <label>From Month </label>
 							  <select class="form-control select2" style="width: 100%;" name="bulanAwal" id="bulanAwal">
 								  <?php
@@ -70,9 +87,7 @@
 								  ?>
 							  </select>
 						  </div>
-						  <a href="<?php echo base_url('sharepartner/tableshare')?>">
-							  <button type="button" class="btn btn-block btn-primary btn-lg">View</button>
-						  </a>
+						  <button type="submit" class="btn btn-block btn-primary btn-lg">View</button>
 					  </div>
 				  </div>
 			  </div>

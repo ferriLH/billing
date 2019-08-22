@@ -53,8 +53,12 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'order'		: [[0,'desc']],
-          'scrollX'     : true
+          //'order'		: [[0,'desc']],
+          'order'		: [],
+          'scrollX'     : true,
+          'deferRender'	: true,
+          'scrollCollapse' : true,
+          'scroller'	: true
 
 
       });
@@ -65,7 +69,11 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
+          'scrollX'     : true,
+          'order'		: [],
+          'deferRender'	: true,
+          'scrollCollapse' : true,
+          'scroller'	: true
 
       });
       $('#traffic').DataTable({
@@ -104,7 +112,8 @@
           'info'        : true,
           'autoWidth'   : true,
       });
-       $('#tsel2').DataTable({
+     
+      $('#tabelSharePartner1').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
@@ -113,41 +122,13 @@
           'autoWidth'   : true,
           'scrollX'     : true
       });
-      $('#tsel3').DataTable({
+      $('#tabelSharePartner2').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
-      });
-      $('#tsel4').DataTable({
-          'paging'      : true,
-          'lengthChange': true,
-          'searching'   : true,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : true,
-          'scrollX'     : true
-      });
-      $('#tsel5').DataTable({
-          'paging'      : true,
-          'lengthChange': true,
-          'searching'   : true,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : true,
-          'scrollX'     : true
-      });
-      $('#tsel6').DataTable({
-          'paging'      : true,
-          'lengthChange': true,
-          'searching'   : true,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : true,
-          'scrollX'     : true
       });
       $('#pencipta4').DataTable({
           'paging'      : true,
