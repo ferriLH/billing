@@ -1,4 +1,6 @@
  <?php
+
+$id_admin = $this->session->userdata('userAdm');
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');
   ?>
@@ -65,7 +67,7 @@
                             </div>
                         <?php } ?>
                         <div class="active tab-pane" id="password">
-                            <form class="form-horizontal" method="post" action="" >
+                            <form class="form-horizontal" method="post" action="<?php echo base_url('C_Profile/updatePassword/');echo $id_admin?>" >
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Old Password</label>
                                     <div class="col-sm-10">
@@ -75,13 +77,13 @@
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">New Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" required="" class="form-control" name="pass" id="txtNewPassword" onchange="" placeholder="New Password">
+                                        <input type="password" required="" class="form-control" name="pass" id="txtNewPassword" onchange="isPasswordMatch()" placeholder="New Password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" required="" class="form-control" name="cpass" id="txtConfirmPassword" onchange="" placeholder="Confirm Password">
+                                        <input type="password" required="" class="form-control" name="cpass" id="txtConfirmPassword" onchange="isPasswordMatch()" placeholder="Confirm Password">
                                     </div>
                                     <div id="divCheckPassword"></div>
                                 </div>
@@ -95,7 +97,7 @@
                         </div>
                         <!-- /.tab-pane -->
                         <div class="tab-pane" id="profile">
-                            <form class="form-horizontal" method="post" action="" >
+                            <form class="form-horizontal" method="post" action="<?php echo base_url('C_Profile/updateProfile/');echo $id_admin?>" >
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Name</label>
 
