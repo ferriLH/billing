@@ -92,11 +92,11 @@ $route['sharepartner/tableshare']   = 'C_Sharepartner/tableshare';
 $route['sharepencipta/sortby']   = 'C_Sharepencipta/sortby';
 $route['sharepencipta/tableshare']   = 'C_Sharepencipta/tableshare';
 
-$route['sharepencipta']         = 'C_Sharepencipta';
-$route['summary']            	= 'C_Summary';
-$route['summary/table']         = 'C_Summary/table';
-$route['summary/RevenuePartner']= 'C_Summary/RevenuePartner';
-$route['summary/RevenuePencipta']= 'C_Summary/RevenuePencipta';
+$route['sharepencipta']        			= 'C_Sharepencipta';
+$route['summary']            			= 'C_Summary';
+$route['summary/table']         		= 'C_Summary/table';
+$route['summary/RevenuePartner/(:any)/(:any)']	= 'C_Summary/RevenuePartner';
+$route['summary/RevenuePencipta']		= 'C_Summary/RevenuePencipta';
 
 
 $route['payment']            	= 'C_Payment';

@@ -17,6 +17,14 @@ class M_Summary extends CI_Model
 
 	}
 
+	function get_spesifik_op($op)
+	{
+		$this->db->select('*');
+		$this->db->from('p_operator');
+		$this->db->where('id',$op);
+		return $this->db->get()->result();
+	}
+
 	function get_summary($op,$month)
 	{
 		$this->db->select('*');
@@ -27,6 +35,21 @@ class M_Summary extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	function get_nama_partner($id)
+	{
+		$this->db->select('*');
+		$this->db->from('p_partner');
+		$this->db->where('id',$id);
+		return $this->db->get()->result();
+	}
+	function get_share($op,$month)
+	{
+		$this->db->select('*');
+		$this->db->from('t_shpartner');
+		$this->db->where('operatorId',$op);
+		$this->db->where('month', $month);
+		return $this->db->get()->result();
+	}
 	function get_sh_partner($op,$month)
 	{
 		$this->db->select('*');

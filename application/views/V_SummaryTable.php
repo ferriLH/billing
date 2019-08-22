@@ -29,21 +29,22 @@
 					  $totalpartner = 0 ;
 					  $totalpencipta = 0;
 					  $shpencipta = 0;
+					  $tmptotalpencipta = 0;
 					  ?>
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
-                  <th>Rp.<?php echo $ops->operator?></th>
+                  <th><?php echo $ops->operator?></th>
                   <th></th>
                   <th></th>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Operator</td>
+					<td>Total Revenue From Operator</td>
                   <td></td>
                   <td>Rp.<?php echo $tempSumOp?></td>
                 </tr>
                 <tr>
-                  <td>Total Revenue From Partner</td>
+					<td><a href="<?php echo base_url('summary/RevenuePartner/'.$ops->id.'/'.$month)?>">Total Revenue From Partner</a></td>
 					<?php $grandpartner = 0; ?>
 					<?php $tmptotalpartner = 0; ?>
 					<?php foreach ($this->M_Summary->get_sh_partner($ops->id,$month) as $shpart){?>

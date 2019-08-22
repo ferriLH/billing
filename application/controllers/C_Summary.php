@@ -41,8 +41,14 @@ class C_Summary extends CI_Controller
     }
     public function RevenuePartner()
     {
+    	$op = $this->uri->segment(3);
+    	$month = $this->uri->segment(4);
+
 		$data = array(
 			"title" => "Revenue Partner From Partner",
+			"op" => $this->M_Summary->get_spesifik_op($op),
+			"month" => $month,
+			//"share" => $this->M_Summary->get_sh_partner($op,$month),
 		);
 		if($this->session->userdata('isLogin') == 'admin'){
 			$this->load->view('TabelSummary/V_RevenuePartner',$data);
