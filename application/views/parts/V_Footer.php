@@ -96,6 +96,14 @@
           'autoWidth'   : true,
           'scrollX'     : true
       });
+      $('#revpen').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+      });
        $('#tsel2').DataTable({
           'paging'      : true,
           'lengthChange': true,

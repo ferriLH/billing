@@ -96,7 +96,7 @@ $route['sharepencipta']        			= 'C_Sharepencipta';
 $route['summary']            			= 'C_Summary';
 $route['summary/table']         		= 'C_Summary/table';
 $route['summary/RevenuePartner/(:any)/(:any)']	= 'C_Summary/RevenuePartner';
-$route['summary/RevenuePencipta']		= 'C_Summary/RevenuePencipta';
+$route['summary/RevenuePencipta/(:any)/(:any)']		= 'C_Summary/RevenuePencipta';
 
 
 $route['payment']            	= 'C_Payment';

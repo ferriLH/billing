@@ -44,7 +44,7 @@ $this->load->view('parts/V_Navigation');
 					<tr>
 						<th>Nama Partner</th>
 						<th>Net</th>
-						<th>Tax</th>
+						<th>Tax(<?php echo $fixtax?>%)</th>
 						<th>Revenue</th>
 					</tr>
 					</thead>

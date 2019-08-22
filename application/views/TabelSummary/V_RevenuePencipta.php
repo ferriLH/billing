@@ -26,38 +26,53 @@
 			</div>
             <!-- /.box-header -->
 			<div class="box-body">
-				<h4><center>JANUARI 2018</center></h4>
-				<h2><center>TELKOMSEL</center></h2>
-				<table id="revenue" class="table table-bordered table-striped">
+				<h4><center><?php echo $month;?></center></h4>
+
+				<?php $th = substr($month,4,1);?>
+				<?php		if ($th >= "9") {
+					$pajak = 0.02;
+				}
+				else {
+					$pajak = 0.045;
+				}
+				$fixtax = $pajak*100;?>
+				<?php foreach ($op as $operator){?>
+					<h2><center><?php echo $operator->operator;?></center></h2>
+				<?php }?>
+				<table id="revpen" class="table table-bordered table-striped">
 					<thead>
 					<tr>
-						<th>No</th>
 						<th>Nama Pencipta</th>
 						<th>Net</th>
-						<th>Tax (4,5%)</th>
+						<th>Tax (<?php echo $fixtax?>%)</th>
 						<th>Revenue</th>
 					</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+					<?php foreach ($this->M_Summary->get_sh_pencipta($operator->id,$month) as $pencipta) {?>
+						<?php $tax = number_format($pencipta->share * $pajak);?>
+						<?php $net = number_format($pencipta->share - ($pencipta->share * $pajak));?>
+						<?php $tmpshare=number_format($pencipta->share);?>
+						<?php foreach ( $this->M_Summary->get_nama_partner($pencipta->penciptaId) as $var){?>
+							<tr>
+							<td><?php echo $var->namaPartner?></td>
+							<td><?php echo $net?></td>
+							<td><?php echo $tax?></td>
+							<td><?php echo $tmpshare?></td>
+							</tr>
+						<?php } }?>
 					</tbody>
 				</table>
-				<div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th>TOTAL</th>
-                  <th>0</th>
-                  <th>0</th>
-                  <th>0</th>
-                </tr>
-              </table>
-            </div>
+<!--				<div class="box-body">-->
+<!--             <table class="table table-bordered">-->
+<!--              <tr>-->
+<!--                  <th>TOTAL</th>-->
+<!--                  <th>0</th>-->
+<!--                  <th>0</th>-->
+<!--                  <th>0</th>-->
+<!--                  <th>0</th>-->
+<!--                </tr>-->
+<!--              </table>-->
+<!--            </div>-->
 			</div>
             <!-- /.box-body -->
 

@@ -30,7 +30,17 @@
 					  $totalpencipta = 0;
 					  $shpencipta = 0;
 					  $tmptotalpencipta = 0;
-					  ?>
+
+
+
+					  $th = substr($month,4,1);?>
+				<?php if ($th >= "9") {
+						  $pajak = 0.02;
+					  }
+					  else {
+						  $pajak = 0.045;
+					  }
+				$fixtax = $pajak*100;?>
             <div class="box-body">
               <table class="table table-bordered">
                 <tr>
@@ -58,12 +68,14 @@
 
                 </tr>
                 <tr>
-                  <td>Total Revenue From Pencipta</td>
-					<?php $grandoperator = 0; ?>
-					<?php $shpencipta = 0; ?>
+					<td><a href="<?php echo base_url('summary/RevenuePencipta/'.$ops->id.'/'.$month)?>">Total Revenue From Pencipta</a></td>
+					<?php $shpencipta = 0; $grandpencipta=0;
+					$grandoperator =0;?>
 					  <?php foreach ($this->M_Summary->get_sh_pencipta($ops->id,$month) as $shpencipta){?>
 						  <?php $totalpencipta = $totalpencipta + $shpencipta->share; $tmptotalpencipta = number_format($totalpencipta);
-						  $grandoperator= $grandoperator +$totalpencipta;?>
+						   $grandoperator = $grandoperator + $totalpencipta;
+						  $grandpencipta=$grandpencipta + $totalpencipta;
+						  ?>
 					  <?php }?>
                   <td>Rp.<?php echo $tmptotalpencipta?></td>
                   <td></td>
@@ -90,10 +102,20 @@
 
             <div class="box-body">
               <table class="table table-bordered">
-				  <?php $grandoperator = 0; ?>
-				  <?php $grandpartner = 0; ?>
-				  <?php $tmpgrandoperator = number_format($grandoperator);
-				  		$tmpgrandpartner = number_format($grandpartner);
+				  <?php if (!isset($grandoperator,$grandpencipta,$grandpartner)){
+				  	$grandpencipta =0;
+				  	$grandpartner = 0;
+				  	$grandoperator = 0;
+					  $tmpgrandoperator = number_format($grandoperator);
+					  $tmpgrandpartner = number_format($grandpartner);
+					  $tmpgrandpencipta = number_format($grandpencipta);
+					  $tmpgrandaop = number_format($grandoperator - $grandpartner - $grandpencipta);
+				  } else {
+					  $tmpgrandoperator = number_format($grandoperator);
+					  $tmpgrandpartner = number_format($grandpartner);
+					  $tmpgrandpencipta = number_format($grandpencipta);
+					  $tmpgrandaop = number_format($grandoperator - $grandpartner - $grandpencipta);
+				  }
 				  ?>
                 <tr>
                   <th>TOTAL</th>
@@ -103,23 +125,23 @@
                 <tr>
                   <td>Total Revenue From Operator</td>
                   <td></td>
-                  <td><?php echo number_format($tmpgrandoperator)?></td>
+                  <td><?php echo $tmpgrandoperator?></td>
                 </tr>
                 <tr>
                   <td>Total Revenue From Partner</td>
-                  <td>331313</td>
-                  <td><?php echo number_format($tmpgrandpartner)?></td>
+                  <td></td>
+                  <td><?php echo $tmpgrandpartner?></td>
                 </tr>
                 <tr>
                   <td>Total Revenue From Pencipta</td>
-                  <td>ACAN AJG</td>
-                  <td>  </td>
+                  <td></td>
+                  <td><?php echo $tmpgrandpencipta ?></td>
                   
                 </tr>
                 <tr>
                   <td>Total Revenue From AlphaOmega</td>
-                  <td>DUAR</td>
-                  <td>MEMEK</td>
+                  <td></td>
+                  <td><?php echo $tmpgrandaop ?></td>
                 </tr>
               </table>
             </div>
