@@ -76,13 +76,17 @@
           'scroller'	: true
 
       });
-      $('#traffic').DataTable({
+      $('#ttraffic').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
+          'order'		: [],
+          'deferRender'	: true,
+          'scrollCollapse' : true,
+          'scroller'	: true
           //'scrollX'     : true
 
       });
@@ -120,7 +124,6 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
       });
       $('#tabelSharePartner2').DataTable({
           'paging'      : true,
@@ -130,41 +133,85 @@
           'info'        : true,
           'autoWidth'   : true,
       });
-      $('#pencipta4').DataTable({
+      $('#tabelSharePartner3').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
       });
-      $('#pencipta1').DataTable({
+      $('#tabelSharePartner4').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
       });
-      $('#pencipta2').DataTable({
+      $('#tabelSharePartner5').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
       });
-      $('#pencipta3').DataTable({
+      $('#tabelSharePartner6').DataTable({
           'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
+      });
+      $('#tabelSharePencipta1').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+      });
+      $('#tabelSharePencipta2').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+      });
+      $('#tabelSharePencipta3').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+      });
+      $('#tabelSharePencipta4').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+      });
+      $('#tabelSharePencipta5').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+      });
+      $('#tabelSharePencipta6').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
       });
       $('#revenue').DataTable();
   });

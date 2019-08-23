@@ -9,7 +9,7 @@
 	  <section class="content-header">
 		  <h1>
 			  <?php echo $title; ?>
-			  <small>Optional description</small>
+			  <small>Optional description <?php echo $this->input->get('op')?></small>
 		  </h1>
 		  <ol class="breadcrumb">
 			  <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -63,7 +63,7 @@
 	  <section class="content container-fluid">
 		  <div class="box box-primary">
 			  <div class="box-body">
-				  <table id="traffic" class="table table-bordered table-striped">
+				  <table id="ttraffic" class="table table-bordered table-striped">
 					  <thead>
 					  <tr>
 						  <td >Judul</td>

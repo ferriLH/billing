@@ -31,9 +31,10 @@
 						<?php echo $this->session->flashdata('sukses'); ?>
 					</div>
 				<?php }?>
-				<a href="<?php echo base_url('rbtcontent/add')?>">
-					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>
-				</a>            </div>
+<!--				<a href="--><?php //echo base_url('rbtcontent/add')?><!--">-->
+<!--					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-plus"></i></button> <br> <br>-->
+<!--				</a>            -->
+			</div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="rbt" class="table table-responsive table-bordered table-striped ">

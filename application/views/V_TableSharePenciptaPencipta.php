@@ -8,7 +8,7 @@ $this->load->view('parts/V_Navigation');
 	<section class="content-header">
 		<h1>
 			<?php echo $title;?>
-			<small> <?php echo $partner[0]['namaPartner'];?></small>
+			<small> <?php echo $pencipta[0]['namaPencipta'];?></small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -34,7 +34,7 @@ $this->load->view('parts/V_Navigation');
 				?>
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>TELKOMSEL</center></h2>
-				<table id="tabelSharePartner1" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta1" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -50,7 +50,7 @@ $this->load->view('parts/V_Navigation');
 					<tbody>
 					<?php $op=1;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
@@ -68,21 +68,17 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>TOTAL SHARE</th>
-							<th>0</th>
-						</tr>
-						<tr>
-							<th>-4,5%</th>
-							<th>0</th>
+							<td colspan="2"><b>TOTAL SHARE BELUM PAJAK</b>  </td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
+
 			</div>
 			<!-- /.box-body -->
 
 		</div>
 	</section>
-	<!-- /.content -->
 	<section class="content container-fluid">
 		<div class="box box-primary">
 			<div class="box-header">
@@ -94,7 +90,7 @@ $this->load->view('parts/V_Navigation');
 			<div class="box-body">
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>INDOSAT</center></h2>
-				<table id="tabelSharePartner2" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta2" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -110,7 +106,7 @@ $this->load->view('parts/V_Navigation');
 					<tbody>
 					<?php $op=2;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
@@ -128,12 +124,8 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>TOTAL SHARE</th>
-							<th>0</th>
-						</tr>
-						<tr>
-							<th>-4,5%</th>
-							<th>0</th>
+							<td colspan="2"><b>TOTAL SHARE BELUM PAJAK</b>  </td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
@@ -142,7 +134,6 @@ $this->load->view('parts/V_Navigation');
 
 		</div>
 	</section>
-
 	<section class="content container-fluid">
 		<div class="box box-primary">
 			<div class="box-header">
@@ -152,9 +143,9 @@ $this->load->view('parts/V_Navigation');
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
+				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>XL</center></h2>
-				<table id="tabelSharePartner3" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta3" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -170,7 +161,7 @@ $this->load->view('parts/V_Navigation');
 					<tbody>
 					<?php $op=3;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
@@ -188,12 +179,8 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>TOTAL SHARE</th>
-							<th>0</th>
-						</tr>
-						<tr>
-							<th>-4,5%</th>
-							<th>0</th>
+							<td colspan="2"><b>TOTAL SHARE BELUM PAJAK</b>  </td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
@@ -202,7 +189,6 @@ $this->load->view('parts/V_Navigation');
 
 		</div>
 	</section>
-
 	<section class="content container-fluid">
 		<div class="box box-primary">
 			<div class="box-header">
@@ -212,9 +198,9 @@ $this->load->view('parts/V_Navigation');
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
+				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>FLEXI</center></h2>
-				<table id="tabelSharePartner4" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta4" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -230,7 +216,7 @@ $this->load->view('parts/V_Navigation');
 					<tbody>
 					<?php $op=6;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
@@ -248,12 +234,8 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>TOTAL SHARE</th>
-							<th>0</th>
-						</tr>
-						<tr>
-							<th>-4,5%</th>
-							<th>0</th>
+							<td colspan="2"><b>TOTAL SHARE BELUM PAJAK</b>  </td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
@@ -272,9 +254,9 @@ $this->load->view('parts/V_Navigation');
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
+				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>MOBILE8</center></h2>
-				<table id="tabelSharePartner5" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta5" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -290,7 +272,7 @@ $this->load->view('parts/V_Navigation');
 					<tbody>
 					<?php $op=5;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
@@ -308,12 +290,8 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>TOTAL SHARE</th>
-							<th>0</th>
-						</tr>
-						<tr>
-							<th>-4,5%</th>
-							<th>0</th>
+							<td colspan="2"><b>TOTAL SHARE BELUM PAJAK</b>  </td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
@@ -332,9 +310,9 @@ $this->load->view('parts/V_Navigation');
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
+				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>ESIA</center></h2>
-				<table id="tabelSharePartner6" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta6" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -350,7 +328,7 @@ $this->load->view('parts/V_Navigation');
 					<tbody>
 					<?php $op=4;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
@@ -368,12 +346,8 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>TOTAL SHARE</th>
-							<th>0</th>
-						</tr>
-						<tr>
-							<th>-4,5%</th>
-							<th>0</th>
+							<td colspan="2"><b>TOTAL SHARE BELUM PAJAK</b>  </td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
@@ -382,7 +356,6 @@ $this->load->view('parts/V_Navigation');
 
 		</div>
 	</section>
-
 	<section class="content">
 		<div class="row">
 			<div class="col-md-6">
@@ -431,8 +404,7 @@ $this->load->view('parts/V_Navigation');
 								<td></td>
 							</tr>
 							<tr>
-								<td><b>GRAND</b>  </td>
-								<td></td>
+								<td colspan="2"><b>GRAND</b>  </td>
 								<td></td>
 							</tr>
 						</table>
@@ -442,7 +414,6 @@ $this->load->view('parts/V_Navigation');
 		</div>
 </div>
 </section>
-
 <!-- /.content-wrapper -->
 <?php
 $this->load->view('parts/V_Footer');

@@ -2,6 +2,8 @@
   <?php
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');
+  $idPenc = $this->session->userdata('idPencipta');
+
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -20,22 +22,31 @@
 	  <section class="content container-fluid">
 
 		  <section class="content container-fluid text-center">
-			  <form action="" method="post">
+			  <form action="<?php echo base_url('sharepencipta/tableshare')?>" method="post">
 				  <div class="box-body" >
 					  <div class="row">
 						  <div class="col-md-4 col-md-offset-4">
 							  <div class="form-group">
-								  <label>Pencipta </label>
-								  <select class="form-control select2" style="width: 100%;" name="pencipta">
-									  <option value="0">- choose -</option>
-									  <?php
-									  foreach ($getPencipta as $p) {
-										  ?>
-										  <option value="<?php echo $p->id?>"><?php echo $p->namaPencipta?></option>
-										  <?php
-									  }
+								  <?php if (isset($idPenc)) {
 									  ?>
-								  </select>
+									  <input name="pencipta" type="hidden" value="<?php echo $idPenc?>">
+									  <?php
+								  }else{
+									  ?>
+									  <label>Pencipta </label>
+									  <select class="form-control select2" style="width: 100%;" name="pencipta">
+										  <option value="0">- choose -</option>
+										  <?php
+										  foreach ($getPencipta as $p) {
+											  ?>
+											  <option value="<?php echo $p->id?>"><?php echo $p->namaPencipta?></option>
+											  <?php
+										  }
+										  ?>
+									  </select>
+									  <?php
+								  }
+								  ?>
 								  <label>From Month </label>
 								  <select class="form-control select2" style="width: 100%;" name="bulanAwal" id="bulanAwal">
 									  <?php
@@ -72,9 +83,7 @@
 									  ?>
 								  </select>
 							  </div>
-							  <a href="<?php echo base_url('sharepencipta/tableshare')?>">
-								  <button type="button" class="btn btn-block btn-primary btn-lg">View</button>
-							  </a>
+							  <button type="submit" class="btn btn-block btn-primary btn-lg">View</button>
 						  </div>
 					  </div>
 				  </div>

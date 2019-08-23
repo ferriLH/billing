@@ -3,7 +3,6 @@
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');
   $idPart = $this->session->userdata('idPartner');
-  $idPenc = $this->session->userdata('idPencipta');
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -38,6 +37,7 @@
 							  <?php
 							  }else{
 							  	?>
+								  <label>Pencipta </label>
 								  <select class="form-control select2" style="width: 100%;" name="partner">
 									  <option value="0">- choose -</option>
 									  <?php

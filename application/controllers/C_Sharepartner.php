@@ -1,6 +1,5 @@
 <?php
 class C_Sharepartner extends CI_Controller
-
 {
     function __construct()
     {
@@ -18,7 +17,6 @@ class C_Sharepartner extends CI_Controller
 		}else{
 			redirect('admin');
 		}
-
     }
     public function tableshare()
     {
@@ -40,7 +38,6 @@ class C_Sharepartner extends CI_Controller
 			if ($partner == 0) {
 				$this->session->set_flashdata('failed', 'Choose Partner');
 				redirect('sharepartner');
-
 			}else{
 				$getPartner1 = $this->M_Sharepartner->getPartner1($partner);
 				$part 			= $getPartner1[0]['id'];

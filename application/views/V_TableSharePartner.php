@@ -104,7 +104,7 @@
 			<div class="box-body">
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>INDOSAT</center></h2>
-				<table id="tabelSharePartner1" class="table table-bordered table-striped">
+				<table id="tabelSharePartner2" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -123,7 +123,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=1;$no=1; foreach ($getRBT as $rbt){?>
+					<?php $op=2;$no=1; foreach ($getRBT as $rbt){?>
 						<?php
 						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
 						?>
@@ -174,7 +174,7 @@
 			<div class="box-body">
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>XL</center></h2>
-				<table id="tabelSharePartner1" class="table table-bordered table-striped">
+				<table id="tabelSharePartner3" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -244,7 +244,7 @@
 			<div class="box-body">
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>FLEXI</center></h2>
-				<table id="tabelSharePartner1" class="table table-bordered table-striped">
+				<table id="tabelSharePartner4" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -314,7 +314,7 @@
 			<div class="box-body">
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>MOBILE8</center></h2>
-				<table id="tabelSharePartner1" class="table table-bordered table-striped">
+				<table id="tabelSharePartner5" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -384,7 +384,7 @@
 			<div class="box-body">
 				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>ESIA</center></h2>
-				<table id="tabelSharePartner1" class="table table-bordered table-striped">
+				<table id="tabelSharePartner6" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>

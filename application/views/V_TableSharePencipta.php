@@ -8,7 +8,7 @@
 	  <section class="content-header">
 		  <h1>
 			  <?php echo $title;?>
-			  <small>Optional description</small>
+			  <small> <?php echo $pencipta[0]['namaPencipta'];?></small>
 		  </h1>
 		  <ol class="breadcrumb">
 			  <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -26,9 +26,15 @@
 			</div>
             <!-- /.box-header -->
 			<div class="box-body">
-				<h4><center>JANUARI 2018</center></h4>
+				<?php
+				$dateObjD   = DateTime::createFromFormat('!m', $dari);
+				$dateObjS   = DateTime::createFromFormat('!m', $sampai);
+				$dariName 	= $dateObjD->format('F');
+				$sampaiName = $dateObjS->format('F');
+				?>
+				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>TELKOMSEL</center></h2>
-				<table id="tsel" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta1" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -47,14 +53,18 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php $op=1;$no=1; foreach ($getRBT as $rbt){?>
+						<?php
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+						?>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><?php echo $no ?></td>
+							<td><?php echo $rbt['judul']?></td>
+							<td><?php echo $rbt['artis']?></td>
+							<td><?php echo $rbt['kdTsel']?></td>
+							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -62,6 +72,7 @@
 							<td></td>
 							<td></td>
 						</tr>
+						<?php $no++;} ?>
 					</tbody>
 				</table>
 				<div class="box-body">
@@ -87,9 +98,9 @@
 			</div>
             <!-- /.box-header -->
 			<div class="box-body">
-				<h4><center>JANUARI 2018</center></h4>
+				<h4><center><?php echo $dariName." until ".$sampaiName." ".$tahun?></center></h4>
 				<h2><center>INDOSAT</center></h2>
-				<table id="tsel2" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta2" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -108,14 +119,18 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php $op=2;$no=1; foreach ($getRBT as $rbt){?>
+						<?php
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+						?>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><?php echo $no ?></td>
+							<td><?php echo $rbt['judul']?></td>
+							<td><?php echo $rbt['artis']?></td>
+							<td><?php echo $rbt['kdIsat']?></td>
+							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -123,6 +138,7 @@
 							<td></td>
 							<td></td>
 						</tr>
+						<?php $no++;} ?>
 					</tbody>
 				</table>
 				<div class="box-body">
@@ -149,7 +165,7 @@
 			<div class="box-body">
 				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>XL</center></h2>
-				<table id="pencipta4" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta3" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -168,14 +184,18 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php $op=3;$no=1; foreach ($getRBT as $rbt){?>
+						<?php
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+						?>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><?php echo $no ?></td>
+							<td><?php echo $rbt['judul']?></td>
+							<td><?php echo $rbt['artis']?></td>
+							<td><?php echo $rbt['kdXL']?></td>
+							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -183,6 +203,7 @@
 							<td></td>
 							<td></td>
 						</tr>
+						<?php $no++;} ?>
 					</tbody>
 				</table>
 				<div class="box-body">
@@ -209,7 +230,7 @@
 			<div class="box-body">
 				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>FLEXI</center></h2>
-				<table id="pencipta1" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta4" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -228,14 +249,18 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php $op=6;$no=1; foreach ($getRBT as $rbt){?>
+						<?php
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+						?>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><?php echo $no ?></td>
+							<td><?php echo $rbt['judul']?></td>
+							<td><?php echo $rbt['artis']?></td>
+							<td><?php echo $rbt['kdFlexi']?></td>
+							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -243,6 +268,7 @@
 							<td></td>
 							<td></td>
 						</tr>
+						<?php $no++;} ?>
 					</tbody>
 				</table>
 				<div class="box-body">
@@ -270,7 +296,7 @@
 			<div class="box-body">
 				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>MOBILE8</center></h2>
-				<table id="pencipta2" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta5" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -289,14 +315,18 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php $op=5;$no=1; foreach ($getRBT as $rbt){?>
+						<?php
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+						?>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><?php echo $no ?></td>
+							<td><?php echo $rbt['judul']?></td>
+							<td><?php echo $rbt['artis']?></td>
+							<td><?php echo $rbt['kdM8']?></td>
+							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -304,6 +334,7 @@
 							<td></td>
 							<td></td>
 						</tr>
+						<?php $no++;} ?>
 					</tbody>
 				</table>
 				<div class="box-body">
@@ -331,7 +362,7 @@
 			<div class="box-body">
 				<h4><center>JANUARI 2018</center></h4>
 				<h2><center>ESIA</center></h2>
-				<table id="pencipta3" class="table table-bordered table-striped">
+				<table id="tabelSharePencipta6" class="table table-bordered table-striped">
 					<thead>
 					<tr>
 						<th>No</th>
@@ -350,14 +381,18 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php $op=4;$no=1; foreach ($getRBT as $rbt){?>
+						<?php
+						$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+						?>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><?php echo $no ?></td>
+							<td><?php echo $rbt['judul']?></td>
+							<td><?php echo $rbt['artis']?></td>
+							<td><?php ?></td>
+							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
+							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -365,6 +400,7 @@
 							<td></td>
 							<td></td>
 						</tr>
+						<?php $no++;} ?>
 					</tbody>
 				</table>
 				<div class="box-body">
