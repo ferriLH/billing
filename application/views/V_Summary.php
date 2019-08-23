@@ -18,7 +18,7 @@
 	  </section>
 	  <!-- Main content -->
 	  <section class="content container-fluid" style="text-align: center">
-		  <form action="<?php echo base_url('summary/table')?>" method="post">
+		  <form action="<?php echo base_url('summary/table')?>" method="get">
 			  <div class="box-body" >
 				  <div class="row">
 					  <div class="col-md-4 col-md-offset-4">

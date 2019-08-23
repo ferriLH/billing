@@ -22,8 +22,8 @@ class C_Summary extends CI_Controller
     }
     public function table()
     {
-		$bulan= $this->input->post('bulan');
-		$tahun = $this->input->post('tahun');
+		$bulan= $this->input->get('bulan');
+		$tahun = $this->input->get('tahun');
 		if ($bulan<10)
 			$month=$tahun."0".$bulan;
 		else
