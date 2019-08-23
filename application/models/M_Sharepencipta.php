@@ -30,15 +30,15 @@ class M_Sharepencipta extends CI_Model
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-//	function get_kode($op,$rbtid)
-//	{
-//		$this->db->select('kode');
-//		$this->db->from('p_kode');
-//		$this->db->where('operatorId',$op);
-//		$this->db->where('rbtId',$rbtid);
-//		$query = $this->db->get();
-//		return $query->result_array();
-//	}
+	function get_kode($op,$rbtid)
+	{
+		$this->db->select('kode');
+		$this->db->from('p_kode');
+		$this->db->where('operatorId',$op);
+		$this->db->where('rbtId',$rbtid);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 	function getTraf($id,$month,$op){
 		$this->db->select("*");
 		$this->db->from('t_traffic_final');

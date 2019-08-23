@@ -42,6 +42,7 @@ class C_Sharepartner extends CI_Controller
 				$getPartner1 = $this->M_Sharepartner->getPartner1($partner);
 				$part 			= $getPartner1[0]['id'];
 				$rev  			= $getPartner1[0]['rev'];
+				$type  			= $getPartner1[0]['type'];
 				$persen			= $rev*100;
 				$getRBT			= $this->M_Sharepartner->getRBT($part);
 				$data = array(
@@ -53,7 +54,10 @@ class C_Sharepartner extends CI_Controller
 					"monthsampai" => $monthsampai,
 					"tahun" => $tahun,
 					"getRBT" => $getRBT,
-
+					"rev"=>$rev,
+					"persen"=>$persen,
+					"part"=>$part,
+					"type"=>$type,
 				);
 				if ($this->session->userdata('role')=='partner') {
 					$this->load->view('V_TableSharePartnerPartner',$data);

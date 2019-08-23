@@ -53,19 +53,133 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=1;$no=1; foreach ($getRBT as $rbt){?>
-						<?php
-						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+					<?php
+					$op=1;
+					$no=1;
+					$totaln1=0;
+					$totaln2=0;
+					$totaln3=0;
+					$totaln4=0;
+					$totaln5=0;
+					$totaln6=0;
+					$totaln7=0;
+					$totalrevenue=0;
+					$totalsh=0;
+					$bayar=0;
+					$share=0;
+					foreach ($getRBT as $rbt){
+						$pkode = $this->M_Sharepartner->get_kode($op,$rbt['id']);
+						if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
+						$traffic = $this->M_Sharepartner->getTraf($kode,$monthdari,$op);
+						if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
+						if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
+						if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
+						if (isset($traffic[0]['n4'])) {$n4=$traffic[0]['n4'];}else{$n4=0;}
+						if (isset($traffic[0]['n5'])) {$n5=$traffic[0]['n5'];}else{$n5=0;}
+						if (isset($traffic[0]['n6'])) {$n6=$traffic[0]['n6'];}else{$n6=0;}
+						if (isset($traffic[0]['n7'])) {$n7=$traffic[0]['n7'];}else{$n7=0;}
+						$getPrice = $this->M_Sharepartner->getPrice($op,$monthdari);
+						if (isset($getPrice[0]['p1'])) {$p1=$getPrice[0]['p1'];}else{$p1=0;}
+						if (isset($getPrice[0]['p2'])) {$p2=$getPrice[0]['p2'];}else{$p2=0;}
+						if (isset($getPrice[0]['p3'])) {$p3=$getPrice[0]['p3'];}else{$p3=0;}
+						if (isset($getPrice[0]['p4'])) {$p4=$getPrice[0]['p4'];}else{$p4=0;}
+						if (isset($getPrice[0]['p5'])) {$p5=$getPrice[0]['p5'];}else{$p5=0;}
+						if (isset($getPrice[0]['p6'])) {$p6=$getPrice[0]['p6'];}else{$p6=0;}
+						if (isset($getPrice[0]['p7'])) {$p7=$getPrice[0]['p7'];}else{$p7=0;}
+						$totalrev=($n1*$p1)+($n2*$p2)+($n3*$p3)+($n4*$p4)+($n5*$p5)+($n6*$p6)+($n7*$p7);
+						if ($op==1&&$part=='68'&&$monthdari=='201012'&&$kode=='2363642')
+						{
+							$rev=0.500;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='68'&&$monthdari=='201101'&&$kode=='2363642')
+						{
+							$rev=0.500;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='68'&&$monthdari=='201102'&&$kode=='2363642')
+						{
+							$rev=0.500;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='118'&&$monthdari=='201012'&&$kode=='2363646')
+						{
+							$rev=0.500;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='118'&&$monthdari=='201101'&&$kode=='2363646')
+						{
+							$rev=0.500;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='118'&&$monthdari=='201102'&&$kode=='2363646')
+						{
+							$rev=0.500;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($type==1)
+						{
+							if (($rev=='0.625'||$rev=='0.7'))
+							{
+								$rev=$rev;
+							}
+							$share=round($totalrev*$rev);
+							$persen=($rev*100).'%';
+						}
+						//rbt mamah dedeh change
+						if ($op==1&&$part=='99'&&$monthdari>='201101'&&$kode=='2363232')
+						{
+							$rev=0;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='99'&&$monthdari>='201101'&&$kode=='2363233')
+						{
+							$rev=0;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}
+						if ($op==1&&$part=='99'&&$monthdari>='201101'&&$kode=='2363234')
+						{
+							$rev=0;
+							$share=round($totalrev.$rev);
+							$persen=($rev*100).'%';
+						}//end of mama dedeh rbt change
+
+						else if ($type==2)
+						{
+//							$getShare = $this->M_Sharepartner->getShare($op,$part);
+//							$share=round(($n1*$resshare[s1])+($n2*$resshare[s2])+($n3*$resshare[s3])+($n4*$resshare[s4])+($n5*$resshare[s5])+($n6*$resshare[s6])+($n7*$resshare[s7]));
+							$share = 0;
+							$persen='-';
+						}
+						$tmpshare=number_format($share);
+						$totaln1=$totaln1+$n1;
+						$totaln2=$totaln2+$n2;
+						$totaln3=$totaln3+$n3;
+						$totaln4=$totaln4+$n4;
+						$totaln5=$totaln5+$n5;
+						$totaln6=$totaln6+$n6;
+						$totaln7=$totaln7+$n7;
+						$totalrevenue=$totalrevenue+$totalrev;
+						$totalsh=$totalsh+$share;
+						$tmptotalrev=number_format($totalrev);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
 							<td><?php echo $rbt['judul']?></td>
 							<td><?php echo $rbt['artis']?></td>
 							<td><?php echo $rbt['kdTsel']?></td>
-							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
-							<td></td>
+							<td><?php echo $n1?></td>
+							<td><?php echo $n2?></td>
+							<td><?php echo $n3?></td>
+							<td><?php echo $n4?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -123,18 +237,35 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=2;$no=1; foreach ($getRBT as $rbt){?>
-						<?php
+					<?php $op=2;$no=1; foreach ($getRBT as $rbt){
+						$pkode = $this->M_Sharepartner->get_kode($op,$rbt['id']);
+						if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
 						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
+						if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
+						if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
+						if (isset($traffic[0]['n4'])) {$n4=$traffic[0]['n4'];}else{$n4=0;}
+						if (isset($traffic[0]['n5'])) {$n5=$traffic[0]['n5'];}else{$n5=0;}
+						if (isset($traffic[0]['n6'])) {$n6=$traffic[0]['n6'];}else{$n6=0;}
+						if (isset($traffic[0]['n7'])) {$n7=$traffic[0]['n7'];}else{$n7=0;}
+						$getPrice = $this->M_Sharepartner->getPrice($op,$monthdari);
+						if (isset($getPrice[0]['p1'])) {$p1=$getPrice[0]['p1'];}else{$p1=0;}
+						if (isset($getPrice[0]['p2'])) {$p2=$getPrice[0]['p2'];}else{$p2=0;}
+						if (isset($getPrice[0]['p3'])) {$p3=$getPrice[0]['p3'];}else{$p3=0;}
+						if (isset($getPrice[0]['p4'])) {$p4=$getPrice[0]['p4'];}else{$p4=0;}
+						if (isset($getPrice[0]['p5'])) {$p5=$getPrice[0]['p5'];}else{$p5=0;}
+						if (isset($getPrice[0]['p6'])) {$p6=$getPrice[0]['p6'];}else{$p6=0;}
+						if (isset($getPrice[0]['p7'])) {$p7=$getPrice[0]['p7'];}else{$p7=0;}
+						//$totalrev=($n1*$p1)+($n2*$p2)+($n3*$p3)+($n4*$p4)+($n5*$p5)+($n6*$p6)+($n7*$p7);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
 							<td><?php echo $rbt['judul']?></td>
 							<td><?php echo $rbt['artis']?></td>
 							<td><?php echo $rbt['kdIsat']?></td>
-							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
+							<td><?php echo $n1?></td>
+							<td><?php echo $n2?></td>
+							<td><?php echo $n3?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -193,18 +324,36 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=3;$no=1; foreach ($getRBT as $rbt){?>
-						<?php
+					<?php $op=3;$no=1; foreach ($getRBT as $rbt){
+						$pkode = $this->M_Sharepartner->get_kode($op,$rbt['id']);
+						if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
 						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
+						if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
+						if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
+						if (isset($traffic[0]['n4'])) {$n4=$traffic[0]['n4'];}else{$n4=0;}
+						if (isset($traffic[0]['n5'])) {$n5=$traffic[0]['n5'];}else{$n5=0;}
+						if (isset($traffic[0]['n6'])) {$n6=$traffic[0]['n6'];}else{$n6=0;}
+						if (isset($traffic[0]['n7'])) {$n7=$traffic[0]['n7'];}else{$n7=0;}
+						$getPrice = $this->M_Sharepartner->getPrice($op,$monthdari);
+						if (isset($getPrice[0]['p1'])) {$p1=$getPrice[0]['p1'];}else{$p1=0;}
+						if (isset($getPrice[0]['p2'])) {$p2=$getPrice[0]['p2'];}else{$p2=0;}
+						if (isset($getPrice[0]['p3'])) {$p3=$getPrice[0]['p3'];}else{$p3=0;}
+						if (isset($getPrice[0]['p4'])) {$p4=$getPrice[0]['p4'];}else{$p4=0;}
+						if (isset($getPrice[0]['p5'])) {$p5=$getPrice[0]['p5'];}else{$p5=0;}
+						if (isset($getPrice[0]['p6'])) {$p6=$getPrice[0]['p6'];}else{$p6=0;}
+						if (isset($getPrice[0]['p7'])) {$p7=$getPrice[0]['p7'];}else{$p7=0;}
+						//$totalrev=($n1*$p1)+($n2*$p2)+($n3*$p3)+($n4*$p4)+($n5*$p5)+($n6*$p6)+($n7*$p7);
+						if ($op==3) $totalrev=($n1*$p1)+$n2+($n3*$p3);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
 							<td><?php echo $rbt['judul']?></td>
 							<td><?php echo $rbt['artis']?></td>
 							<td><?php echo $rbt['kdXL']?></td>
-							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
+							<td><?php echo $n1?></td>
+							<td><?php echo $n2?></td>
+							<td><?php echo $n3?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -263,18 +412,35 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=6;$no=1; foreach ($getRBT as $rbt){?>
-						<?php
+					<?php $op=6;$no=1; foreach ($getRBT as $rbt){
+						$pkode = $this->M_Sharepartner->get_kode($op,$rbt['id']);
+						if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
 						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
+						if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
+						if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
+						if (isset($traffic[0]['n4'])) {$n4=$traffic[0]['n4'];}else{$n4=0;}
+						if (isset($traffic[0]['n5'])) {$n5=$traffic[0]['n5'];}else{$n5=0;}
+						if (isset($traffic[0]['n6'])) {$n6=$traffic[0]['n6'];}else{$n6=0;}
+						if (isset($traffic[0]['n7'])) {$n7=$traffic[0]['n7'];}else{$n7=0;}
+						$getPrice = $this->M_Sharepartner->getPrice($op,$monthdari);
+						if (isset($getPrice[0]['p1'])) {$p1=$getPrice[0]['p1'];}else{$p1=0;}
+						if (isset($getPrice[0]['p2'])) {$p2=$getPrice[0]['p2'];}else{$p2=0;}
+						if (isset($getPrice[0]['p3'])) {$p3=$getPrice[0]['p3'];}else{$p3=0;}
+						if (isset($getPrice[0]['p4'])) {$p4=$getPrice[0]['p4'];}else{$p4=0;}
+						if (isset($getPrice[0]['p5'])) {$p5=$getPrice[0]['p5'];}else{$p5=0;}
+						if (isset($getPrice[0]['p6'])) {$p6=$getPrice[0]['p6'];}else{$p6=0;}
+						if (isset($getPrice[0]['p7'])) {$p7=$getPrice[0]['p7'];}else{$p7=0;}
+						//$totalrev=($n1*$p1)+($n2*$p2)+($n3*$p3)+($n4*$p4)+($n5*$p5)+($n6*$p6)+($n7*$p7);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
 							<td><?php echo $rbt['judul']?></td>
 							<td><?php echo $rbt['artis']?></td>
 							<td><?php echo $rbt['kdFlexi']?></td>
-							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
+							<td><?php echo $n1?></td>
+							<td><?php echo $n2?></td>
+							<td><?php echo $n3?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -333,18 +499,35 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=5;$no=1; foreach ($getRBT as $rbt){?>
-						<?php
+					<?php $op=5;$no=1; foreach ($getRBT as $rbt){
+						$pkode = $this->M_Sharepartner->get_kode($op,$rbt['id']);
+						if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
 						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
+						if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
+						if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
+						if (isset($traffic[0]['n4'])) {$n4=$traffic[0]['n4'];}else{$n4=0;}
+						if (isset($traffic[0]['n5'])) {$n5=$traffic[0]['n5'];}else{$n5=0;}
+						if (isset($traffic[0]['n6'])) {$n6=$traffic[0]['n6'];}else{$n6=0;}
+						if (isset($traffic[0]['n7'])) {$n7=$traffic[0]['n7'];}else{$n7=0;}
+						$getPrice = $this->M_Sharepartner->getPrice($op,$monthdari);
+						if (isset($getPrice[0]['p1'])) {$p1=$getPrice[0]['p1'];}else{$p1=0;}
+						if (isset($getPrice[0]['p2'])) {$p2=$getPrice[0]['p2'];}else{$p2=0;}
+						if (isset($getPrice[0]['p3'])) {$p3=$getPrice[0]['p3'];}else{$p3=0;}
+						if (isset($getPrice[0]['p4'])) {$p4=$getPrice[0]['p4'];}else{$p4=0;}
+						if (isset($getPrice[0]['p5'])) {$p5=$getPrice[0]['p5'];}else{$p5=0;}
+						if (isset($getPrice[0]['p6'])) {$p6=$getPrice[0]['p6'];}else{$p6=0;}
+						if (isset($getPrice[0]['p7'])) {$p7=$getPrice[0]['p7'];}else{$p7=0;}
+						//$totalrev=($n1*$p1)+($n2*$p2)+($n3*$p3)+($n4*$p4)+($n5*$p5)+($n6*$p6)+($n7*$p7);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
 							<td><?php echo $rbt['judul']?></td>
 							<td><?php echo $rbt['artis']?></td>
 							<td><?php echo $rbt['kdM8']?></td>
-							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
+							<td><?php echo $n1?></td>
+							<td><?php echo $n2?></td>
+							<td><?php echo $n3?></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -403,18 +586,35 @@
 					</tr>
 					</thead>
 					<tbody>
-					<?php $op=4;$no=1; foreach ($getRBT as $rbt){?>
-						<?php
+					<?php $op=4;$no=1; foreach ($getRBT as $rbt){
+						$pkode = $this->M_Sharepartner->get_kode($op,$rbt['id']);
+						if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
 						$traffic = $this->M_Sharepartner->getTraf($rbt['id'],$monthdari,$op);
+						if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
+						if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
+						if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
+						if (isset($traffic[0]['n4'])) {$n4=$traffic[0]['n4'];}else{$n4=0;}
+						if (isset($traffic[0]['n5'])) {$n5=$traffic[0]['n5'];}else{$n5=0;}
+						if (isset($traffic[0]['n6'])) {$n6=$traffic[0]['n6'];}else{$n6=0;}
+						if (isset($traffic[0]['n7'])) {$n7=$traffic[0]['n7'];}else{$n7=0;}
+						$getPrice = $this->M_Sharepartner->getPrice($op,$monthdari);
+						if (isset($getPrice[0]['p1'])) {$p1=$getPrice[0]['p1'];}else{$p1=0;}
+						if (isset($getPrice[0]['p2'])) {$p2=$getPrice[0]['p2'];}else{$p2=0;}
+						if (isset($getPrice[0]['p3'])) {$p3=$getPrice[0]['p3'];}else{$p3=0;}
+						if (isset($getPrice[0]['p4'])) {$p4=$getPrice[0]['p4'];}else{$p4=0;}
+						if (isset($getPrice[0]['p5'])) {$p5=$getPrice[0]['p5'];}else{$p5=0;}
+						if (isset($getPrice[0]['p6'])) {$p6=$getPrice[0]['p6'];}else{$p6=0;}
+						if (isset($getPrice[0]['p7'])) {$p7=$getPrice[0]['p7'];}else{$p7=0;}
+						//$totalrev=($n1*$p1)+($n2*$p2)+($n3*$p3)+($n4*$p4)+($n5*$p5)+($n6*$p6)+($n7*$p7);
 						?>
 						<tr>
 							<td><?php echo $no ?></td>
 							<td><?php echo $rbt['judul']?></td>
 							<td><?php echo $rbt['artis']?></td>
 							<td><?php ?></td>
-							<td><?php if (isset($traffic[0]['n1'])) {echo $traffic[0]['n1'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n2'])) {echo $traffic[0]['n2'];}else{echo 0;}?></td>
-							<td><?php if (isset($traffic[0]['n3'])) {echo $traffic[0]['n3'];}else{echo 0;}?></td>
+							<td><?php echo $n1?></td>
+							<td><?php echo $n2?></td>
+							<td><?php echo $n3?></td>
 							<td></td>
 							<td></td>
 							<td></td>
