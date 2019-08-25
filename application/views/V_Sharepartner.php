@@ -37,7 +37,7 @@
 							  <?php
 							  }else{
 							  	?>
-								  <label>Pencipta </label>
+								  <label>Partner </label>
 								  <select class="form-control select2" style="width: 100%;" name="partner">
 									  <option value="0">- choose -</option>
 									  <?php
