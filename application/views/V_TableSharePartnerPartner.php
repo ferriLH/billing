@@ -18,7 +18,7 @@ $this->load->view('parts/V_Navigation');
 	</section>
 	<!-- Main content -->
 	<?php
-	$totalrekap = array(1,2,3,4,5,6);
+	$totalrekap = array(0,1,2,3,4,5,6);
 	$grandtot = 0;
 	$dari1=$dari;
 	$dari2=$monthdari;$dari3=$monthdari;$dari4=$monthdari;$dari5=$monthdari;$dari6=$monthdari;$dari7=$monthdari;

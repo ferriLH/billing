@@ -73,14 +73,14 @@ class M_Sharepartner extends CI_Model
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-	function getShare($op,$part){
-		$this->db->select("*");
-		$this->db->from('p_share');
-		$this->db->where('operatorId',$op);
-		$this->db->where('partnerId',$part);
-		$query = $this->db->get();
-		return $query->result_array();
-	}
+//	function getShare($op,$part){
+//		$this->db->select("*");
+//		$this->db->from('p_share');
+//		$this->db->where('operatorId',$op);
+//		$this->db->where('partnerId',$part);
+//		$query = $this->db->get();
+//		return $query->result_array();
+//	}
 	function getPajak($tahun){
 		$this->db->select("*");
 		$this->db->from('p_pajak');

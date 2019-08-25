@@ -41,10 +41,11 @@ class C_Sharepencipta extends CI_Controller
 				redirect('sharepencipta');
 			}else{
 				$getPencipta1 	= $this->M_Sharepencipta->getPencipta1($pencipta);
-				$part 			= $getPencipta1[0]['id'];
+				$penc 			= $getPencipta1[0]['id'];
 				$rev  			= $getPencipta1[0]['rev'];
+				$type  			= $getPencipta1[0]['type'];
 				$persen			= $rev*100;
-				$getRBT			= $this->M_Sharepencipta->getRBT($part);
+				$getRBT			= $this->M_Sharepencipta->getRBT($penc);
 				$data = array(
 					"title" => "SHARE PENCIPTA",
 					"pencipta" => $getPencipta1,
@@ -54,6 +55,10 @@ class C_Sharepencipta extends CI_Controller
 					"monthsampai" => $monthsampai,
 					"tahun" => $tahun,
 					"getRBT" => $getRBT,
+					"rev"=>$rev,
+					"persen"=>$persen,
+					"part"=>$penc,
+					"type"=>$type,
 
 				);
 				if ($this->session->userdata('role')=='pencipta') {
