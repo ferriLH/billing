@@ -90,7 +90,7 @@ class C_Profile extends CI_Controller
 						$this->session->set_userdata($sess_data);
 					}
 					if ($this->session->userdata('role')=='partner') {
-						$getProfile = $this->M_Login->getPartner($this->session->userdata('idPartner'));
+						$getProfile = $this->M_Profile->getPartner($this->session->userdata('idPartner'));
 						foreach ($getProfile->result() as $dat) {
 							$sess_data['nama'] 		= $dat->namaPartner;
 							$sess_data['noTelp']    = $dat->noTelp;
@@ -101,7 +101,7 @@ class C_Profile extends CI_Controller
 							$this->session->set_userdata($sess_data);
 						}
 					}elseif ($this->session->userdata('role')=='pencipta') {
-						$getProfile = $this->M_Login->getPencipta($this->session->userdata('idPencipta'));
+						$getProfile = $this->M_Profile->getPencipta($this->session->userdata('idPencipta'));
 						foreach ($getProfile->result() as $dat) {
 							$sess_data['nama']      = $dat->namaPencipta;
 							$sess_data['noTelp']    = $dat->noTelp;
