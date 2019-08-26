@@ -121,6 +121,37 @@ class C_Profile extends CI_Controller
 			redirect('login');
 		}
     }
+    function updatePartner($id) {
+        $data = array(
+            "title"=>"Profile",
+            "subTitle"=>"Partner",
+            "popUpProfile"=>TRUE,
+            "popUpPass"=>FALSE,
+            "popUpPhoto"=>FALSE,
+        );
+    if ($this->session->userdata('isLogin') == "partner") {
+		        $namaPartner  = $this->input->post('inputName');
+		        $noTelp = $this->input->post('inputEmail');
+		        $this->M_Profile->updatePartner($id,$nama_admin,$noTelp);
+		        $setProfile = $this->M_Profile->getPartner($id);
+		        foreach ($setProfile->result() as $dat){
+					$sess_data['isLogin']       = 'partner';
+					$sess_data['id_user']       = $dat->id;
+					$sess_data['nama']    		= $dat->namaPartner;
+					$sess_data['telp']   		= $dat->noTelp;
+					$sess_data['fax']   		= $dat->noFax;
+					$sess_data['bank']   		= $dat->bank;
+					$sess_data['telp']   		= $dat->noTelp;
+					$sess_data['noacc']         = $dat->noAcc;
+					$sess_data['rev']   		= $dat->rev;
+					$sess_data['type']   		= $dat->type;
+					$this->session->set_userdata($sess_data);
+		        }
+		            $this->load->view('V_EditProfile',$data);
+		        }else{
+            redirect('admin');
+        }
+    }
 
     function updatePassword($id)
 	{

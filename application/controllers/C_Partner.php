@@ -20,6 +20,18 @@ class C_Partner extends CI_Controller
 			redirect('admin');
 		}
     }
+    public function TablePartner()
+    {
+        $data = array(
+            "title" => "Tabel Partner",
+        );
+        if($this->session->userdata('isLogin') == 'partner'){
+            $this->load->view('V_TablePartner',$data);
+        }else{
+            redirect('login');
+        }
+        
+    }
     public function add()
     {
         $data = array(

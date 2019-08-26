@@ -117,8 +117,10 @@
           'autoWidth'   : true,
       });
       $('#revenue').DataTable();
+      $('#tblpencipta').DataTable();
+      $('#tblpartner').DataTable();
   });
-
+      
    $('#datepicker').datepicker({
       autoclose: true
     })

@@ -19,7 +19,7 @@ class C_Home extends CI_Controller
 		}
         
     }
-
+    
     function signoutPartner()
     {
         $this->session->sess_destroy();

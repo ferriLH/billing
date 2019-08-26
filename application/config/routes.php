@@ -68,6 +68,7 @@ $route['rbtcontent']            = 'C_Rbtcontent';
 $route['rbtcontent/add']        = 'C_Rbtcontent/add';
 
 $route['partner']            	= 'C_Partner';
+$route['partner/tablepartner']  = 'C_Partner/tablepartner';
 $route['partner/add']          	= 'C_Partner/add';
 $route['partner/add/auth']      = 'C_Partner/addAuth';
 $route['partner/delete/(:any)'] = 'C_Partner/delete/$1';
