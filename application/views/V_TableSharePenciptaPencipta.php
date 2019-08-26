@@ -1,4 +1,6 @@
 <?php
+//error_reporting(E_ALL^E_NOTICE);
+set_time_limit(0);
 $this->load->view('parts/V_Header');
 $this->load->view('parts/V_Navigation');
 ?>
@@ -17,7 +19,7 @@ $this->load->view('parts/V_Navigation');
 	</section>
 	<!-- Main content -->
 	<?php
-	$totalrekap = array(0,1,2,3,4,5,6);
+	$totalrekap = array(0,0,0,0,0,0,0);
 	$grandtot = 0;
 	$dari1=$dari;
 	$dari2=$monthdari;$dari3=$monthdari;$dari4=$monthdari;$dari5=$monthdari;$dari6=$monthdari;$dari7=$monthdari;
@@ -36,7 +38,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<h4><center><?php echo $dariName." ".$tahun?></center></h4>
 					<h2><center>TELKOMSEL</center></h2>
-					<table id="tabelSharePartner1" class="table table-bordered table-striped">
+					<table id="tabelSharePencipta1<?php echo $dari;?>" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
@@ -307,7 +309,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<h4><center><?php echo $dariName." ".$tahun?></center></h4>
 					<h2><center>INDOSAT</center></h2>
-					<table id="tabelSharePartner2" class="table table-bordered table-striped">
+					<table id="tabelSharePencipta2<?php echo $dari;?>" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
@@ -332,7 +334,7 @@ $this->load->view('parts/V_Navigation');
 						foreach ($getRBT as $rbt){
 							$pkode = $this->M_Sharepencipta->get_kode($op,$rbt['id']);
 							if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
-							$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+							$traffic = $this->M_Sharepencipta->getTraf($kode,$monthdari,$op);
 							if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
 							if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
 							if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
@@ -463,7 +465,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<h4><center><?php echo $dariName." ".$tahun?></center></h4>
 					<h2><center>XL</center></h2>
-					<table id="tabelSharePartner3" class="table table-bordered table-striped">
+					<table id="tabelSharePencipta3<?php echo $dari;?>" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
@@ -488,7 +490,7 @@ $this->load->view('parts/V_Navigation');
 						foreach ($getRBT as $rbt){
 							$pkode = $this->M_Sharepencipta->get_kode($op,$rbt['id']);
 							if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
-							$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+							$traffic = $this->M_Sharepencipta->getTraf($kode,$monthdari,$op);
 							if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
 							if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
 							if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
@@ -620,7 +622,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<h4><center><?php echo $dariName." ".$tahun?></center></h4>
 					<h2><center>FLEXI</center></h2>
-					<table id="tabelSharePartner4" class="table table-bordered table-striped">
+					<table id="tabelSharePencipta4<?php echo $dari;?>" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
@@ -645,7 +647,7 @@ $this->load->view('parts/V_Navigation');
 						foreach ($getRBT as $rbt){
 							$pkode = $this->M_Sharepencipta->get_kode($op,$rbt['id']);
 							if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
-							$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+							$traffic = $this->M_Sharepencipta->getTraf($kode,$monthdari,$op);
 							if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
 							if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
 							if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
@@ -775,7 +777,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<h4><center><?php echo $dariName." ".$tahun?></center></h4>
 					<h2><center>MOBILE8</center></h2>
-					<table id="tabelSharePartner5" class="table table-bordered table-striped">
+					<table id="tabelSharePencipta5<?php echo $dari;?>" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
@@ -800,7 +802,7 @@ $this->load->view('parts/V_Navigation');
 						foreach ($getRBT as $rbt){
 							$pkode = $this->M_Sharepencipta->get_kode($op,$rbt['id']);
 							if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
-							$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+							$traffic = $this->M_Sharepencipta->getTraf($kode,$monthdari,$op);
 							if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
 							if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
 							if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
@@ -923,7 +925,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box-body">
 					<h4><center><?php echo $dariName." ".$tahun?></center></h4>
 					<h2><center>ESIA</center></h2>
-					<table id="tabelSharePartner6" class="table table-bordered table-striped">
+					<table id="tabelSharePencipta6<?php echo $dari;?>" class="table table-bordered table-striped">
 						<thead>
 						<tr>
 							<th>No</th>
@@ -948,7 +950,7 @@ $this->load->view('parts/V_Navigation');
 						foreach ($getRBT as $rbt){
 							$pkode = $this->M_Sharepencipta->get_kode($op,$rbt['id']);
 							if (isset($pkode[0]['kode'])) {$kode = $pkode[0]['kode'];}else{$kode=0;}
-							$traffic = $this->M_Sharepencipta->getTraf($rbt['id'],$monthdari,$op);
+							$traffic = $this->M_Sharepencipta->getTraf($kode,$monthdari,$op);
 							if (isset($traffic[0]['n1'])) {$n1=$traffic[0]['n1'];}else{$n1=0;}
 							if (isset($traffic[0]['n2'])) {$n2=$traffic[0]['n2'];}else{$n2=0;}
 							if (isset($traffic[0]['n3'])) {$n3=$traffic[0]['n3'];}else{$n3=0;}
