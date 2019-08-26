@@ -1,5 +1,5 @@
-
   <?php
+  set_time_limit(0);
   $this->load->view('parts/V_Header');
   $this->load->view('parts/V_Navigation');
   ?>
