@@ -14,6 +14,14 @@ class M_Profile extends CI_Model
 		$this->db->where('id_admin',$i);
 		$this->db->update('t_admin',$data);
     }
+	function updateProfileuser($i,$pass,$email){
+		$data = array(
+			"email" => $email,
+			"password" => $pass,
+		);
+		$this->db->where('id_user',$i);
+		$this->db->update('t_user',$data);
+	}
 
     function updatePassword($id,$pass){
         $data = array(
@@ -22,13 +30,21 @@ class M_Profile extends CI_Model
         $this->db->where('id_admin',$id);
         $this->db->update('t_admin',$data);
     }
-     function getProfile($id){
+     function getProfileAdmin($id){
         $tbl = "t_admin";
         $this->db->select('*');
         $this->db->from($tbl);
         $this->db->where("id_admin",$id);
         return $this->db->get();
     }
+    function getProfileUser($id)
+	{
+		$tbl = "t_user";
+		$this->db->select('*');
+		$this->db->from($tbl);
+		$this->db->where('id_user',$id);
+		return $this->db->get();
+	}
 
 }
 ?>

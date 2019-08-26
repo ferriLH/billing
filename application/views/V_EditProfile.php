@@ -51,75 +51,74 @@
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#password" data-toggle="tab">Change Password</a></li>
-                        <li><a href="#profile" data-toggle="tab">Update Profile</a></li>
-                    </ul>
                     <div class="tab-content">
-                        <?php
-                        if (validation_errors() || $this->session->flashdata('result_login')) {
-                            ?>
-                            <div class="alert alert-danger">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Warning!</strong>
-                                <?php echo validation_errors(); ?>
-                                <?php echo $this->session->flashdata('result_login'); ?>
-                            </div>
-                        <?php } ?>
-                        <div class="active tab-pane" id="password">
-                            <form class="form-horizontal" method="post" action="<?php echo base_url('C_Profile/updatePassword/'.$id)?>" >
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Old Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" required="" class="form-control" name="inputOPassword" id="inputOPassword" placeholder="Old Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">New Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" required="" class="form-control" name="pass" id="pass" onchange="isPasswordMatch()" placeholder="New Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Confirm Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" required="" class="form-control" name="cpass" id="cpass" onchange="isPasswordMatch()" placeholder="Confirm Password">
-                                    </div>
-                                    <div id="divCheckPassword"></div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" id="next" class="btn btn-danger">Update</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.tab-pane -->
-                        <div class="tab-pane" id="profile">
-                            <form class="form-horizontal" method="post" action="<?php echo base_url('C_Profile/updateProfile/'.$id)?>" >
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+						<div class="box box-info">
+							<div class="box-header with-border">
+								<h3 class="box-title">Edit Profile</h3>
+							</div>
+							<!-- /.box-header -->
+							<!-- form start -->
+							<form class="form-horizontal" action="<?php echo base_url('C_Profile/updateProfile/'.$id)?>" method="post">
+								<div class="box-body">
+									<?php if(validation_errors() || $this->session->flashdata('failed')){ ?>
+										<div class="alert alert-warning">
+											<button type="button" class="close" data-dismiss="alert">&times;</button>
+											<strong>Warning</strong>
+											<?php echo validation_errors(); ?>
+											<?php echo $this->session->flashdata('failed'); ?>
+										</div>
+									<?php } else {?>
+									<?php if (validation_errors() || $this->session->flashdata('success'))
+										{?>
+											<div class="alert alert-success">
+												<button type="button" class="close" data-dismiss="alert">&times;</button>
+												<strong>Success</strong>
+												<?php echo validation_errors(); ?>
+												<?php echo $this->session->flashdata('success'); ?>
+											</div>
+										<?php } } ?>
+									<div class="form-group">
+										<label for="nama" class="col-sm-2 control-label">Nama</label>
 
-                                    <div class="col-sm-10">
-                                        <input type="text" required="" class="form-control" name="inputName" id="inputName" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+										<div class="col-sm-10">
+											<?php if ($this->session->userdata('isLogin') == "partner"){ ?>
+											<input type="text" class="form-control" id="nama" placeholder="Nama" name="nama" value="<?php echo $this->session->userdata('nama')?>" disabled>
+											<?php } else{?>
+											<input type="text" class="form-control" id="nama" placeholder="Nama" name="nama" >
+											<?php }?>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="email" class="col-sm-2 control-label">Email</label>
 
-                                    <div class="col-sm-10">
-                                        <input type="email" required="" class="form-control" name="inputEmail" id="inputEmail" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" name="submit" class="btn btn-danger">Update</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- /.tab-content -->
+										<div class="col-sm-10">
+											<input type="email" class="form-control" id="email" placeholder="Email" name="email">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="password" class="col-sm-2 control-label">Password</label>
+
+										<div class="col-sm-10">
+											<input type="password" class="form-control" id="password" placeholder="Password" name="password">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="re-password" class="col-sm-2 control-label">Confirm Password</label>
+
+										<div class="col-sm-10">
+											<input type="password" class="form-control" id="re-password" placeholder="Confirm Password" name="re-password">
+										</div>
+									</div>
+								</div>
+								<!-- /.box-body -->
+								<div class="box-footer">
+									<button type="submit" class="btn btn-info pull-right">Confirm</button>
+								</div>
+								<!-- /.box-footer -->
+							</form>
+						</div>
+
+						<!-- /.tab-content -->
                 </div>
                 <!-- /.nav-tabs-custom -->
             </div>
