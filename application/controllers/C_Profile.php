@@ -14,8 +14,10 @@ class C_Profile extends CI_Controller
         );
         if($this->session->userdata('isLogin') == 'admin'){
         	$this->load->view('V_EditProfile',$data);
-        }else{
-			redirect('admin');
+        }else if ($this->session->userdata('isLogin') == 'partner'){
+			$this->load->view('V_EditProfile',$data);
+		} else {
+			redirect('');
 		}
     }
 
