@@ -258,7 +258,7 @@ $id 	= $this->session->userdata('id_user');
 		  }elseif (($login=='partner')&&($role=='pencipta')) {
 		  ?>
 			  <li><a href="<?php echo base_url('sharepencipta')?>"><i class="fa fa-link"></i> <span>SHARE PENCIPTA</span></a></li>
-        <li><a href="<?php echo base_url('pencipta/tablepencipta')?>"><i class="fa fa-link"></i> <span>TABEL PENCIPTA</span></a></li>
+       <!-- <li><a href="<?php echo base_url('pencipta/tablepencipta')?>"><i class="fa fa-link"></i> <span>TABEL PENCIPTA</span></a></li> -->
 			  <?php
 		  }
 		  ?>
