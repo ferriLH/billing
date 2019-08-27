@@ -20,13 +20,15 @@ class C_Partner extends CI_Controller
 			redirect('admin');
 		}
     }
-    public function TablePartner()
+    public function table_alias()
     {
+    	$id = $this->session->userdata('idPartner');
         $data = array(
-            "title" => "Tabel Partner",
+            "title" => "Tabel Alias",
+			"prbt" => $this->M_Partner->get_prbt($id)
         );
         if($this->session->userdata('isLogin') == 'partner'){
-            $this->load->view('V_TablePartner',$data);
+            $this->load->view('V_Tablealias',$data);
         }else{
             redirect('login');
         }

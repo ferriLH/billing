@@ -66,4 +66,28 @@ class M_Partner extends CI_Model
 	{
 		$this->db->insert('t_user',$data);
 	}
+
+	function get_prbt($id)
+	{
+		$this->db->select('*');
+		$this->db->from('p_rbt');
+		$this->db->where('partnerId',$id);
+		return $this->db->get()->result();
+	}
+
+	function get_pencipta($id)
+	{
+		$this->db->select('*');
+		$this->db->from('p_pencipta');
+		$this->db->where('id',$id);
+		return $this->db->get()->result();
+	}
+
+	function get_alias($id)
+	{
+		$this->db->select('*');
+		$this->db->from('t_alias');
+		$this->db->where('id_alias',$id);
+		return $this->db->get()->result();
+	}
 }

@@ -68,12 +68,12 @@ $route['rbtcontent']            = 'C_Rbtcontent';
 $route['rbtcontent/add']        = 'C_Rbtcontent/add';
 
 $route['partner']            	= 'C_Partner';
-$route['partner/tablepartner']  = 'C_Partner/tablepartner';
+$route['partner/tablealias']    = 'C_Partner/table_alias';
 $route['partner/add']          	= 'C_Partner/add';
 $route['partner/add/auth']      = 'C_Partner/addAuth';
 $route['partner/delete/(:any)'] = 'C_Partner/delete/$1';
 $route['partner/edit/(:any)']   = 'C_Partner/edit/$1';
-$route['partner/edit/auth/(:any)']= 'C_Partner/editAuth/$1';
+$route['partner/edit/auth/(:any)'] = 'C_Partner/editAuth/$1';
 
 $route['pencipta']            	= 'C_Pencipta';
 $route['pencipta/add']          = 'C_Pencipta/add';
@@ -81,6 +81,7 @@ $route['pencipta/add/auth']     = 'C_Pencipta/addAuth';
 $route['pencipta/delete/(:any)']= 'C_Pencipta/delete/$1';
 $route['pencipta/edit/(:any)']	= 'C_Pencipta/edit/$1';
 $route['pencipta/edit/auth/(:any)']	= 'C_Pencipta/editAuth/$1';
+$route['pencipta/tablealias']		= 'C_Pencipta/tabel_alias';
 
 $route['rbtsubmit']            	= 'C_Rbtsubmit';
 $route['rbtsubmit/commit']	    = 'C_Rbtsubmit/rbtsubmit';

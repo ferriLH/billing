@@ -253,7 +253,7 @@ $id 	= $this->session->userdata('id_user');
 		  }elseif (($login=='partner')&&($role=='partner')) {
 		  	?>
 			  <li><a href="<?php echo base_url('sharepartner')?>"><i class="fa fa-link"></i> <span>SHARE PARTNER</span></a></li>
-        <li><a href="<?php echo base_url('partner/tablepartner')?>"><i class="fa fa-link"></i> <span>DAFTAR KODE RBT</span></a></li>
+        <li><a href="<?php echo base_url('partner/tablealias')?>"><i class="fa fa-link"></i> <span>DAFTAR KODE RBT</span></a></li>
 			  <?php
 		  }elseif (($login=='partner')&&($role=='pencipta')) {
 		  ?>
