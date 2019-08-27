@@ -88,9 +88,7 @@ $route['traffic']            	= 'C_Traffic';
 $route['traffic/commit']       	= 'C_Traffic/commit';
 
 $route['sharepartner']          = 'C_Sharepartner';
-$route['sharepartner/sortby']   = 'C_Sharepartner/sortby';
-$route['sharepartner/tableshare']   = 'C_Sharepartner/tableshare';
-$route['sharepencipta/sortby']   = 'C_Sharepencipta/sortby';
+$route['sharepartner/tableshare']= 'C_Sharepartner/tableshare';
 $route['sharepencipta/tableshare']   = 'C_Sharepencipta/tableshare';
 
 $route['sharepencipta']        			= 'C_Sharepencipta';
@@ -99,9 +97,10 @@ $route['summary/table']         		= 'C_Summary/table';
 $route['summary/RevenuePartner/(:any)/(:any)']	= 'C_Summary/RevenuePartner';
 $route['summary/RevenuePencipta/(:any)/(:any)']		= 'C_Summary/RevenuePencipta';
 
-
 $route['payment']            	= 'C_Payment';
-$route['payment/table']         = 'C_Payment/table';
+$route['payment/tablePartner']  = 'C_Payment/tablePartner';
+$route['payment/tablePencipta'] = 'C_Payment/tablePencipta';
+
 $route['rbttsel']            	= 'C_Rbttsel';
 $route['rbttsel/commit']		= 'C_Rbttsel/rbttsel_submit';
 
