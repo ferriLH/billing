@@ -7,4 +7,5 @@ class M_Payment extends CI_Model
 	{
 		parent::__construct();
 	}
+
 }

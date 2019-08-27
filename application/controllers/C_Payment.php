@@ -5,7 +5,7 @@ class C_Payment extends CI_Controller
     function __construct()
     {
         parent::__construct();
-		$this->load->model('M_Payment');
+		//$this->load->model('M_Payment');
 	}
     public function index()
     {
