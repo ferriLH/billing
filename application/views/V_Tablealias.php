@@ -44,9 +44,10 @@ $this->load->view('parts/V_Navigation');
 							<th>Kode Indosat Sistem</th>
 					</tr>
 					</thead>
+					<?php $no = 1?>
 					<?php foreach ($prbt as $rbt){?>
 						<tr>
-							<td>1</td>
+							<td><?php echo $no?></td> <?php $no++?>
 							<td><?php echo $rbt->judul?></td>
 							<td><?php echo $rbt->artis?></td>
 							<?php foreach ($this->M_Partner->get_pencipta($rbt->penciptaId) as $pencipta){?>
