@@ -15,7 +15,9 @@
 	<!-- jvectormap -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/jvectormap/jquery-jvectormap.css">
 	<!-- DataTables -->
-	<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<!--	<link rel="stylesheet" href="--><?php //echo base_url()?><!--assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css	">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/AdminLTE.min.css">
 	<!-- Bootstrap time Picker -->

@@ -1238,52 +1238,76 @@ $this->load->view('parts/V_Navigation');
 		<script>
             $(function () {
                 $('#tabelSharePartner1<?php echo $dari;?>').DataTable({
-                    'paging'      : true,
-                    'lengthChange': true,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
+                    'paging'		: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'			: 'Bfrtip',
+                    'buttons'		: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
                 });
                 $('#tabelSharePartner2<?php echo $dari;?>').DataTable({
-                    'paging'      : true,
-                    'lengthChange': true,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
+                    'paging'		: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'			: 'Bfrtip',
+                    'buttons'		: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
                 });
                 $('#tabelSharePartner3<?php echo $dari;?>').DataTable({
-                    'paging'      : true,
-                    'lengthChange': true,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
+                    'paging'		: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'			: 'Bfrtip',
+                    'buttons'		: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
                 });
                 $('#tabelSharePartner4<?php echo $dari;?>').DataTable({
-                    'paging'      : true,
-                    'lengthChange': true,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
+                    'paging'		: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'			: 'Bfrtip',
+                    'buttons'		: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
                 });
                 $('#tabelSharePartner5<?php echo $dari;?>').DataTable({
-                    'paging'      : true,
-                    'lengthChange': true,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
+                    'paging'		: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'			: 'Bfrtip',
+                    'buttons'		: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
                 });
                 $('#tabelSharePartner6<?php echo $dari;?>').DataTable({
-                    'paging'      : true,
-                    'lengthChange': true,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
+                    'paging'		: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'			: 'Bfrtip',
+                    'buttons'		: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
                 });
             });
 		</script>

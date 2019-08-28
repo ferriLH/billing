@@ -1060,11 +1060,88 @@ $this->load->view('parts/V_Navigation');
 				?>
 			</div>
 		</section>
+		<script>
+            $(function () {
+                $('#tabelSharePencipta1<?php echo $dari;?>').DataTable({
+                    'paging'			: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'				: 'Bfrtip',
+                    'buttons'			: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+                $('#tabelSharePencipta2<?php echo $dari;?>').DataTable({
+                    'paging'			: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'				: 'Bfrtip',
+                    'buttons'			: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+                $('#tabelSharePencipta3<?php echo $dari;?>').DataTable({
+                    'paging'			: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'				: 'Bfrtip',
+                    'buttons'			: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+                $('#tabelSharePencipta4<?php echo $dari;?>').DataTable({
+                    'paging'			: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'				: 'Bfrtip',
+                    'buttons'			: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+                $('#tabelSharePencipta5<?php echo $dari;?>').DataTable({
+                    'paging'			: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'				: 'Bfrtip',
+                    'buttons'			: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+                $('#tabelSharePencipta6<?php echo $dari;?>').DataTable({
+                    'paging'			: true,
+                    'lengthChange'	: true,
+                    'searching'   	: true,
+                    'ordering'    	: true,
+                    'info'        	: true,
+                    'autoWidth'   	: true,
+                    'dom'				: 'Bfrtip',
+                    'buttons'			: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+            });
+		</script>
 		<?php
 		$monthdari = $monthdari+ 1;
 		$dari = $dari+1;
 	}
 	?>
+
 	<!-- /.content -->
 	<section class="content">
 		<div class="row">
