@@ -16,7 +16,12 @@ $this->load->view('parts/V_Navigation');
 			<li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
 			<li class="active"><?php echo $title?></li>
 		</ol>
+		<div class="clearfix" style="float: right">
+			<button type="button" class="btn btn-primary" style=""><i class="glyphicon glyphicon-download-alt"></i></button>
+			<button onclick="window.print();return false;" type="button" class="btn btn-primary" style=""><i class="glyphicon glyphicon-print"></i></button>
+		</div>
 	</section>
+	<section class="clearfix"></section>
 	<!-- Main content -->
 	<?php
 	$totalrekap = array(0,0,0,0,0,0,0);
@@ -30,9 +35,7 @@ $this->load->view('parts/V_Navigation');
 		<section class="content container-fluid">
 			<div class="box box-primary">
 				<div class="box-header">
-					<a href="<?php echo base_url('pencipta/add')?>">
-						<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-					</a>
+
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -301,9 +304,7 @@ $this->load->view('parts/V_Navigation');
 		<section class="content container-fluid">
 			<div class="box box-primary">
 				<div class="box-header">
-					<a href="<?php echo base_url('pencipta/add')?>">
-						<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-					</a>
+
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -426,7 +427,6 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln1?></td>
 								<td><?php echo $totaln2?></td>
 								<td><?php echo $totaln3?></td>
-								<td><?php echo $totaln4?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
 							<tr>
@@ -457,9 +457,7 @@ $this->load->view('parts/V_Navigation');
 		<section class="content container-fluid">
 			<div class="box box-primary">
 				<div class="box-header">
-					<a href="<?php echo base_url('pencipta/add')?>">
-						<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-					</a>
+
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -614,9 +612,7 @@ $this->load->view('parts/V_Navigation');
 		<section class="content container-fluid">
 			<div class="box box-primary">
 				<div class="box-header">
-					<a href="<?php echo base_url('pencipta/add')?>">
-						<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-					</a>
+
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -769,9 +765,7 @@ $this->load->view('parts/V_Navigation');
 		<section class="content container-fluid">
 			<div class="box box-primary">
 				<div class="box-header">
-					<a href="<?php echo base_url('pencipta/add')?>">
-						<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-					</a>
+
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -917,9 +911,7 @@ $this->load->view('parts/V_Navigation');
 		<section class="content container-fluid">
 			<div class="box box-primary">
 				<div class="box-header">
-					<a href="<?php echo base_url('pencipta/add')?>">
-						<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-					</a>
+
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -1080,7 +1072,7 @@ $this->load->view('parts/V_Navigation');
 				<div class="box">
 					<div class="box-header with-border">
 						<center> <h3 class="box-title"><b>SHARE PARTNER</b></h3> <br></center>
-						<center> <h4>PMM(Mobid)</h4></center>
+						<center> <h4> <?php echo $pencipta[0]['namaPencipta'];?></h4></center>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">

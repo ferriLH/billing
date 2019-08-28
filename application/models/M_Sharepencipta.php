@@ -11,7 +11,7 @@ class M_Sharepencipta extends CI_Model
 	function getPencipta(){
 		$this->db->select("id,namaPencipta");
 		$this->db->from('p_pencipta');
-		$this->db->order_by('namaPencipta','asc');
+		//$this->db->order_by('namaPencipta','asc');
 		//$this->db->where('type',1);
 		$query = $this->db->get();
 		return $query->result();

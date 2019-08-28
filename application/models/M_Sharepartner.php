@@ -11,7 +11,7 @@ class M_Sharepartner extends CI_Model
 	function getPartner(){
 		$this->db->select("*");
 		$this->db->from('p_partner');
-		$this->db->order_by('namaPartner','asc');
+		//$this->db->order_by('namaPartner','asc');
 		//$this->db->where('type',1);
 		$query = $this->db->get();
 		return $query->result();
