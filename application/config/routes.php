@@ -69,6 +69,7 @@ $route['rbtcontent/add']        = 'C_Rbtcontent/add';
 
 $route['partner']            	= 'C_Partner';
 $route['partner/tablealias']    = 'C_Partner/table_alias';
+$route['partner/tablealias/export'] = 'C_Partner/export_alias';
 $route['partner/add']          	= 'C_Partner/add';
 $route['partner/add/auth']      = 'C_Partner/addAuth';
 $route['partner/delete/(:any)'] = 'C_Partner/delete/$1';

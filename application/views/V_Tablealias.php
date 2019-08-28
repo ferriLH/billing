@@ -21,7 +21,7 @@ $this->load->view('parts/V_Navigation');
 		<div class="box box-primary">
 			<div class="box-header">
 				<h2><center>Tabel Partner</center></h2>
-				<a href="<?php echo base_url('partner/add')?>">
+				<a href="<?php echo base_url('partner/tablealias/export')?>">
 					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
 				</a>
 			</div>
