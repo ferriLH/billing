@@ -11,6 +11,16 @@ class M_Partner extends CI_Model
 		$this->db->where('type',1);
 		return $this->db->get();
     }
+
+    function get_partner($id)
+	{
+		$this->db->select('*');
+		$this->db->from('p_partner');
+		$this->db->where('id',$id);
+		return $this->db->get()->result();
+	}
+
+
     function add_new_partner($data)
     {
         $this->db->insert('p_partner',$data);

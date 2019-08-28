@@ -6,12 +6,14 @@ $this->load->view('parts/V_Header');
 
 					header("Content-Disposition: attachment; filename=$title.xls");
 
-					//header("Pragma: no-cache");
+					header("Pragma: no-cache");
 
 					header("Expires: 0");
 
 					?>
-					<h2><center>Tabel Partner</center></h2>
+					<?php foreach ($partner as $p){?>
+					<h2><center>Tabel Alias Partner : <?php echo $p->namaPartner?></center></h2>
+					<?php }?>
 <br><br>
 <br><br>
 					<table id="tblpartner" class="table table-bordered table-striped">

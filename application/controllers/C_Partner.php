@@ -25,7 +25,8 @@ class C_Partner extends CI_Controller
     	$id = $this->session->userdata('idPartner');
         $data = array(
             "title" => "Tabel Alias",
-			"prbt" => $this->M_Partner->get_prbt($id)
+			"prbt" => $this->M_Partner->get_prbt($id),
+
         );
         if($this->session->userdata('isLogin') == 'partner'){
             $this->load->view('V_Tablealias',$data);
@@ -40,7 +41,8 @@ class C_Partner extends CI_Controller
 		$id = $this->session->userdata('idPartner');
 		$data = array(
 			"title" => "Tabel Alias",
-			"prbt"  => $this->M_Partner->get_prbt($id)
+			"prbt"  => $this->M_Partner->get_prbt($id),
+			"partner" => $this->M_Partner->get_partner($id)
 		);
 		if ($this->session->userdata('isLogin')=='partner'){
 			$this->load->view('V_Alias_export',$data);
