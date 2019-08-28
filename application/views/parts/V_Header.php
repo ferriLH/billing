@@ -21,9 +21,9 @@
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/AdminLTE.min.css">
 	<!-- Bootstrap time Picker -->
-	<link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/timepicker/bootstrap-timepicker.min.css">
-	<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!--	<link rel="stylesheet" href="--><?php //echo base_url()?><!--assets/plugins/timepicker/bootstrap-timepicker.min.css">-->
+<!--	<link rel="stylesheet" href="--><?php //echo base_url()?><!--assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">-->
+<!--	<link rel="stylesheet" href="--><?php //echo base_url()?><!--assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">-->
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
 		 folder instead of downloading all of them to reduce the load. -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/skins/skin-blue.min.css">
@@ -32,5 +32,9 @@
 	<link rel="icon" href="<?php echo base_url()?>assets/images/favicon.png">
 	<script src="<?php echo base_url()?>assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
 </head>

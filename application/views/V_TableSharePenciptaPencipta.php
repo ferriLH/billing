@@ -1153,7 +1153,8 @@ $this->load->view('parts/V_Navigation');
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">
-						<table class="table table-bordered table-responsive">
+						<table id="sumSharePencipta" class="table table-bordered table-responsive">
+							<thead>
 							<tr>
 								<th>OPERATOR</th>
 								<?php
@@ -1167,6 +1168,8 @@ $this->load->view('parts/V_Navigation');
 								?>
 								<th>TOTAL</th>
 							</tr>
+							</thead>
+							<tbody>
 							<tr>
 								<td>TELKOMSEL</td>
 								<?php
@@ -1241,13 +1244,26 @@ $this->load->view('parts/V_Navigation');
 								echo "<td>$tmptotalrekap[4]</td>";
 								?>
 							</tr>
-							<tr>
-								<?php
-								$tmpgrandtot=number_format($grandtot);
-								echo "<td><b>GRAND</td><td class='text-right' colspan=".$j.">".$tmpgrandtot."</b></td>";
-								?>
-							</tr>
+							</tbody>
+							<tfooter>
+								<tr>
+									<?php
+									$tmpgrandtot=number_format($grandtot);
+									echo "<td><b>GRAND</td><td class='text-right' colspan=".$j.">".$tmpgrandtot."</b></td>";
+									?>
+								</tr>
+							</tfooter>
 						</table>
+						<script>
+                            $(function () {
+                                $('#sumSharePencipta').DataTable({
+                                    dom		: 'Bfrtip',
+                                    buttons	: [
+                                        'copy', 'csv', 'excel', 'pdf', 'print'
+                                    ]
+                                });
+                            });
+						</script>
 					</div>
 				</div>
 			</div>

@@ -36,10 +36,10 @@
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 <!-- date-range-picker -->
-<script src="<?php echo base_url()?>assets/bower_components/moment/min/moment.min.js"></script>
-<script src="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!--<script src="--><?php //echo base_url()?><!--assets/bower_components/moment/min/moment.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>-->
 <!-- bootstrap datepicker -->
-<script src="<?php echo base_url()?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!--<script src="--><?php //echo base_url()?><!--assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>-->
 
 <script>
   $(function () {
@@ -52,6 +52,10 @@
 		  'autoWidth'   : true,
           'responsive'	: true,
 		  'order'		: [[0,'desc']],
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
           //'scrollX'     : true
 
       });
@@ -67,7 +71,11 @@
           'scrollX'     : true,
           'deferRender'	: true,
           'scrollCollapse' : true,
-          'scroller'	: true
+          'scroller'	: true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
 
 
       });
@@ -78,11 +86,15 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true,
+          // 'scrollX'     : true,
           'order'		: [],
           'deferRender'	: true,
-          'scrollCollapse' : true,
-          'scroller'	: true
+          // 'scrollCollapse' : true,
+          // 'scroller'	: true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
 
       });
       $('#ttraffic').DataTable({
@@ -95,7 +107,11 @@
           'order'		: [],
           'deferRender'	: true,
           'scrollCollapse' : true,
-          'scroller'	: true
+          'scroller'	: true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
           //'scrollX'     : true
 
       });
@@ -106,7 +122,11 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
+          'scrollX'     : true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
       });
       $('#revpart').DataTable({
           'paging'      : true,
@@ -115,7 +135,11 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
-          'scrollX'     : true
+          // 'scrollX'     : true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
       });
       $('#revpen').DataTable({
           'paging'      : true,
@@ -124,15 +148,15 @@
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
       });
       $('#revenue').DataTable();
       $('#tblpencipta').DataTable();
       $('#tblpartner').DataTable();
   });
-      
-   $('#datepicker').datepicker({
-      autoclose: true
-    })
 </script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

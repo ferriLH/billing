@@ -38,12 +38,12 @@
 							  }else{
 							  	?>
 								  <label>Partner </label>
-								  <select class="form-control select2" style="width: 100%;" name="partner">
+								  <select data-live-search="true" class="form-control selectpicker" style="width: 100%;" name="partner">
 									  <option value="0">- choose -</option>
 									  <?php
 									  foreach ($getPartner as $p) {
 										  ?>
-										  <option value="<?php echo $p->id?>"><?php echo $p->namaPartner?></option>
+										  <option value="<?php echo $p->id?>" data-tokens="<?php echo $p->namaPartner?>"><?php echo $p->namaPartner?></option>
 										  <?php
 									  }
 									  ?>

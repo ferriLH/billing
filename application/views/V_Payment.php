@@ -35,12 +35,12 @@
 						  <div class="col-md-4 col-md-offset-4">
 							  <div class="form-group">
 								  <label>Partner </label>
-								  <select class="form-control select2" style="width: 100%;" name="partner">
+								  <select data-live-search="true" class="form-control selectpicker" style="width: 100%;" name="partner">
 									  <option value="0">- choose -</option>
 									  <?php
 									  foreach ($getPartner as $p) {
 										  ?>
-										  <option value="<?php echo $p->id?>"><?php echo $p->namaPartner?></option>
+										  <option value="<?php echo $p->id?>" data-tokens="<?php echo $p->namaPartner?>"><?php echo $p->namaPartner?></option>
 										  <?php
 									  }
 									  ?>
@@ -94,7 +94,7 @@
 						  <div class="col-md-4 col-md-offset-4">
 							  <div class="form-group">
 								  <label>Pencipta </label>
-								  <select class="form-control select2" style="width: 100%;" name="pencipta">
+								  <select data-live-search="true" class="form-control selectpicker" style="width: 100%;" name="pencipta">
 									  <option value="0">- choose -</option>
 									  <?php
 									  foreach ($getPencipta as $p) {
@@ -111,7 +111,7 @@
 									  $jml_bln=count($sasih);
 									  for($b=1; $b<$jml_bln; $b++){
 										  ?>
-										  <option value="<?php echo $b?>"><?php echo $sasih[$b];?></option>
+										  <option data-tokens="<?php echo $p->namaPencipta?>" value="<?php echo $b?>"><?php echo $sasih[$b];?></option>
 										  <?php
 									  }
 									  ?>

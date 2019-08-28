@@ -34,12 +34,12 @@
 								  }else{
 									  ?>
 									  <label>Pencipta </label>
-									  <select class="form-control select2" style="width: 100%;" name="pencipta">
+									  <select data-live-search="true" class="form-control selectpicker" style="width: 100%;" name="pencipta">
 										  <option value="0">- choose -</option>
 										  <?php
 										  foreach ($getPencipta as $p) {
 											  ?>
-											  <option value="<?php echo $p->id?>"><?php echo $p->namaPencipta?></option>
+											  <option value="<?php echo $p->id?>" data-tokens="<?php echo $p->namaPencipta?>"><?php echo $p->namaPencipta?></option>
 											  <?php
 										  }
 										  ?>

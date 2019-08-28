@@ -709,12 +709,13 @@ $this->load->view('parts/V_Navigation');
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header with-border">
-						<center> <h3 class="box-title"><b>SHARE PENCIPTA</b></h3> <br></center>
-						<center> <h4><?php echo $pencipta[0]['namaPencipta'];?></h4></center>
+						<center> <h3 class="box-title"><b>SHARE PARTNER</b></h3> <br></center>
+						<center> <h4> <?php echo $pencipta[0]['namaPencipta'];?></h4></center>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">
-						<table class="table table-bordered table-responsive">
+						<table id="sumSharePencipta" class="table table-bordered table-responsive">
+							<thead>
 							<tr>
 								<th>OPERATOR</th>
 								<?php
@@ -728,6 +729,8 @@ $this->load->view('parts/V_Navigation');
 								?>
 								<th>TOTAL</th>
 							</tr>
+							</thead>
+							<tbody>
 							<tr>
 								<td>TELKOMSEL</td>
 								<?php
@@ -802,13 +805,26 @@ $this->load->view('parts/V_Navigation');
 								echo "<td>$tmptotalrekap[4]</td>";
 								?>
 							</tr>
-							<tr>
-								<?php
-								$tmpgrandtot=number_format($grandtot);
-								echo "<td><b>GRAND</td><td class='text-right' colspan=".$j.">".$tmpgrandtot."</b></td>";
-								?>
-							</tr>
+							</tbody>
+							<tfooter>
+								<tr>
+									<?php
+									$tmpgrandtot=number_format($grandtot);
+									echo "<td><b>GRAND</td><td class='text-right' colspan=".$j.">".$tmpgrandtot."</b></td>";
+									?>
+								</tr>
+							</tfooter>
 						</table>
+						<script>
+                            $(function () {
+                                $('#sumSharePencipta').DataTable({
+                                    dom		: 'Bfrtip',
+                                    buttons	: [
+                                        'copy', 'csv', 'excel', 'pdf', 'print'
+                                    ]
+                                });
+                            });
+						</script>
 					</div>
 				</div>
 			</div>
