@@ -14,6 +14,10 @@ $this->load->view('parts/V_Navigation');
 			<li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
 			<li class="active"><?php echo $title;?></li>
 		</ol>
+		<br>
+		<a href="<?php echo base_url('partner/tablealias/export')?>">
+			<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
+		</a>
 	</section>
 
 	<!-- Main content -->
@@ -21,9 +25,6 @@ $this->load->view('parts/V_Navigation');
 		<div class="box box-primary">
 			<div class="box-header">
 				<h2><center>Tabel Partner</center></h2>
-				<a href="<?php echo base_url('partner/tablealias/export')?>">
-					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-				</a>
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">

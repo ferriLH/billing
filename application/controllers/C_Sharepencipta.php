@@ -44,10 +44,12 @@ class C_Sharepencipta extends CI_Controller
 				$penc 			= $getPencipta1[0]['id'];
 				$rev  			= $getPencipta1[0]['rev'];
 				$type  			= $getPencipta1[0]['type'];
+				$nam			= $getPencipta1[0]['namaPencipta'];
 				$persen			= $rev*100;
+
 				$getRBT			= $this->M_Sharepencipta->getRBT($penc);
 				$data = array(
-					"title" => "SHARE PENCIPTA",
+					"title" => "SHARE PENCIPTA | ".$nam,
 					"pencipta" => $getPencipta1,
 					"dari" => $dari,
 					"sampai" => $sampai,

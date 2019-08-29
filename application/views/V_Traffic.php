@@ -9,7 +9,7 @@
 	  <section class="content-header">
 		  <h1>
 			  <?php echo $title; ?>
-			  <small>Optional description <?php echo $this->input->get('op')?></small>
+			  <small><?php echo $this->input->get('op')?></small>
 		  </h1>
 		  <ol class="breadcrumb">
 			  <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -99,7 +99,28 @@
 			  </div>
 		  </div>
 	  </section>
+	  <script>
+		  $(function () {
+              $('#ttraffic').DataTable({
+                  'paging'      : true,
+                  'lengthChange': true,
+                  'searching'   : true,
+                  'ordering'    : true,
+                  'info'        : true,
+                  'autoWidth'   : true,
+                  'order'		: [],
+                  'deferRender'	: true,
+                  'scrollCollapse' : true,
+                  'scroller'	: true,
+                  'dom'			: 'Bfrtip',
+                  'buttons'		: [
+                      'copy', 'csv', 'excel', 'pdf', 'print'
+                  ]
+                  //'scrollX'     : true
 
+              });
+          })
+	  </script>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

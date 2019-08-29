@@ -28,6 +28,7 @@ class M_Sharepencipta extends CI_Model
 		$this->db->select("*");
 		$this->db->from('p_rbt');
 		$this->db->where('penciptaId',$id);
+		$this->db->where('judul !=','null');
 		$query = $this->db->get();
 		return $query->result_array();
 	}

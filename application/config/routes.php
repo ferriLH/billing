@@ -88,6 +88,7 @@ $route['rbtsubmit']            	= 'C_Rbtsubmit';
 $route['rbtsubmit/commit']	    = 'C_Rbtsubmit/rbtsubmit';
 $route['traffic']            	= 'C_Traffic';
 $route['traffic/commit']       	= 'C_Traffic/commit';
+$route['traffic/data']       	= 'C_Traffic/data';
 
 $route['sharepartner']          = 'C_Sharepartner';
 $route['sharepartner/tableshare']= 'C_Sharepartner/tableshare';

@@ -34,7 +34,6 @@ class M_Rbtcontent extends CI_Model
 	}
 	function get_pencipta($result)
 	{
-		$result;
 		$this->db->select('namaPencipta');
 		$this->db->from('p_pencipta');
 		$this->db->where('id',$result);

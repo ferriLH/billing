@@ -20,9 +20,7 @@
     <section class="content container-fluid">
 		<div class="box box-primary">
 			<div class="box-header">
-				<a href="<?php echo base_url('partner/add')?>">
-					<button type="button" class="btn btn-info" style="float: right;"><i class="glyphicon glyphicon-download-alt"></i></button> <br> <br>
-				</a>
+
 			</div>
             <!-- /.box-header -->
 			<div class="box-body">

@@ -83,7 +83,7 @@
 									  ?>
 								  </select>
 							  </div>
-							  <button type="submit" class="btn btn-block btn-primary btn-lg">View</button>
+							  <input type="submit" name="submit" value="View" class="btn btn-block btn-primary btn-lg">
 						  </div>
 					  </div>
 				  </div>

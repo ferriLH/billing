@@ -43,10 +43,11 @@ class C_Sharepartner extends CI_Controller
 				$part 			= $getPartner1[0]['id'];
 				$rev  			= $getPartner1[0]['rev'];
 				$type  			= $getPartner1[0]['type'];
+				$nam			= $getPartner1[0]['namaPartner'];
 				$persen			= $rev*100;
 				$getRBT			= $this->M_Sharepartner->getRBT($part);
 				$data = array(
-					"title" => "SHARE PARTNER",
+					"title" => "SHARE PARTNER | ".$nam,
 					"partner" => $getPartner1,
 					"dari" => $dari,
 					"sampai" => $sampai,

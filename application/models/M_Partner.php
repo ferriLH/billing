@@ -82,6 +82,7 @@ class M_Partner extends CI_Model
 		$this->db->select('*');
 		$this->db->from('p_rbt');
 		$this->db->where('partnerId',$id);
+		$this->db->where('judul !=','null');
 		return $this->db->get()->result();
 	}
 

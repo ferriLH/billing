@@ -10,7 +10,7 @@ $this->load->view('parts/V_Navigation');
 	<section class="content-header">
 		<h1>
 			<?php echo $title;?>
-			<small> <?php echo $partner[0]['namaPartner'];?></small>
+<!--			<small> --><?php //echo $partner[0]['namaPartner'];?><!--</small>-->
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -369,7 +369,7 @@ $this->load->view('parts/V_Navigation');
 						?>
 
 						</tbody>
-						<tfooter>
+						<tfoot>
 							<tr>
 								<td class="text-bold text-right" colspan="4">Total</td>
 								<td><?php echo $totaln1?></td>
@@ -385,7 +385,7 @@ $this->load->view('parts/V_Navigation');
 								<td class="text-bold text-right" colspan="7">- <?php echo $besarpajak?> %</td>
 								<td><?php echo $tmpbayar?></td>
 							</tr>
-						</tfooter>
+						</tfoot>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -515,7 +515,7 @@ $this->load->view('parts/V_Navigation');
 						$tgl=date("Y-m-d");
 						?>
 						</tbody>
-						<tfooter>
+						<tfoot>
 							<tr>
 								<td class="text-bold text-right" colspan="4">Total</td>
 								<td><?php echo $totaln1?></td>
@@ -531,7 +531,7 @@ $this->load->view('parts/V_Navigation');
 								<td class="text-bold text-right" colspan="7">-4,5%</td>
 								<td><?php echo $tmpbayar?></td>
 							</tr>
-						</tfooter>
+						</tfoot>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -665,7 +665,7 @@ $this->load->view('parts/V_Navigation');
 						$tgl=date("Y-m-d");
 						?>
 						</tbody>
-						<tfooter>
+						<tfoot>
 							<tr>
 								<td class="text-bold text-right" colspan="4">Total</td>
 								<td><?php echo $totaln1?></td>
@@ -681,7 +681,7 @@ $this->load->view('parts/V_Navigation');
 								<td class="text-bold text-right" colspan="7">-4,5%</td>
 								<td><?php echo $tmpbayar?></td>
 							</tr>
-						</tfooter>
+						</tfoot>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -811,7 +811,7 @@ $this->load->view('parts/V_Navigation');
 						$tgl=date("Y-m-d");
 						?>
 						</tbody>
-						<tfooter>
+						<tfoot>
 							<tr>
 								<td class="text-bold text-right" colspan="4">Total</td>
 								<td><?php echo $totaln1?></td>
@@ -827,7 +827,7 @@ $this->load->view('parts/V_Navigation');
 								<td class="text-bold text-right" colspan="7">-4,5%</td>
 								<td><?php echo $tmpbayar?></td>
 							</tr>
-						</tfooter>
+						</tfoot>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -958,7 +958,7 @@ $this->load->view('parts/V_Navigation');
 						$tgl=date("Y-m-d");
 						?>
 						</tbody>
-						<tfooter>
+						<tfoot>
 							<tr>
 								<td class="text-bold text-right" colspan="4">Total</td>
 								<td><?php echo $totaln1?></td>
@@ -974,7 +974,7 @@ $this->load->view('parts/V_Navigation');
 								<td class="text-bold text-right" colspan="7">-4,5%</td>
 								<td><?php echo $tmpbayar?></td>
 							</tr>
-						</tfooter>
+						</tfoot>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -1104,7 +1104,7 @@ $this->load->view('parts/V_Navigation');
 						$tgl=date("Y-m-d");
 						?>
 						</tbody>
-						<tfooter>
+						<tfoot>
 							<tr>
 								<td class="text-bold text-right" colspan="4">Total</td>
 								<td><?php echo $totaln1?></td>
@@ -1120,7 +1120,7 @@ $this->load->view('parts/V_Navigation');
 								<td class="text-bold text-right" colspan="7">-4,5%</td>
 								<td><?php echo $tmpbayar?></td>
 							</tr>
-						</tfooter>
+						</tfoot>
 					</table>
 				</div>
 				<!-- /.box-body -->
@@ -1147,8 +1147,10 @@ $this->load->view('parts/V_Navigation');
                     'autoWidth'   	: true,
                     'dom'			: 'Bfrtip',
                     'buttons'		: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                        { extend: 'copyHtml5', footer: true },
+                        { extend: 'excelHtml5', footer: true },
+                        { extend: 'csvHtml5', footer: true },
+                        { extend: 'print', footer: true },                    ]
                 });
                 $('#tabelSharePartner2<?php echo $dari;?>').DataTable({
                     'paging'		: true,
@@ -1159,8 +1161,10 @@ $this->load->view('parts/V_Navigation');
                     'autoWidth'   	: true,
                     'dom'			: 'Bfrtip',
                     'buttons'		: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                        { extend: 'copyHtml5', footer: true },
+                        { extend: 'excelHtml5', footer: true },
+                        { extend: 'csvHtml5', footer: true },
+                        { extend: 'print', footer: true },                    ]
                 });
                 $('#tabelSharePartner3<?php echo $dari;?>').DataTable({
                     'paging'		: true,
@@ -1171,8 +1175,10 @@ $this->load->view('parts/V_Navigation');
                     'autoWidth'   	: true,
                     'dom'			: 'Bfrtip',
                     'buttons'		: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                        { extend: 'copyHtml5', footer: true },
+                        { extend: 'excelHtml5', footer: true },
+                        { extend: 'csvHtml5', footer: true },
+                        { extend: 'print', footer: true },                    ]
                 });
                 $('#tabelSharePartner4<?php echo $dari;?>').DataTable({
                     'paging'		: true,
@@ -1183,8 +1189,10 @@ $this->load->view('parts/V_Navigation');
                     'autoWidth'   	: true,
                     'dom'			: 'Bfrtip',
                     'buttons'		: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                        { extend: 'copyHtml5', footer: true },
+                        { extend: 'excelHtml5', footer: true },
+                        { extend: 'csvHtml5', footer: true },
+                        { extend: 'print', footer: true },                    ]
                 });
                 $('#tabelSharePartner5<?php echo $dari;?>').DataTable({
                     'paging'		: true,
@@ -1195,8 +1203,10 @@ $this->load->view('parts/V_Navigation');
                     'autoWidth'   	: true,
                     'dom'			: 'Bfrtip',
                     'buttons'		: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                        { extend: 'copyHtml5', footer: true },
+                        { extend: 'excelHtml5', footer: true },
+                        { extend: 'csvHtml5', footer: true },
+                        { extend: 'print', footer: true },                    ]
                 });
                 $('#tabelSharePartner6<?php echo $dari;?>').DataTable({
                     'paging'		: true,
@@ -1207,8 +1217,10 @@ $this->load->view('parts/V_Navigation');
                     'autoWidth'   	: true,
                     'dom'			: 'Bfrtip',
                     'buttons'		: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                        { extend: 'copyHtml5', footer: true },
+                        { extend: 'excelHtml5', footer: true },
+                        { extend: 'csvHtml5', footer: true },
+                        { extend: 'print', footer: true },                    ]
                 });
             });
 		</script>
@@ -1334,7 +1346,10 @@ $this->load->view('parts/V_Navigation');
                                 $('#sumSharePartner').DataTable({
                                     dom		: 'Bfrtip',
                                     buttons	: [
-                                        'copy', 'csv', 'excel', 'pdf', 'print'
+                                        { extend: 'copyHtml5', footer: true },
+                                        { extend: 'excelHtml5', footer: true },
+                                        { extend: 'csvHtml5', footer: true },
+                                        { extend: 'print', footer: true },
                                     ]
                                 });
                             });

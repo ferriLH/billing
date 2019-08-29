@@ -74,7 +74,7 @@
           'scroller'	: true,
           'dom'			: 'Bfrtip',
           'buttons'		: [
-              'copy', 'csv', 'excel', 'pdf', 'print'
+              'copy', 'csv', 'excel', 'print'
           ]
 
 
@@ -97,24 +97,24 @@
           ]
 
       });
-      $('#ttraffic').DataTable({
-          'paging'      : true,
-          'lengthChange': true,
-          'searching'   : true,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : true,
-          'order'		: [],
-          'deferRender'	: true,
-          'scrollCollapse' : true,
-          'scroller'	: true,
-          'dom'			: 'Bfrtip',
-          'buttons'		: [
-              'copy', 'csv', 'excel', 'pdf', 'print'
-          ]
-          //'scrollX'     : true
-
-      });
+      // $('#ttraffic').DataTable({
+      //     'paging'      : true,
+      //     'lengthChange': true,
+      //     'searching'   : true,
+      //     'ordering'    : true,
+      //     'info'        : true,
+      //     'autoWidth'   : true,
+      //     'order'		: [],
+      //     'deferRender'	: true,
+      //     'scrollCollapse' : true,
+      //     'scroller'	: true,
+      //     'dom'			: 'Bfrtip',
+      //     'buttons'		: [
+      //         'copy', 'csv', 'excel', 'pdf', 'print'
+      //     ]
+      //     //'scrollX'     : true
+	  //
+      // });
       $('#tsel').DataTable({
           'paging'      : true,
           'lengthChange': true,
@@ -125,7 +125,7 @@
           'scrollX'     : true,
           'dom'			: 'Bfrtip',
           'buttons'		: [
-              'copy', 'csv', 'excel', 'pdf', 'print'
+              'copy', 'csv', 'excel', 'print'
           ]
       });
       $('#revpart').DataTable({
@@ -155,7 +155,18 @@
       });
       $('#revenue').DataTable();
       $('#tblpencipta').DataTable();
-      $('#tblpartner').DataTable();
+      $('#tblpartner').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true,
+          'dom'			: 'Bfrtip',
+          'buttons'		: [
+              'copy', 'csv', 'excel', 'print'
+          ]
+      });
   });
 </script>
 

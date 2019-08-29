@@ -10,7 +10,7 @@
 	  <section class="content-header">
 		  <h1>
 			  <?php echo $title;?>
-			  <small> <?php echo $pencipta[0]['namaPencipta'];?></small>
+<!--			  <small> --><?php //echo $pencipta[0]['namaPencipta'];?><!--</small>-->
 		  </h1>
 		  <ol class="breadcrumb">
 			  <li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -281,7 +281,7 @@
 						  ?>
 
 						  </tbody>
-						  <tfooter>
+						  <tfoot>
 							  <tr>
 								  <td class="text-bold text-right" colspan="4">Total</td>
 								  <td><?php echo $totaln1?></td>
@@ -300,10 +300,10 @@
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
 							  <tr>
-								  <td class="text-bold text-right" colspan="13">-4,5%</td>
-								  <td><?php echo $tmpbayar?></td>
+								  <th class="text-bold text-right" colspan="13">-4,5%</th>
+								  <th><?php echo $tmpbayar?></th>
 							  </tr>
-						  </tfooter>
+						  </tfoot>
 					  </table>
 				  </div>
 				  <!-- /.box-body -->
@@ -451,7 +451,7 @@
 						  $tgl=date("Y-m-d");
 						  ?>
 						  </tbody>
-						  <tfooter>
+						  <tfoot>
 							  <tr>
 								  <td class="text-bold text-right" colspan="4">Total</td>
 								  <td><?php echo $totaln1?></td>
@@ -470,10 +470,10 @@
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
 							  <tr>
-								  <td class="text-bold text-right" colspan="13">-4,5%</td>
-								  <td><?php echo $tmpbayar?></td>
+								  <th class="text-bold text-right" colspan="13">-4,5%</th>
+								  <th><?php echo $tmpbayar?></th>
 							  </tr>
-						  </tfooter>
+						  </tfoot>
 					  </table>
 				  </div>
 				  <!-- /.box-body -->
@@ -625,7 +625,7 @@
 						  $tgl=date("Y-m-d");
 						  ?>
 						  </tbody>
-						  <tfooter>
+						  <tfoot>
 							  <tr>
 								  <td class="text-bold text-right" colspan="4">Total</td>
 								  <td><?php echo $totaln1?></td>
@@ -644,10 +644,10 @@
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
 							  <tr>
-								  <td class="text-bold text-right" colspan="13">-4,5%</td>
-								  <td><?php echo $tmpbayar?></td>
+								  <th class="text-bold text-right" colspan="13">-4,5%</th>
+								  <th><?php echo $tmpbayar?></th>
 							  </tr>
-						  </tfooter>
+						  </tfoot>
 					  </table>
 				  </div>
 				  <!-- /.box-body -->
@@ -795,7 +795,7 @@
 						  $tgl=date("Y-m-d");
 						  ?>
 						  </tbody>
-						  <tfooter>
+						  <tfoot>
 							  <tr>
 								  <td class="text-bold text-right" colspan="4">Total</td>
 								  <td><?php echo $totaln1?></td>
@@ -814,10 +814,10 @@
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
 							  <tr>
-								  <td class="text-bold text-right" colspan="13">-4,5%</td>
-								  <td><?php echo $tmpbayar?></td>
+								  <th class="text-bold text-right" colspan="13">-4,5%</th>
+								  <th><?php echo $tmpbayar?></th>
 							  </tr>
-						  </tfooter>
+						  </tfoot>
 					  </table>
 				  </div>
 				  <!-- /.box-body -->
@@ -966,7 +966,7 @@
 						  $tgl=date("Y-m-d");
 						  ?>
 						  </tbody>
-						  <tfooter>
+						  <tfoot>
 							  <tr>
 								  <td class="text-bold text-right" colspan="4">Total</td>
 								  <td><?php echo $totaln1?></td>
@@ -985,10 +985,10 @@
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
 							  <tr>
-								  <td class="text-bold text-right" colspan="13">-4,5%</td>
-								  <td><?php echo $tmpbayar?></td>
+								  <th class="text-bold text-right" colspan="13">-4,5%</th>
+								  <th><?php echo $tmpbayar?></th>
 							  </tr>
-						  </tfooter>
+						  </tfoot>
 					  </table>
 				  </div>
 				  <!-- /.box-body -->
@@ -1136,7 +1136,7 @@
 						  $tgl=date("Y-m-d");
 						  ?>
 						  </tbody>
-						  <tfooter>
+						  <tfoot>
 							  <tr>
 								  <td class="text-bold text-right" colspan="4">Total</td>
 								  <td><?php echo $totaln1?></td>
@@ -1155,10 +1155,10 @@
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
 							  <tr>
-								  <td class="text-bold text-right" colspan="13">-4,5%</td>
-								  <td><?php echo $tmpbayar?></td>
+								  <th class="text-bold text-right" colspan="13">-4,5%</th>
+								  <th><?php echo $tmpbayar?></th>
 							  </tr>
-						  </tfooter>
+						  </tfoot>
 					  </table>
 				  </div>
 				  <!-- /.box-body -->
@@ -1185,7 +1185,10 @@
                       'autoWidth'   	: true,
                       'dom'				: 'Bfrtip',
                       'buttons'			: [
-                          'copy', 'csv', 'excel', 'pdf', 'print'
+                          { extend: 'copyHtml5', footer: true },
+                          { extend: 'excelHtml5', footer: true },
+                          { extend: 'csvHtml5', footer: true },
+                          { extend: 'print', footer: true },
                       ]
                   });
                   $('#tabelSharePencipta2<?php echo $dari;?>').DataTable({
@@ -1197,7 +1200,10 @@
                       'autoWidth'   	: true,
                       'dom'				: 'Bfrtip',
                       'buttons'			: [
-                          'copy', 'csv', 'excel', 'pdf', 'print'
+                          { extend: 'copyHtml5', footer: true },
+                          { extend: 'excelHtml5', footer: true },
+                          { extend: 'csvHtml5', footer: true },
+                          { extend: 'print', footer: true },
                       ]
                   });
                   $('#tabelSharePencipta3<?php echo $dari;?>').DataTable({
@@ -1209,7 +1215,10 @@
                       'autoWidth'   	: true,
                       'dom'				: 'Bfrtip',
                       'buttons'			: [
-                          'copy', 'csv', 'excel', 'pdf', 'print'
+                          { extend: 'copyHtml5', footer: true },
+                          { extend: 'excelHtml5', footer: true },
+                          { extend: 'csvHtml5', footer: true },
+                          { extend: 'print', footer: true },
                       ]
                   });
                   $('#tabelSharePencipta4<?php echo $dari;?>').DataTable({
@@ -1221,7 +1230,10 @@
                       'autoWidth'   	: true,
                       'dom'				: 'Bfrtip',
                       'buttons'			: [
-                          'copy', 'csv', 'excel', 'pdf', 'print'
+                          { extend: 'copyHtml5', footer: true },
+                          { extend: 'excelHtml5', footer: true },
+                          { extend: 'csvHtml5', footer: true },
+                          { extend: 'print', footer: true },
                       ]
                   });
                   $('#tabelSharePencipta5<?php echo $dari;?>').DataTable({
@@ -1233,7 +1245,10 @@
                       'autoWidth'   	: true,
                       'dom'				: 'Bfrtip',
                       'buttons'			: [
-                          'copy', 'csv', 'excel', 'pdf', 'print'
+                          { extend: 'copyHtml5', footer: true },
+                          { extend: 'excelHtml5', footer: true },
+                          { extend: 'csvHtml5', footer: true },
+                          { extend: 'print', footer: true },
                       ]
                   });
                   $('#tabelSharePencipta6<?php echo $dari;?>').DataTable({
@@ -1245,7 +1260,10 @@
                       'autoWidth'   	: true,
                       'dom'				: 'Bfrtip',
                       'buttons'			: [
-                          'copy', 'csv', 'excel', 'pdf', 'print'
+                          { extend: 'copyHtml5', footer: true },
+                          { extend: 'excelHtml5', footer: true },
+                          { extend: 'csvHtml5', footer: true },
+                          { extend: 'print', footer: true },
                       ]
                   });
               });
@@ -1358,21 +1376,24 @@
 								  ?>
 							  </tr>
 							  </tbody>
-							  <tfooter>
+							  <tfoot>
 								  <tr>
 									  <?php
 									  $tmpgrandtot=number_format($grandtot);
-									  echo "<td><b>GRAND</td><td class='text-right' colspan=".$j.">".$tmpgrandtot."</b></td>";
+									  echo "<th><b>GRAND</th><th class='text-right' colspan=".$j.">".$tmpgrandtot."</b></th>";
 									  ?>
 								  </tr>
-							  </tfooter>
+							  </tfoot>
 						  </table>
 						  <script>
                               $(function () {
                                   $('#sumSharePencipta').DataTable({
                                       dom		: 'Bfrtip',
                                       buttons	: [
-                                          'copy', 'csv', 'excel', 'pdf', 'print'
+                                          { extend: 'copyHtml5', footer: true },
+                                          { extend: 'excelHtml5', footer: true },
+                                          { extend: 'csvHtml5', footer: true },
+                                          { extend: 'print', footer: true },
                                       ]
                                   });
                               });
