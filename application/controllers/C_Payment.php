@@ -47,12 +47,13 @@ class C_Payment extends CI_Controller
 			}else{
 				$getPartner1 = $this->M_Sharepartner->getPartner1($partner);
 				$part 			= $getPartner1[0]['id'];
+				$nam 			= $getPartner1[0]['namaPartner'];
 				$rev  			= $getPartner1[0]['rev'];
 				$type  			= $getPartner1[0]['type'];
 				$persen			= $rev*100;
 				$getRBT			= $this->M_Sharepartner->getRBT($part);
 				$data = array(
-					"title" => "Table Payment Partner",
+					"title" => "Payment Partner | ".$nam." | ".$monthdari." - ".$monthsampai,
 					"partner" => $getPartner1,
 					"dari" => $dari,
 					"sampai" => $sampai,
@@ -95,12 +96,13 @@ class C_Payment extends CI_Controller
 			}else{
 				$getPencipta1 	= $this->M_Sharepencipta->getPencipta1($pencipta);
 				$penc 			= $getPencipta1[0]['id'];
+				$nam 			= $getPencipta1[0]['namaPencipta'];
 				$rev  			= $getPencipta1[0]['rev'];
 				$type  			= $getPencipta1[0]['type'];
 				$persen			= $rev*100;
 				$getRBT			= $this->M_Sharepencipta->getRBT($penc);
 				$data = array(
-					"title" => "Table Payment Pencipta",
+					"title" => "Payment Pencipta | ".$nam." | ".$monthdari." - ".$monthsampai,
 					"pencipta" => $getPencipta1,
 					"dari" => $dari,
 					"sampai" => $sampai,

@@ -9,7 +9,6 @@
 	<section class="content-header">
 		<h1>
 			<?php echo $title; ?>
-			<small><?php echo $partner[0]['namaPartner'];?></small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i>Dashboard</a></li>
@@ -754,7 +753,7 @@
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header with-border">
-						<center> <h3 class="box-title"><b>SHARE PARTNER</b></h3> <br></center>
+						<center> <h3 class="box-title"><b>PAYMENT PARTNER</b></h3> <br></center>
 						<center> <h4><?php echo $partner[0]['namaPartner'];?></h4></center>
 					</div>
 					<!-- /.box-header -->
@@ -851,21 +850,24 @@
 								?>
 							</tr>
 							</tbody>
-							<tfooter>
+							<tfoot>
 								<tr>
 									<?php
 									$tmpgrandtot=number_format($grandtot);
 									echo "<td><b>GRAND</td><td class='text-right' colspan=".$j.">".$tmpgrandtot."</b></td>";
 									?>
 								</tr>
-							</tfooter>
+							</tfoot>
 						</table>
 						<script>
                             $(function () {
                                 $('#sumSharePartner').DataTable({
                                     dom		: 'Bfrtip',
                                     buttons	: [
-                                        'copy', 'csv', 'excel', 'pdf', 'print'
+                                        { extend: 'copyHtml5', footer: true },
+                                        { extend: 'excelHtml5', footer: true },
+                                        { extend: 'csvHtml5', footer: true },
+                                        { extend: 'print', footer: true },
                                     ]
                                 });
                             });

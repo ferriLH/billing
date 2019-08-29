@@ -13,7 +13,7 @@ class C_Sharepartner extends CI_Controller
 				"title" => "Share Partner",
 				"getPartner" => $this->M_Sharepartner->getPartner(),
 			);
-			$this->load->view('V_SharePartner',$data);
+			$this->load->view('V_Sharepartner',$data);
 		}else{
 			redirect('admin');
 		}
@@ -47,7 +47,7 @@ class C_Sharepartner extends CI_Controller
 				$persen			= $rev*100;
 				$getRBT			= $this->M_Sharepartner->getRBT($part);
 				$data = array(
-					"title" => "SHARE PARTNER | ".$nam,
+					"title" => "SHARE PARTNER | ".$nam." | ".$monthdari." - ".$monthsampai,
 					"partner" => $getPartner1,
 					"dari" => $dari,
 					"sampai" => $sampai,

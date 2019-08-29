@@ -49,7 +49,7 @@ class C_Sharepencipta extends CI_Controller
 
 				$getRBT			= $this->M_Sharepencipta->getRBT($penc);
 				$data = array(
-					"title" => "SHARE PENCIPTA | ".$nam,
+					"title" => "SHARE PENCIPTA | ".$nam." | ".$monthdari." - ".$monthsampai,
 					"pencipta" => $getPencipta1,
 					"dari" => $dari,
 					"sampai" => $sampai,

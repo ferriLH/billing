@@ -295,14 +295,14 @@
 								  <td><?php echo $tmptotalrevenue?></td>
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
-							  <tr>
-								  <td class="text-bold text-right" colspan="13">Total Share</td>
-								  <td><?php echo $tmptotalsh?></td>
-							  </tr>
-							  <tr>
-								  <th class="text-bold text-right" colspan="13">-4,5%</th>
-								  <th><?php echo $tmpbayar?></th>
-							  </tr>
+<!--							  <tr>-->
+<!--								  <td class="text-bold text-right" colspan="13">Total Share</td>-->
+<!--								  <td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							  </tr>-->
+<!--							  <tr>-->
+<!--								  <th class="text-bold text-right" colspan="13">-4,5%</th>-->
+<!--								  <th>--><?php //echo $tmpbayar?><!--</th>-->
+<!--							  </tr>-->
 						  </tfoot>
 					  </table>
 				  </div>
@@ -465,14 +465,14 @@
 								  <td><?php echo $tmptotalrevenue?></td>
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
-							  <tr>
-								  <td class="text-bold text-right" colspan="13">Total Share</td>
-								  <td><?php echo $tmptotalsh?></td>
-							  </tr>
-							  <tr>
-								  <th class="text-bold text-right" colspan="13">-4,5%</th>
-								  <th><?php echo $tmpbayar?></th>
-							  </tr>
+<!--							  <tr>-->
+<!--								  <td class="text-bold text-right" colspan="13">Total Share</td>-->
+<!--								  <td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							  </tr>-->
+<!--							  <tr>-->
+<!--								  <th class="text-bold text-right" colspan="13">-4,5%</th>-->
+<!--								  <th>--><?php //echo $tmpbayar?><!--</th>-->
+<!--							  </tr>-->
 						  </tfoot>
 					  </table>
 				  </div>
@@ -639,14 +639,14 @@
 								  <td><?php echo $tmptotalrevenue?></td>
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
-							  <tr>
-								  <td class="text-bold text-right" colspan="13">Total Share</td>
-								  <td><?php echo $tmptotalsh?></td>
-							  </tr>
-							  <tr>
-								  <th class="text-bold text-right" colspan="13">-4,5%</th>
-								  <th><?php echo $tmpbayar?></th>
-							  </tr>
+<!--							  <tr>-->
+<!--								  <td class="text-bold text-right" colspan="13">Total Share</td>-->
+<!--								  <td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							  </tr>-->
+<!--							  <tr>-->
+<!--								  <th class="text-bold text-right" colspan="13">-4,5%</th>-->
+<!--								  <th>--><?php //echo $tmpbayar?><!--</th>-->
+<!--							  </tr>-->
 						  </tfoot>
 					  </table>
 				  </div>
@@ -809,14 +809,14 @@
 								  <td><?php echo $tmptotalrevenue?></td>
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
-							  <tr>
-								  <td class="text-bold text-right" colspan="13">Total Share</td>
-								  <td><?php echo $tmptotalsh?></td>
-							  </tr>
-							  <tr>
-								  <th class="text-bold text-right" colspan="13">-4,5%</th>
-								  <th><?php echo $tmpbayar?></th>
-							  </tr>
+<!--							  <tr>-->
+<!--								  <td class="text-bold text-right" colspan="13">Total Share</td>-->
+<!--								  <td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							  </tr>-->
+<!--							  <tr>-->
+<!--								  <th class="text-bold text-right" colspan="13">-4,5%</th>-->
+<!--								  <th>--><?php //echo $tmpbayar?><!--</th>-->
+<!--							  </tr>-->
 						  </tfoot>
 					  </table>
 				  </div>
@@ -980,14 +980,14 @@
 								  <td><?php echo $tmptotalrevenue?></td>
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
-							  <tr>
-								  <td class="text-bold text-right" colspan="13">Total Share</td>
-								  <td><?php echo $tmptotalsh?></td>
-							  </tr>
-							  <tr>
-								  <th class="text-bold text-right" colspan="13">-4,5%</th>
-								  <th><?php echo $tmpbayar?></th>
-							  </tr>
+<!--							  <tr>-->
+<!--								  <td class="text-bold text-right" colspan="13">Total Share</td>-->
+<!--								  <td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							  </tr>-->
+<!--							  <tr>-->
+<!--								  <th class="text-bold text-right" colspan="13">-4,5%</th>-->
+<!--								  <th>--><?php //echo $tmpbayar?><!--</th>-->
+<!--							  </tr>-->
 						  </tfoot>
 					  </table>
 				  </div>
@@ -1150,14 +1150,14 @@
 								  <td><?php echo $tmptotalrevenue?></td>
 								  <td><?php echo $tmptotalsh?></td>
 							  </tr>
-							  <tr>
-								  <td class="text-bold text-right" colspan="13">Total Share</td>
-								  <td><?php echo $tmptotalsh?></td>
-							  </tr>
-							  <tr>
-								  <th class="text-bold text-right" colspan="13">-4,5%</th>
-								  <th><?php echo $tmpbayar?></th>
-							  </tr>
+<!--							  <tr>-->
+<!--								  <td class="text-bold text-right" colspan="13">Total Share</td>-->
+<!--								  <td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							  </tr>-->
+<!--							  <tr>-->
+<!--								  <th class="text-bold text-right" colspan="13">-4,5%</th>-->
+<!--								  <th>--><?php //echo $tmpbayar?><!--</th>-->
+<!--							  </tr>-->
 						  </tfoot>
 					  </table>
 				  </div>

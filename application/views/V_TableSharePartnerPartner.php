@@ -377,14 +377,14 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln3?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">Total Share</td>
-								<td><?php echo $tmptotalsh?></td>
-							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">- <?php echo $besarpajak?> %</td>
-								<td><?php echo $tmpbayar?></td>
-							</tr>
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">Total Share</td>-->
+<!--								<td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							</tr>-->
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">- --><?php //echo $besarpajak?><!-- %</td>-->
+<!--								<td>--><?php //echo $tmpbayar?><!--</td>-->
+<!--							</tr>-->
 						</tfoot>
 					</table>
 				</div>
@@ -523,14 +523,14 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln3?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">Total Share</td>
-								<td><?php echo $tmptotalsh?></td>
-							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">-4,5%</td>
-								<td><?php echo $tmpbayar?></td>
-							</tr>
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">Total Share</td>-->
+<!--								<td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							</tr>-->
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">-4,5%</td>-->
+<!--								<td>--><?php //echo $tmpbayar?><!--</td>-->
+<!--							</tr>-->
 						</tfoot>
 					</table>
 				</div>
@@ -673,14 +673,14 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln3?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">Total Share</td>
-								<td><?php echo $tmptotalsh?></td>
-							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">-4,5%</td>
-								<td><?php echo $tmpbayar?></td>
-							</tr>
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">Total Share</td>-->
+<!--								<td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							</tr>-->
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">-4,5%</td>-->
+<!--								<td>--><?php //echo $tmpbayar?><!--</td>-->
+<!--							</tr>-->
 						</tfoot>
 					</table>
 				</div>
@@ -819,14 +819,14 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln3?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">Total Share</td>
-								<td><?php echo $tmptotalsh?></td>
-							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">-4,5%</td>
-								<td><?php echo $tmpbayar?></td>
-							</tr>
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">Total Share</td>-->
+<!--								<td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							</tr>-->
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">-4,5%</td>-->
+<!--								<td>--><?php //echo $tmpbayar?><!--</td>-->
+<!--							</tr>-->
 						</tfoot>
 					</table>
 				</div>
@@ -966,14 +966,14 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln3?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">Total Share</td>
-								<td><?php echo $tmptotalsh?></td>
-							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">-4,5%</td>
-								<td><?php echo $tmpbayar?></td>
-							</tr>
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">Total Share</td>-->
+<!--								<td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							</tr>-->
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">-4,5%</td>-->
+<!--								<td>--><?php //echo $tmpbayar?><!--</td>-->
+<!--							</tr>-->
 						</tfoot>
 					</table>
 				</div>
@@ -1112,14 +1112,14 @@ $this->load->view('parts/V_Navigation');
 								<td><?php echo $totaln3?></td>
 								<td><?php echo $tmptotalsh?></td>
 							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">Total Share</td>
-								<td><?php echo $tmptotalsh?></td>
-							</tr>
-							<tr>
-								<td class="text-bold text-right" colspan="7">-4,5%</td>
-								<td><?php echo $tmpbayar?></td>
-							</tr>
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">Total Share</td>-->
+<!--								<td>--><?php //echo $tmptotalsh?><!--</td>-->
+<!--							</tr>-->
+<!--							<tr>-->
+<!--								<td class="text-bold text-right" colspan="7">-4,5%</td>-->
+<!--								<td>--><?php //echo $tmpbayar?><!--</td>-->
+<!--							</tr>-->
 						</tfoot>
 					</table>
 				</div>
